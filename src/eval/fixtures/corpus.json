@@ -1,0 +1,74 @@
+[
+  {
+    "id": "movie-inception",
+    "title": "Inception",
+    "source": "movies/inception.md",
+    "text": "Inception is a science fiction heist film about a thief who steals secrets by entering people's dreams. A team plants an idea in a corporate heir's mind through layered dream levels. The spinning top totem leaves the ending ambiguous."
+  },
+  {
+    "id": "movie-arrival",
+    "title": "Arrival",
+    "source": "movies/arrival.md",
+    "text": "Arrival follows a linguist recruited by the military to communicate with aliens whose ships appear across Earth. Learning their circular language changes how she perceives time. The film treats language as a way of reshaping thought."
+  },
+  {
+    "id": "movie-parasite",
+    "title": "Parasite",
+    "source": "movies/parasite.md",
+    "text": "Parasite is a dark comedy thriller about a poor family that infiltrates a wealthy household by posing as skilled workers. Class tension builds from a basement secret toward a violent birthday gathering."
+  },
+  {
+    "id": "column-city-heat",
+    "title": "The city will not cool overnight",
+    "source": "columns/heat.md",
+    "text": "A newspaper column on a record heat wave. Asphalt holds the day's temperature after sunset. The writer argues that shade trees and night buses matter more than another cooling-center press release."
+  },
+  {
+    "id": "column-library-hours",
+    "title": "Who needs a library after six",
+    "source": "columns/library.md",
+    "text": "The city cut weekday library hours. Students lose a quiet desk and a printer. The column says public rooms are infrastructure, not a luxury for people who already own a study."
+  },
+  {
+    "id": "column-transit-strike",
+    "title": "A strike measured in missed shifts",
+    "source": "columns/transit.md",
+    "text": "Bus drivers walked out over unpaid overtime. Commuters describe two-hour crossings and lost restaurant shifts. The column asks why the city budget can fund a stadium before a contract."
+  },
+  {
+    "id": "story-lighthouse",
+    "title": "Keeper",
+    "source": "stories/lighthouse.md",
+    "text": "A short story about a lighthouse keeper who starts leaving the lamp unlit on foggy nights. Fishermen still find the rocks. He writes letters to a sister who never answers and counts ships that do not come."
+  },
+  {
+    "id": "story-market",
+    "title": "Tuesday stall",
+    "source": "stories/market.md",
+    "text": "A fruit seller in a covered market pretends not to notice a boy stealing oranges. Each Tuesday she leaves one bruised orange at the edge of the crate. Winter comes and the boy stops arriving."
+  },
+  {
+    "id": "story-train",
+    "title": "Last seat",
+    "source": "stories/train.md",
+    "text": "On a night train a woman recognizes the stranger opposite her from a wedding years ago. They do not speak. Stations pass like unused sentences. At dawn she leaves the scarf he forgot on the seat."
+  },
+  {
+    "id": "docs-jwt",
+    "title": "JWT authentication",
+    "source": "docs/auth.md",
+    "text": "JWT authentication allows a server to issue a signed token after login. The client sends the token on later requests. The server verifies the signature instead of storing session state. Expired tokens must be rejected."
+  },
+  {
+    "id": "docs-chunking",
+    "title": "Why documents are chunked",
+    "source": "docs/chunking.md",
+    "text": "Embedding an entire document into one vector averages out its meaning. Retrieval works better when text is split into overlapping chunks so a search hit points at a paragraph, not a whole essay."
+  },
+  {
+    "id": "docs-qdrant",
+    "title": "Qdrant payload indexes",
+    "source": "docs/qdrant.md",
+    "text": "Qdrant stores vectors and a JSON payload per point. Keyword indexes on documentId and source make filtered search cheap. Without a payload index a filter scans every point."
+  }
+]

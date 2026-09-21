@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+
+# Local infra / generated reports
+qdrant_storage/
+eval-results.json
+eval-chunk-results.json
+eval-model-results.json
+eval-qdrant-results.json
+bench-results.json
+bench-ingest-results.json
+
+# Model caches
+.cache/
+.huggingface/
+*.bin
+*.onnx
+
+# SQLite document store
+data/

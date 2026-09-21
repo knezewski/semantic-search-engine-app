@@ -1,0 +1,152 @@
+{
+  "info": {
+    "name": "Semantic Search Engine",
+    "description": "Endpoints for the retrieval pipeline: ingest, pipeline status, search, and probes. Import into Requestly API Client (Postman v2.1 format).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "documentId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Process liveness."
+      }
+    },
+    {
+      "name": "Readiness",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ready",
+          "host": ["{{baseUrl}}"],
+          "path": ["ready"]
+        },
+        "description": "Checks Qdrant collection and Redis are reachable."
+      }
+    },
+    {
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/metrics",
+          "host": ["{{baseUrl}}"],
+          "path": ["metrics"]
+        },
+        "description": "BullMQ waiting/active/completed/failed counts per queue."
+      }
+    },
+    {
+      "name": "Ingest document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/documents",
+          "host": ["{{baseUrl}}"],
+          "path": ["documents"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"JWT\",\n  \"text\": \"JWT authentication issues a signed token that the client sends with each request, allowing the server to verify identity without server-side sessions.\",\n  \"source\": \"docs/auth.md\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Accepts a document, returns 202 with `{ id, status: \"queued\" }`. Copy the returned `id` into the `documentId` collection variable."
+      }
+    },
+    {
+      "name": "Get document status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/documents/{{documentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["documents", "{{documentId}}"]
+        },
+        "description": "Pipeline status for a document. `text` is intentionally not returned."
+      }
+    },
+    {
+      "name": "Search (default mode)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/search",
+          "host": ["{{baseUrl}}"],
+          "path": ["search"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"How does JWT work?\",\n  \"limit\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Default mode is `rerank` when RERANK_ENABLED=true, otherwise `hybrid`."
+      }
+    },
+    {
+      "name": "Search (rerank + source filter)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/search",
+          "host": ["{{baseUrl}}"],
+          "path": ["search"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"How does JWT work?\",\n  \"limit\": 5,\n  \"mode\": \"rerank\",\n  \"source\": \"docs/auth.md\",\n  \"scoreThreshold\": 0.3\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "`mode` is `dense` | `hybrid` | `rerank`. `source` filters by document source. `scoreThreshold` (0..1) applies in dense mode."
+      }
+    }
+  ]
+}

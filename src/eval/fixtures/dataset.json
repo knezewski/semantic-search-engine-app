@@ -1,0 +1,127 @@
+[
+  {
+    "id": "q1",
+    "query": "How does JWT authentication work?",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q2",
+    "query": "Why split text into overlapping chunks before embedding?",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q3",
+    "query": "What are Qdrant payload indexes used for?",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q4",
+    "query": "science fiction movie about planting an idea inside a dream",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q5",
+    "query": "film where a linguist talks to aliens and time changes",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q6",
+    "query": "poor family infiltrates a rich house in a class satire",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q7",
+    "query": "newspaper column about a heat wave and shade trees",
+    "relevantDocumentIds": ["column-city-heat"]
+  },
+  {
+    "id": "q8",
+    "query": "library hours were cut and students lost a quiet desk",
+    "relevantDocumentIds": ["column-library-hours"]
+  },
+  {
+    "id": "q9",
+    "query": "bus drivers strike unpaid overtime commuters miss work",
+    "relevantDocumentIds": ["column-transit-strike"]
+  },
+  {
+    "id": "q10",
+    "query": "lighthouse keeper who stops lighting the lamp",
+    "relevantDocumentIds": ["story-lighthouse"]
+  },
+  {
+    "id": "q11",
+    "query": "market seller leaves an orange for a boy who steals fruit",
+    "relevantDocumentIds": ["story-market"]
+  },
+  {
+    "id": "q12",
+    "query": "night train strangers from a wedding and a forgotten scarf",
+    "relevantDocumentIds": ["story-train"]
+  },
+  {
+    "id": "q13",
+    "query": "does the server store session state when using JSON web tokens?",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q14",
+    "query": "spinning top totem ambiguous ending heist in dreams",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q15",
+    "query": "circular alien language reshapes how someone thinks about time",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q16",
+    "query": "basement secret and a violent birthday party class conflict",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q17",
+    "query": "asphalt stays hot after sunset cooling centers are not enough",
+    "relevantDocumentIds": ["column-city-heat"]
+  },
+  {
+    "id": "q18",
+    "query": "public rooms are infrastructure not a luxury",
+    "relevantDocumentIds": ["column-library-hours"]
+  },
+  {
+    "id": "q19",
+    "query": "city funds a stadium before a transit contract",
+    "relevantDocumentIds": ["column-transit-strike"]
+  },
+  {
+    "id": "q20",
+    "query": "letters to a sister who never answers ships that do not come",
+    "relevantDocumentIds": ["story-lighthouse"]
+  },
+  {
+    "id": "q21",
+    "query": "winter comes and the boy stops arriving at the stall",
+    "relevantDocumentIds": ["story-market"]
+  },
+  {
+    "id": "q22",
+    "query": "stations pass like unused sentences on a night train",
+    "relevantDocumentIds": ["story-train"]
+  },
+  {
+    "id": "q23",
+    "query": "filtered vector search is expensive without a keyword index",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q24",
+    "query": "one vector for a whole essay washes out paragraph meaning",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q25",
+    "query": "expired tokens must be rejected after login",
+    "relevantDocumentIds": ["docs-jwt"]
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "name": "semantic-search-engine",
+  "type": "module",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "dev:worker": "bun run --hot src/workers/start.ts",
+    "start": "bun src/index.ts",
+    "worker": "bun src/workers/start.ts",
+    "jobs:replay": "bun src/workers/replay.ts",
+    "build": "tsc --noEmit",
+    "infra:up": "docker compose -f docker/docker-compose.yml up -d",
+    "infra:down": "docker compose -f docker/docker-compose.yml down",
+    "lint": "biome lint ./src",
+    "lint:fix": "biome lint --write ./src",
+    "format": "biome format --write ./src",
+    "check": "biome check --write ./src",
+    "type-check": "tsc --noEmit",
+    "test": "bun test src",
+    "eval": "bun src/eval/run.ts",
+    "eval:chunks": "bun src/eval/chunk-experiments.ts",
+    "eval:models": "bun src/eval/models.ts",
+    "eval:qdrant": "bun src/eval/qdrant-sweep.ts",
+    "bench": "bun src/bench/run.ts",
+    "bench:ingest": "bun src/bench/ingest.ts"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@qdrant/js-client-rest": "^1.17.0",
+    "arktype": "^2.2.0",
+    "bullmq": "^5.70.4",
+    "hono": "^4.12.5",
+    "ioredis": "^5.10.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@types/bun": "latest",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "^5.9.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun run type-check && bunx biome check ./src"
+  }
+}

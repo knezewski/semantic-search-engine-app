@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "skills": {
+    "bun": {
+      "source": "midudev/autoskills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "1386ed5490ed278e38312a416c9aa074dbe3849f32ae7f841e4142fef5d4df94"
+    },
+    "hono": {
+      "source": "yusukebe/hono-skill",
+      "sourceType": "autoskills-registry",
+      "computedHash": "bc1c40e71ec13faa82ab7e9464bfd57cc282780a1087b021d26ba0d2c082059b"
+    },
+    "qdrant-advisor": {
+      "source": "qdrant/skills",
+      "sourceType": "github",
+      "skillPath": "meta/qdrant-advisor/SKILL.md",
+      "computedHash": "847fd40916d767cde7cf266a4213d6645b125e6103daea3a313d99075ec209f0"
+    },
+    "typescript-advanced-types": {
+      "source": "wshobson/agents",
+      "sourceType": "autoskills-registry",
+      "computedHash": "5ca0e177c6aaaba1889255691224daafdb7d71f317cc70bede1590d3907ded42"
+    }
+  }
+}
