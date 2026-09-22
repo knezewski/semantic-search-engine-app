@@ -1,55 +1,24 @@
 # Semantic Document Retrieval Engine
 
-Backend retrieval infrastructure: HTTP ingest → BullMQ workers → Qdrant → semantic search.
+Backend for semantic document search: HTTP ingest → BullMQ workers → Qdrant → hybrid retrieval with reranking.
 
-This is not a chatbot UI. The public contract is document ingest, pipeline status, and search.
+Public contract: document ingest, pipeline status, search.
 
 ```text
-Client
-  ↓
-Hono API
-  ↓
-Service
-  ↓
-BullMQ / Redis
-  ↓
-Ingest → Chunk → Embed → Index workers
-  ↓
-Qdrant
-  ↓
-POST /search
+Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embed → Index → Qdrant → POST /search
 ```
 
-## Status
+## Features
 
-- Phase 0 done: env, pinned Docker infra, CI, toolchain.
-- Phase 1 done: document/chunk domain, deterministic ids, SQLite document store, idempotent `document_chunks` collection + payload indexes.
-- Phase 2 done: `POST /documents`, `GET /documents/:id`, `POST /search`, `/health`, `/ready`.
-- Phase 3 done: four BullMQ queues + workers, retries, replay.
-- Phase 4 done: `EmbeddingPort`, lazy HF adapter, `embed` / `embedBatch`, model from `EMBEDDING_MODEL`.
-- Phase 6 done: Recall@K / MRR / NDCG on a fixed fixture corpus.
-- Latency: embedding warmup + query cache + HNSW `ef` + `Server-Timing` + `bun run bench`.
-- Hybrid search: dense + BM25 sparse, RRF fusion. `"mode": "dense"` to disable.
-- Eval compares dense vs hybrid vs rerank on the same fixture set.
-- Rerank: cross-encoder `Xenova/ms-marco-MiniLM-L-6-v2` over the hybrid candidate pool.
-- Chunking uses the embedding tokenizer (`CHUNK_SIZE` / `CHUNK_OVERLAP` in tokens). `bun run eval:chunks` compares 250/25, 500/50, 800/80.
-- Ingest throughput: `bun run bench:ingest`.
-- Embedding bake-off: `bun run eval:models`.
-- HNSW / int8 quantization sweep: `bun run eval:qdrant`.
-- Queue counts: `GET /metrics`. Compose has CPU/memory limits.
-- Outside the spec: `my-plugin` still talks to the old API.
-
-```bash
-bun test src
-bun run eval
-bun run eval:chunks
-bun run eval:models
-bun run eval:qdrant
-bun run bench
-bun run bench:ingest
-```
-
-On API start the process calls `VectorService.ensureCollection()` for `COLLECTION_NAME` (default `document_chunks`).
+- Deterministic chunk ids, SQLite document store, idempotent `document_chunks` collection with payload indexes.
+- Four BullMQ queues + workers, 3 attempts with exponential backoff, manual replay.
+- Embeddings via a lazy Hugging Face adapter (`embed` / `embedBatch`), model from `EMBEDDING_MODEL`.
+- Chunking uses the embedding tokenizer, so `CHUNK_SIZE` / `CHUNK_OVERLAP` are in tokens.
+- Hybrid search: dense + BM25 sparse, fused with RRF.
+- Optional cross-encoder rerank over the hybrid candidate pool (default search mode).
+- Query embedding cache, HNSW `ef` tuning, `Server-Timing` response header.
+- Quality and perf harnesses: Recall@K / MRR / NDCG on a fixed fixture corpus, search and ingest benchmarks,
+  chunk-size / model / Qdrant sweeps.
 
 ## Prerequisites
 
@@ -62,46 +31,44 @@ On API start the process calls `VectorService.ensureCollection()` for `COLLECTIO
 cp .env.example .env
 bun install
 bun run infra:up
-bun run dev
+bun run dev          # API
 bun run dev:worker   # second terminal
 ```
 
 - API: `http://localhost:3000`
-- Health: `GET /health` — ready: `GET /ready`
 - Qdrant dashboard: `http://localhost:6333/dashboard`
 - Redis: `localhost:6379`
 
-Replay a failed document after the worker is running:
+On start the API verifies Qdrant, calls `VectorService.ensureCollection()`, and warms up the embedding (and rerank)
+models. If the API later runs *inside* Compose, use `redis://redis:6379` and `http://qdrant:6333`.
+
+Replay a failed document (worker must be running):
 
 ```bash
 bun run jobs:replay -- <documentId>
 ```
 
-```bash
-bun run type-check
-bun test src
-bun run infra:down
-```
-
 ## Configuration
 
-See `.env.example`. Values are read from `src/config/env.ts`.
+See `.env.example`; values are read in `src/config/env.ts`.
 
 | Variable | Default | Notes |
 | --- | --- | --- |
 | `PORT` | `3000` | API process |
-| `REDIS_URL` | `redis://localhost:6379` | BullMQ queue connection |
-| `SQLITE_PATH` | `./data/semantic-search.sqlite` | SQLite document store file |
+| `NODE_ENV` / `LOG_LEVEL` | `development` / `info` | runtime + logging |
+| `REDIS_URL` | `redis://localhost:6379` | BullMQ connection |
+| `SQLITE_PATH` | `./data/semantic-search.sqlite` | document store file |
 | `QDRANT_URL` | `http://localhost:6333` | no trailing slash |
+| `QDRANT_API_KEY` | – | set for managed Qdrant |
 | `COLLECTION_NAME` | `document_chunks` | single collection target |
 | `VECTOR_SIZE` | `384` | must match embedding model |
-| `EMBEDDING_MODEL` | `BAAI/bge-small-en-v1.5` | swapped via service later |
-| `CHUNK_SIZE` / `CHUNK_OVERLAP` | `500` / `50` | tokens of the embedding tokenizer |
-| `RERANK_ENABLED` | `true` | default search mode becomes `rerank` |
+| `EMBEDDING_MODEL` | `BAAI/bge-small-en-v1.5` | any Xenova/HF model |
+| `CHUNK_SIZE` / `CHUNK_OVERLAP` | `500` / `50` | embedding-tokenizer tokens |
+| `SEARCH_HNSW_EF` | `64` | ANN recall/latency tradeoff |
+| `EMBEDDING_CACHE_SIZE` | `256` | cached query embeddings |
+| `RERANK_ENABLED` | `true` | makes `rerank` the default search mode |
 | `RERANK_MODEL` | `Xenova/ms-marco-MiniLM-L-6-v2` | cross-encoder |
-| `RERANK_CANDIDATES` | `20` | pool size before rerank |
-
-If the API later runs *inside* Compose, use `redis://redis:6379` and `http://qdrant:6333`.
+| `RERANK_CANDIDATES` | `20` | candidate pool before rerank |
 
 ## API
 
@@ -109,10 +76,13 @@ If the API later runs *inside* Compose, use `redis://redis:6379` and `http://qdr
 | --- | --- | --- |
 | GET | `/health` | process liveness |
 | GET | `/ready` | Qdrant collection + Redis |
-| GET | `/metrics` | BullMQ waiting/active/completed/failed |
+| GET | `/metrics` | BullMQ waiting/active/completed/failed per queue |
 | POST | `/documents` | `202 { id, status: "queued" }` |
-| GET | `/documents/:id` | pipeline status, no `text` |
-| POST | `/search` | default `rerank` (hybrid + cross-encoder); `"mode": "hybrid"` or `"dense"` |
+| GET | `/documents/:id` | pipeline status (`queued` → `chunking` → `embedding` → `indexing` → `ready` \| `failed`), no `text` |
+| POST | `/search` | default `rerank`; `mode` may be `hybrid` or `dense` |
+
+`POST /search` accepts `query`, `limit` (1–50), `source`, `scoreThreshold` (0–1), `mode` and returns
+`{ results: [...] }` plus a `Server-Timing` header (`embed`, `qdrant`, `rerank`, `total`).
 
 ```bash
 curl -s -X POST http://localhost:3000/documents \
@@ -124,14 +94,39 @@ curl -s -X POST http://localhost:3000/search \
   -d '{"query":"How does JWT work?","limit":5}'
 ```
 
+## Quality and performance
+
+```bash
+bun run eval          # dense vs hybrid vs rerank → eval-results.json
+bun run eval:chunks   # chunk sizes 250/25, 500/50, 800/80
+bun run eval:models   # embedding bake-off
+bun run eval:qdrant   # HNSW / int8 quantization sweep
+bun run bench         # search latency percentiles → bench-results.json
+bun run bench:ingest  # ingest throughput
+```
+
+## Development
+
+```bash
+bun test src
+bun run type-check
+bun run lint
+bun run infra:down
+```
+
+A pre-commit hook runs `type-check` + Biome. CI runs GitLab SAST.
+
 ## Layout
 
 ```text
 src/
-  api/           HTTP adapters
+  api/           Hono routes + handlers
   config/env.ts  typed environment
-  db/            SQLite store + Qdrant/Redis clients
-  domain/        chunking / prompts
-  services/      document, embedding, search, vector
-docker/          Redis + Qdrant
+  db/            SQLite document store, Qdrant/Redis clients
+  domain/        chunking, sparse vectors, tokenizer, rerank
+  queue/         BullMQ queues, jobs, stats
+  services/      document, embedding, search, rerank, vector
+  workers/       ingest → chunk → embed → index, replay
+  eval/ bench/   metrics harnesses + fixture corpus
+docker/          Redis + Qdrant (CPU/memory limits)
 ```
