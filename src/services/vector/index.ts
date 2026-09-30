@@ -7,7 +7,7 @@ import { pointIdForChunk } from "../../utils/hash"
 const PAYLOAD_INDEXES = ["documentId", "source"] as const
 const SPARSE_NAME = "bm25"
 
-type SearchHits = Awaited<ReturnType<QdrantClient["search"]>>
+type SearchHits = Awaited<ReturnType<QdrantClient["query"]>>["points"]
 
 interface SearchChunksInput {
   vector: number[]
@@ -134,8 +134,8 @@ export class VectorService {
   }
 
   async searchChunks(input: SearchChunksInput, collection = this.collectionName): Promise<SearchHits> {
-    return this.qdrant.search(collection, {
-      vector: input.vector,
+    const response = await this.qdrant.query(collection, {
+      query: input.vector,
       limit: input.limit ?? 10,
       score_threshold: input.scoreThreshold,
       with_payload: true,
@@ -150,6 +150,7 @@ export class VectorService {
           }
         : undefined
     })
+    return response.points
   }
 
   async searchSparse(
@@ -162,14 +163,12 @@ export class VectorService {
   ): Promise<SearchHits> {
     if (input.sparse.indices.length === 0) return []
 
-    return this.qdrant.search(collection, {
-      vector: {
-        name: SPARSE_NAME,
-        vector: {
-          indices: input.sparse.indices,
-          values: input.sparse.values
-        }
+    const response = await this.qdrant.query(collection, {
+      query: {
+        indices: input.sparse.indices,
+        values: input.sparse.values
       },
+      using: SPARSE_NAME,
       limit: input.limit ?? 10,
       with_payload: true,
       with_vector: false,
@@ -178,7 +177,8 @@ export class VectorService {
             must: [{ key: "source", match: { value: input.source } }]
           }
         : undefined
-    } as Parameters<QdrantClient["search"]>[1])
+    })
+    return response.points
   }
 
   async deleteByDocumentId(documentId: string, collection = this.collectionName): Promise<void> {

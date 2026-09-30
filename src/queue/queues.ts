@@ -25,29 +25,29 @@ const enqueueIngest = async (documentId: string): Promise<void> => {
     { documentId },
     {
       ...defaultJobOptions,
-      jobId: `ingest:${documentId}`
+      jobId: `ingest-${documentId}`
     }
   )
 }
 
 const enqueueChunk = async (documentId: string): Promise<void> => {
-  await chunkQueue.add("chunk", { documentId }, { ...defaultJobOptions, jobId: `chunk:${documentId}` })
+  await chunkQueue.add("chunk", { documentId }, { ...defaultJobOptions, jobId: `chunk-${documentId}` })
 }
 
 const enqueueEmbedding = async (documentId: string): Promise<void> => {
-  await embeddingQueue.add("embed", { documentId }, { ...defaultJobOptions, jobId: `embed:${documentId}` })
+  await embeddingQueue.add("embed", { documentId }, { ...defaultJobOptions, jobId: `embed-${documentId}` })
 }
 
 const enqueueIndex = async (documentId: string): Promise<void> => {
-  await indexQueue.add("index", { documentId }, { ...defaultJobOptions, jobId: `index:${documentId}` })
+  await indexQueue.add("index", { documentId }, { ...defaultJobOptions, jobId: `index-${documentId}` })
 }
 
 const clearPipelineJobs = async (documentId: string): Promise<void> => {
   await Promise.all([
-    ingestQueue.remove(`ingest:${documentId}`),
-    chunkQueue.remove(`chunk:${documentId}`),
-    embeddingQueue.remove(`embed:${documentId}`),
-    indexQueue.remove(`index:${documentId}`)
+    ingestQueue.remove(`ingest-${documentId}`),
+    chunkQueue.remove(`chunk-${documentId}`),
+    embeddingQueue.remove(`embed-${documentId}`),
+    indexQueue.remove(`index-${documentId}`)
   ])
 }
 

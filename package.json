@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
-    "@qdrant/js-client-rest": "^1.17.0",
+    "@qdrant/js-client-rest": "^1.19.0",
     "arktype": "^2.2.0",
     "bullmq": "^5.70.4",
     "hono": "^4.12.5",
