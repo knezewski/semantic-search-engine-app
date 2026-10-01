@@ -5,7 +5,7 @@ services:
     ports:
       - "6379:6379"
     restart: unless-stopped
-    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "noeviction"]
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "noeviction", "--save", "", "--appendonly", "no"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -43,17 +43,6 @@ services:
           cpus: "0.25"
           memory: 256M
 
-  redisinsight:
-    image: redis/redisinsight:latest
-    container_name: semantic-redisinsight
-    ports:
-      - "5540:5540"
-    volumes:
-      - redisinsight_data:/data
-    restart: unless-stopped
-    depends_on:
-      - redis
 
 volumes:
   qdrant_data:
-  redisinsight_data:

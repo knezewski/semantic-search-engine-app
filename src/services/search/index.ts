@@ -1,12 +1,15 @@
 import type { QdrantClient } from "@qdrant/js-client-rest"
 import { env } from "../../config/env"
 import { toSparseVector } from "../../domain/sparse"
+import { CircuitBreaker } from "../../utils/circuit-breaker"
 import { getEmbeddingService } from "../embedding"
 import { getRerankService } from "../rerank"
 import { VectorService } from "../vector"
 import { rrfFuse } from "./rrf"
 
 type SearchMode = "dense" | "hybrid" | "rerank"
+
+type DenseSearchPoints = Awaited<ReturnType<VectorService["searchChunks"]>>
 
 interface SearchQuery {
   query: string
@@ -33,6 +36,8 @@ interface TimedSearchResult {
   rerankMs: number
   totalMs: number
   mode: SearchMode
+  /** Components that degraded during this search (e.g. "rerank", "embedding", "qdrant"). */
+  degraded: string[]
 }
 
 const asString = (value: unknown): string | undefined =>
@@ -50,6 +55,7 @@ const resolveMode = (mode?: SearchMode): SearchMode => {
 
 export class SearchService {
   private vectors: VectorService
+  private readonly qdrantBreaker = new CircuitBreaker({ threshold: 5, cooldownMs: 30_000 })
 
   constructor(qdrant: QdrantClient, collection: string = env.collectionName) {
     this.vectors = new VectorService(qdrant, collection)
@@ -63,20 +69,47 @@ export class SearchService {
   async searchTimed(input: SearchQuery): Promise<TimedSearchResult> {
     const limit = input.limit ?? 5
     const mode = resolveMode(input.mode)
+    const degraded: string[] = []
     const started = performance.now()
-    const vector = await getEmbeddingService().embed(input.query)
+
+    let vector: number[]
+    try {
+      vector = await getEmbeddingService().embed(input.query)
+    } catch (error) {
+      // Dense embedding is unavailable — degrade to sparse/BM25-only search.
+      console.warn("Embedding unavailable, degrading to sparse-only search", error)
+      const sparseHits = await this.sparseHits(input.query, limit, input.source)
+      const now = performance.now()
+      return {
+        hits: sparseHits.slice(0, limit),
+        embedMs: now - started,
+        qdrantMs: 0,
+        rerankMs: 0,
+        totalMs: now - started,
+        mode: "dense",
+        degraded: ["embedding"]
+      }
+    }
     const embedMs = performance.now() - started
 
     const qdrantStarted = performance.now()
     const pool = candidateLimit(limit)
     const retrieveLimit = mode === "dense" ? limit : pool
 
-    const densePromise = this.vectors.searchChunks({
-      vector,
-      limit: retrieveLimit,
-      source: input.source,
-      scoreThreshold: mode === "dense" ? input.scoreThreshold : undefined
-    })
+    const densePromise: Promise<DenseSearchPoints> = this.qdrantBreaker
+      .run(() =>
+        this.vectors.searchChunks({
+          vector,
+          limit: retrieveLimit,
+          source: input.source,
+          scoreThreshold: mode === "dense" ? input.scoreThreshold : undefined
+        })
+      )
+      .catch((error): DenseSearchPoints => {
+        console.warn("Qdrant dense search unavailable, degrading", error)
+        degraded.push("qdrant")
+        return []
+      })
 
     let hits: SearchHit[]
     if (mode === "dense") {
@@ -102,7 +135,14 @@ export class SearchService {
     let rerankMs = 0
     if (mode === "rerank") {
       const rerankStarted = performance.now()
-      hits = await this.rerankHits(input.query, hits, limit)
+      try {
+        hits = await this.rerankHits(input.query, hits, limit)
+      } catch (error) {
+        // Rerank is an optional quality boost — keep the fused order instead of failing.
+        console.warn("Rerank unavailable, falling back to fused order", error)
+        hits = hits.slice(0, limit)
+        degraded.push("rerank")
+      }
       rerankMs = performance.now() - rerankStarted
     } else {
       hits = hits.slice(0, limit)
@@ -114,7 +154,8 @@ export class SearchService {
       qdrantMs,
       rerankMs,
       totalMs: performance.now() - started,
-      mode
+      mode,
+      degraded
     }
   }
 

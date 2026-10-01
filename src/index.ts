@@ -5,6 +5,8 @@ import { toErrorBody } from "./api/errors"
 import routes from "./api/routes/index"
 import { env } from "./config/env"
 import { getQdrantClient, verifyQdrantConnection } from "./db/qdrant.client"
+import { closeRedis } from "./db/redis.client"
+import { closeQueues } from "./queue/queues"
 import { warmupEmbeddings } from "./services/embedding"
 import { warmupRerank } from "./services/rerank"
 import { VectorService } from "./services/vector"
@@ -36,8 +38,24 @@ const start = async (): Promise<void> => {
     collection.created ? `Qdrant collection ${collection.name} created` : `Qdrant collection ${collection.name} ready`
   )
 
-  serve({ fetch: app.fetch, port: env.port })
+  const server = serve({ fetch: app.fetch, port: env.port })
   console.log(`Server running on http://localhost:${env.port}`)
+
+  const shutdown = async (): Promise<void> => {
+    console.log("Shutting down API...")
+    // Stop accepting new connections and drain in-flight requests.
+    await server.stop()
+    await closeQueues()
+    await closeRedis()
+    process.exit(0)
+  }
+
+  process.on("SIGINT", () => {
+    void shutdown()
+  })
+  process.on("SIGTERM", () => {
+    void shutdown()
+  })
 }
 
 start().catch(error => {

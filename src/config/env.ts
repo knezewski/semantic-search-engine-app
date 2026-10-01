@@ -24,8 +24,14 @@ const integer = (key: string, fallback: number): number => {
   return parsed
 }
 
+const nodeEnv = optional("NODE_ENV") ?? "development"
+
 const env = {
-  nodeEnv: optional("NODE_ENV") ?? "development",
+  nodeEnv,
+  isProduction: nodeEnv === "production",
+  isDevelopment: nodeEnv === "development",
+  isTest: nodeEnv === "test",
+
   port: integer("PORT", 3000),
   logLevel: optional("LOG_LEVEL") ?? "info",
 

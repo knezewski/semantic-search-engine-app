@@ -28,11 +28,11 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 ## Run locally
 
 ```bash
-cp .env.example .env
+cp .env.example .env   # optional: shared local defaults
 bun install
 bun run infra:up
-bun run dev          # API
-bun run dev:worker   # second terminal
+bun run dev          # API (loads .env.development)
+bun run dev:worker   # second terminal (loads .env.development)
 ```
 
 - API: `http://localhost:3000`
@@ -47,6 +47,27 @@ Replay a failed document (worker must be running):
 ```bash
 bun run jobs:replay -- <documentId>
 ```
+
+## Environments
+
+Bun auto-loads env files by `NODE_ENV` (in increasing precedence, later wins):
+
+```text
+.env
+.env.{NODE_ENV}          # .env.development / .env.production / .env.test
+.env.local               # local overrides (not loaded when NODE_ENV=test)
+.env.{NODE_ENV}.local    # per-environment local overrides (secrets)
+```
+
+`NODE_ENV` defaults to `development`, so `bun run dev` / `dev:worker` read `.env.development`.
+The `start` / `worker` scripts set `NODE_ENV=production` and read `.env.production`.
+
+- `.env.development` — committed, local values (localhost Redis/Qdrant).
+- `.env.production` — committed, production values (service names / managed URLs, secret placeholders).
+- `.env.development.local` / `.env.production.local` — gitignored, for personal secrets (e.g. `QDRANT_API_KEY`, `REDIS_URL`).
+
+Code branches on the environment via the typed `env` object in `src/config/env.ts`:
+`env.isProduction`, `env.isDevelopment`, `env.isTest`.
 
 ## Configuration
 

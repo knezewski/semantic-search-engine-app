@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "dev:worker": "bun run --hot src/workers/start.ts",
-    "start": "bun src/index.ts",
-    "worker": "bun src/workers/start.ts",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "worker": "NODE_ENV=production bun src/workers/start.ts",
     "jobs:replay": "bun src/workers/replay.ts",
     "build": "tsc --noEmit",
     "infra:up": "docker compose -f docker/docker-compose.yml up -d",

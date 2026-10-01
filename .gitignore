@@ -2,6 +2,7 @@ node_modules/
 dist/
 .env
 .env.local
+.env.*.local
 *.log
 
 # Local infra / generated reports
@@ -21,3 +22,6 @@ bench-ingest-results.json
 
 # SQLite document store
 data/
+
+# Runtime PID files written by `make start`
+.run/

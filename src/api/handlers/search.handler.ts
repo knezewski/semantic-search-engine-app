@@ -21,7 +21,11 @@ const searchDocuments = async (c: Context) => {
     `embed;dur=${timed.embedMs.toFixed(1)}, qdrant;dur=${timed.qdrantMs.toFixed(1)}, rerank;dur=${timed.rerankMs.toFixed(1)}, total;dur=${timed.totalMs.toFixed(1)}`
   )
 
-  return c.json({ results: timed.hits })
+  if (timed.degraded.length > 0) {
+    c.header("X-Degraded", timed.degraded.join(","))
+  }
+
+  return c.json({ results: timed.hits, degraded: timed.degraded })
 }
 
 export { searchDocuments }
