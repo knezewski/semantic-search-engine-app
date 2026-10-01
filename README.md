@@ -48,6 +48,7 @@ Replay a failed document (worker must be running):
 bun run jobs:replay -- <documentId>
 ```
 
+<<<<<<< HEAD
 ## Environments
 
 Bun auto-loads env files by `NODE_ENV` (in increasing precedence, later wins):
@@ -69,6 +70,8 @@ The `start` / `worker` scripts set `NODE_ENV=production` and read `.env.producti
 Code branches on the environment via the typed `env` object in `src/config/env.ts`:
 `env.isProduction`, `env.isDevelopment`, `env.isTest`.
 
+=======
+>>>>>>> origin/main
 ## Configuration
 
 See `.env.example`; values are read in `src/config/env.ts`.
