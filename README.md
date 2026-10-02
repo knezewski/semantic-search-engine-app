@@ -1,24 +1,39 @@
 # Semantic Document Retrieval Engine
 
-Backend for semantic document search: HTTP ingest → BullMQ workers → Qdrant → hybrid retrieval with reranking.
+Production-shaped backend for semantic document search: HTTP ingest → BullMQ workers → Qdrant → hybrid retrieval with cross-encoder reranking. Built in TypeScript on Bun, with evaluation and latency harnesses baked in from day one.
 
-Public contract: document ingest, pipeline status, search.
+**Why it exists:** retrieval quality is only as good as what you measure. This repo pairs a hybrid search pipeline with a reproducible eval loop (Recall@K / MRR / NDCG) and per-request latency breakdowns, so retrieval changes are judged on numbers, not vibes.
 
-```text
+```
 Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embed → Index → Qdrant → POST /search
 ```
 
 ## Features
 
-- Deterministic chunk ids, SQLite document store, idempotent `document_chunks` collection with payload indexes.
-- Four BullMQ queues + workers, 3 attempts with exponential backoff, manual replay.
-- Embeddings via a lazy Hugging Face adapter (`embed` / `embedBatch`), model from `EMBEDDING_MODEL`.
-- Chunking uses the embedding tokenizer, so `CHUNK_SIZE` / `CHUNK_OVERLAP` are in tokens.
-- Hybrid search: dense + BM25 sparse, fused with RRF.
-- Optional cross-encoder rerank over the hybrid candidate pool (default search mode).
-- Query embedding cache, HNSW `ef` tuning, `Server-Timing` response header.
-- Quality and perf harnesses: Recall@K / MRR / NDCG on a fixed fixture corpus, search and ingest benchmarks,
-  chunk-size / model / Qdrant sweeps.
+- **Hybrid retrieval:** dense + BM25 sparse, fused with Reciprocal Rank Fusion (RRF).
+- **Reranking:** optional cross-encoder rerank over the hybrid candidate pool (default search mode).
+- **Measured quality:** Recall@K / MRR / NDCG harness over a fixed fixture corpus; chunk-size, embedding-model, and Qdrant quantization sweeps.
+- **Latency transparency:** `Server-Timing` response header splitting `embed` / `qdrant` / `rerank` / `total`; search-percentile and ingest-throughput benchmarks.
+- **Resilient ingest:** four BullMQ queues + workers, 3 attempts with exponential backoff, manual replay, deterministic chunk ids, idempotent `document_chunks` collection with payload indexes.
+- **Operable:** `/health`, `/ready`, `/metrics`; circuit breaker and graceful shutdown; typed env; SQLite document store.
+
+## Current results
+
+> Measured locally on the fixture corpus (`EMBEDDING_MODEL=BAAI/bge-small-en-v1.5`). Reproduce with `bun run eval` / `bun run bench`.
+
+| Mode | Recall@5 | MRR | NDCG@10 |
+| --- | --- | --- | --- |
+| dense | __ | __ | __ |
+| hybrid | __ | __ | __ |
+| rerank | __ | __ | __ |
+
+| Metric | p50 | p95 |
+| --- | --- | --- |
+| `/search` latency (ms) | __ | __ |
+
+## Tech
+
+Bun · Hono · TypeScript · Qdrant · Redis · BullMQ · SQLite · Hugging Face / Xenova embeddings + cross-encoder.
 
 ## Prerequisites
 
@@ -27,51 +42,39 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 
 ## Run locally
 
-```bash
-cp .env.example .env   # optional: shared local defaults
+```
+cp .env.example .env
 bun install
 bun run infra:up
-bun run dev          # API (loads .env.development)
-bun run dev:worker   # second terminal (loads .env.development)
+bun run dev          # API
+bun run dev:worker   # second terminal
 ```
 
 - API: `http://localhost:3000`
 - Qdrant dashboard: `http://localhost:6333/dashboard`
 - Redis: `localhost:6379`
 
-On start the API verifies Qdrant, calls `VectorService.ensureCollection()`, and warms up the embedding (and rerank)
-models. If the API later runs *inside* Compose, use `redis://redis:6379` and `http://qdrant:6333`.
+On start the API verifies Qdrant, calls `VectorService.ensureCollection()`, and warms up the embedding (and rerank) models. If the API runs _inside_ Compose, use `redis://redis:6379` and `http://qdrant:6333`.
 
 Replay a failed document (worker must be running):
 
-```bash
+```
 bun run jobs:replay -- <documentId>
 ```
 
-<<<<<<< HEAD
 ## Environments
 
-Bun auto-loads env files by `NODE_ENV` (in increasing precedence, later wins):
+Bun auto-loads env files by `NODE_ENV` (later wins):
 
-```text
+```
 .env
-.env.{NODE_ENV}          # .env.development / .env.production / .env.test
+.env.{NODE_ENV}          # development / production / test
 .env.local               # local overrides (not loaded when NODE_ENV=test)
-.env.{NODE_ENV}.local    # per-environment local overrides (secrets)
+.env.{NODE_ENV}.local    # per-environment secrets (gitignored)
 ```
 
-`NODE_ENV` defaults to `development`, so `bun run dev` / `dev:worker` read `.env.development`.
-The `start` / `worker` scripts set `NODE_ENV=production` and read `.env.production`.
+`NODE_ENV` defaults to `development`. The `start` / `worker` scripts set `NODE_ENV=production`. Secrets (`QDRANT_API_KEY`, `REDIS_URL`) live in gitignored `*.local` files. Code branches via the typed `env` object in `src/config/env.ts` (`env.isProduction` / `isDevelopment` / `isTest`).
 
-- `.env.development` — committed, local values (localhost Redis/Qdrant).
-- `.env.production` — committed, production values (service names / managed URLs, secret placeholders).
-- `.env.development.local` / `.env.production.local` — gitignored, for personal secrets (e.g. `QDRANT_API_KEY`, `REDIS_URL`).
-
-Code branches on the environment via the typed `env` object in `src/config/env.ts`:
-`env.isProduction`, `env.isDevelopment`, `env.isTest`.
-
-=======
->>>>>>> origin/main
 ## Configuration
 
 See `.env.example`; values are read in `src/config/env.ts`.
@@ -81,7 +84,7 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | `PORT` | `3000` | API process |
 | `NODE_ENV` / `LOG_LEVEL` | `development` / `info` | runtime + logging |
 | `REDIS_URL` | `redis://localhost:6379` | BullMQ connection |
-| `SQLITE_PATH` | `./data/semantic-search.sqlite` | document store file |
+| `SQLITE_PATH` | `./data/semantic-search.sqlite` | document store |
 | `QDRANT_URL` | `http://localhost:6333` | no trailing slash |
 | `QDRANT_API_KEY` | – | set for managed Qdrant |
 | `COLLECTION_NAME` | `document_chunks` | single collection target |
@@ -90,7 +93,7 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | `CHUNK_SIZE` / `CHUNK_OVERLAP` | `500` / `50` | embedding-tokenizer tokens |
 | `SEARCH_HNSW_EF` | `64` | ANN recall/latency tradeoff |
 | `EMBEDDING_CACHE_SIZE` | `256` | cached query embeddings |
-| `RERANK_ENABLED` | `true` | makes `rerank` the default search mode |
+| `RERANK_ENABLED` | `true` | makes `rerank` the default mode |
 | `RERANK_MODEL` | `Xenova/ms-marco-MiniLM-L-6-v2` | cross-encoder |
 | `RERANK_CANDIDATES` | `20` | candidate pool before rerank |
 
@@ -102,13 +105,12 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | GET | `/ready` | Qdrant collection + Redis |
 | GET | `/metrics` | BullMQ waiting/active/completed/failed per queue |
 | POST | `/documents` | `202 { id, status: "queued" }` |
-| GET | `/documents/:id` | pipeline status (`queued` → `chunking` → `embedding` → `indexing` → `ready` \| `failed`), no `text` |
+| GET | `/documents/:id` | pipeline status (`queued → chunking → embedding → indexing → ready \| failed`) |
 | POST | `/search` | default `rerank`; `mode` may be `hybrid` or `dense` |
 
-`POST /search` accepts `query`, `limit` (1–50), `source`, `scoreThreshold` (0–1), `mode` and returns
-`{ results: [...] }` plus a `Server-Timing` header (`embed`, `qdrant`, `rerank`, `total`).
+`POST /search` accepts `query`, `limit` (1–50), `source`, `scoreThreshold` (0–1), `mode`, and returns `{ results: [...] }` plus a `Server-Timing` header (`embed`, `qdrant`, `rerank`, `total`).
 
-```bash
+```
 curl -s -X POST http://localhost:3000/documents \
   -H 'content-type: application/json' \
   -d '{"title":"JWT","text":"JWT authentication allows...","source":"docs/auth.md"}'
@@ -120,7 +122,7 @@ curl -s -X POST http://localhost:3000/search \
 
 ## Quality and performance
 
-```bash
+```
 bun run eval          # dense vs hybrid vs rerank → eval-results.json
 bun run eval:chunks   # chunk sizes 250/25, 500/50, 800/80
 bun run eval:models   # embedding bake-off
@@ -131,18 +133,18 @@ bun run bench:ingest  # ingest throughput
 
 ## Development
 
-```bash
+```
 bun test src
 bun run type-check
 bun run lint
 bun run infra:down
 ```
 
-A pre-commit hook runs `type-check` + Biome. CI runs GitLab SAST.
+Pre-commit hook runs `type-check` + Biome. CI runs SAST.
 
 ## Layout
 
-```text
+```
 src/
   api/           Hono routes + handlers
   config/env.ts  typed environment
@@ -154,3 +156,7 @@ src/
   eval/ bench/   metrics harnesses + fixture corpus
 docker/          Redis + Qdrant (CPU/memory limits)
 ```
+
+## License
+
+MIT
