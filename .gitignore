@@ -34,3 +34,12 @@ data/
 .cursor/
 .kiro/
 skills-lock.json
+. DS_Store
+.agents/
+.claude/
+.cline/
+.codebuddy/
+.continue/
+.cursor/
+.kiro/
+skills-lock.json
