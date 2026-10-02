@@ -25,3 +25,12 @@ data/
 
 # Runtime PID files written by `make start`
 .run/
+. DS_Store
+.agents/
+.claude/
+.cline/
+.codebuddy/
+.continue/
+.cursor/
+.kiro/
+skills-lock.json
