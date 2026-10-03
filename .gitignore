@@ -43,3 +43,22 @@ skills-lock.json
 .cursor/
 .kiro/
 skills-lock.json
+
+# OS
+.DS_Store
+
+# AI agent configs
+.agents/
+.claude/
+.cline/
+.codebuddy/
+.continue/
+.cursor/
+.kiro/
+skills-lock.json
+CLAUDE.md
+
+# Env files (keep only .env.example tracked)
+.env
+.env.*
+!.env.example
