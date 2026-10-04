@@ -19,17 +19,21 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 
 ## Current results
 
-> Measured locally on the fixture corpus (`EMBEDDING_MODEL=BAAI/bge-small-en-v1.5`). Reproduce with `bun run eval` / `bun run bench`.
+> Measured locally on the fixture corpus (30 documents, 73 queries, `EMBEDDING_MODEL=BAAI/bge-small-en-v1.5`). Reproduce with `bun run eval` / `bun run bench`.
 
 | Mode | Recall@5 | MRR | NDCG@10 |
 | --- | --- | --- | --- |
-| dense | __ | __ | __ |
-| hybrid | __ | __ | __ |
-| rerank | __ | __ | __ |
+| dense | 1.000 | 0.966 | 0.975 |
+| hybrid | 1.000 | 0.973 | 0.980 |
+| rerank | 1.000 | 0.986 | 0.990 |
+
+> Recall@5 is saturated (1.0) on this corpus; MRR/NDCG@10 discriminate and rank dense < hybrid < rerank.
 
 | Metric | p50 | p95 |
 | --- | --- | --- |
-| `/search` latency (ms) | __ | __ |
+| `/search` latency (ms) | 1124 | 1709 |
+
+> Status (2026-10-04): reranking returns real cross-encoder scores (the previous implementation always returned 0), and ingest fails fast with `503 NOT_READY` when Redis is down. Manual test cases **SRCH-06** and **ERR-04** now pass.
 
 ## Tech
 
@@ -95,7 +99,7 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | `EMBEDDING_CACHE_SIZE` | `256` | cached query embeddings |
 | `RERANK_ENABLED` | `true` | makes `rerank` the default mode |
 | `RERANK_MODEL` | `Xenova/ms-marco-MiniLM-L-6-v2` | cross-encoder |
-| `RERANK_CANDIDATES` | `20` | candidate pool before rerank |
+| `RERANK_CANDIDATES` | `15` | candidate pool ceiling before rerank (lower = faster, smaller recall window) |
 
 ## API
 

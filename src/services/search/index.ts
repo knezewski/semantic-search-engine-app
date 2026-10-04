@@ -46,7 +46,13 @@ const asString = (value: unknown): string | undefined =>
 const asNumber = (value: unknown, fallback: number): number =>
   typeof value === "number" && Number.isFinite(value) ? value : fallback
 
-const candidateLimit = (limit: number): number => Math.min(50, Math.max(env.rerankCandidates, limit * 5))
+/**
+ * Candidate pool size for hybrid fusion and reranking. Reranking is the
+ * expensive step, so RERANK_CANDIDATES acts as a hard ceiling on the pool
+ * (lower = faster, but a smaller recall window). Always retrieve at least
+ * `limit` candidates, with a small oversample for small limits.
+ */
+const candidateLimit = (limit: number): number => Math.min(50, env.rerankCandidates, Math.max(limit * 5, limit))
 
 const resolveMode = (mode?: SearchMode): SearchMode => {
   if (mode) return mode

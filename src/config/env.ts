@@ -54,7 +54,7 @@ const env = {
 
   rerankEnabled: flag("RERANK_ENABLED", true),
   rerankModel: optional("RERANK_MODEL") ?? "Xenova/ms-marco-MiniLM-L-6-v2",
-  rerankCandidates: integer("RERANK_CANDIDATES", 20)
+  rerankCandidates: integer("RERANK_CANDIDATES", 15)
 } as const
 
 type AppEnv = typeof env

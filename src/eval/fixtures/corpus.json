@@ -70,5 +70,113 @@
     "title": "Qdrant payload indexes",
     "source": "docs/qdrant.md",
     "text": "Qdrant stores vectors and a JSON payload per point. Keyword indexes on documentId and source make filtered search cheap. Without a payload index a filter scans every point."
+  },
+  {
+    "id": "movie-dream-machine",
+    "title": "The Dream Machine",
+    "source": "movies/dream-machine.md",
+    "text": "The Dream Machine is a sci-fi thriller about a studio that records and sells other people's dreams. A thief breaks in at night to steal the dreams of a corporate board and plants false memories to close a deal. The machine's red light blinks through the layered sleep states."
+  },
+  {
+    "id": "movie-contact",
+    "title": "Contact Signal",
+    "source": "movies/contact.md",
+    "text": "Contact Signal follows an astronomer who joins a linguist to decode a repeating transmission from space. As she learns the alien alphabet, the team's understanding of time and causality begins to change. The film treats language as a key to a different physics."
+  },
+  {
+    "id": "movie-mansion",
+    "title": "The House on the Hill",
+    "source": "movies/mansion.md",
+    "text": "The House on the Hill is a dark comedy about a hired driver who discovers a hidden room beneath his employer's mansion. Class resentment between the two families boils over at a disastrous birthday dinner. A secret in the walls drives the finale."
+  },
+  {
+    "id": "docs-oauth",
+    "title": "OAuth 2.0 authorization",
+    "source": "docs/oauth.md",
+    "text": "OAuth 2.0 is an authorization framework. A client receives a signed token after the user consents, without ever seeing the password. The server may keep stateful sessions or issue short-lived stateless credentials, and tokens must be validated on every call."
+  },
+  {
+    "id": "docs-hnsw",
+    "title": "HNSW approximate nearest neighbor",
+    "source": "docs/hnsw.md",
+    "text": "HNSW is an approximate nearest neighbor index over vectors. It keeps a layered graph of connections. Queries are fast but memory grows with edges. A lower ef parameter trades recall for speed, and a filter over payload fields can scan many points unless the field is indexed."
+  },
+  {
+    "id": "docs-vector-scale",
+    "title": "Sharding a vector database",
+    "source": "docs/shards.md",
+    "text": "Sharding a vector database across machines requires a partition key. Choosing the wrong key concentrates load on one shard. A payload filter that is not indexed forces a scan of every point on the shard."
+  },
+  {
+    "id": "docs-cookies",
+    "title": "Cookie-based sessions",
+    "source": "docs/cookies.md",
+    "text": "With cookie-based sessions the server stores the session in a database and sends the browser only a small session id. On each request the browser sends the cookie back and the server looks up the stored state. The session ends when the server deletes the row."
+  },
+  {
+    "id": "docs-api-keys",
+    "title": "Static API keys",
+    "source": "docs/api-keys.md",
+    "text": "An API key is a long static secret that a client puts in a request header. It identifies a machine account rather than a person and has no expiry or signature. Rotating a key means generating a new one and revoking the old."
+  },
+  {
+    "id": "docs-saml",
+    "title": "SAML single sign-on",
+    "source": "docs/saml.md",
+    "text": "SAML exchanges an XML assertion between an identity provider and a service provider for enterprise single sign-on. The user authenticates once at the identity provider, which signs an assertion that the application trusts. It is common in corporate networks."
+  },
+  {
+    "id": "movie-lucid",
+    "title": "Nightwalk",
+    "source": "movies/lucid.md",
+    "text": "Nightwalk is a film about a lucid dreamer who learns to steer his own nightmares to cure his insomnia. He leaves a red door in every dream as a marker. The door begins to open on its own."
+  },
+  {
+    "id": "movie-signal",
+    "title": "Signal to the Stars",
+    "source": "movies/signal.md",
+    "text": "Signal to the Stars is a film where a mathematician detects a repeating burst of prime numbers from space. She helps build a machine to travel to the source, but the journey changes what she knows about causality."
+  },
+  {
+    "id": "movie-tenants",
+    "title": "Two Families",
+    "source": "movies/tenants.md",
+    "text": "Two Families is a dark comedy about two households sharing a duplex, one upstairs and one downstairs. A slow leak in the shared pipe turns small grievances into a feud. The final scene floods the staircase."
+  },
+  {
+    "id": "docs-quantization",
+    "title": "Scalar quantization",
+    "source": "docs/quantization.md",
+    "text": "Scalar quantization compresses vectors to 8-bit integers to cut memory and speed up search. It loses some precision, so recall drops slightly. A quantile threshold keeps the most common values accurate."
+  },
+  {
+    "id": "docs-embedding",
+    "title": "Embedding similarity",
+    "source": "docs/embedding.md",
+    "text": "An embedding model maps a text to a fixed-size vector. Similarity between two vectors is measured with cosine distance. Models trained for retrieval place related meanings close together."
+  },
+  {
+    "id": "column-rent",
+    "title": "Rent rises faster than wages",
+    "source": "columns/rent.md",
+    "text": "A city column on rent control. Landlords raise rents faster than wages and tenants move farther out. The writer argues vacancy taxes would do more than another affordability study."
+  },
+  {
+    "id": "column-parking",
+    "title": "Meters and the empty main street",
+    "source": "columns/parking.md",
+    "text": "A column on parking meters. Rising meter rates and aggressive fines drive shoppers to malls outside the city. The writer says free evening parking would save the main street."
+  },
+  {
+    "id": "story-window",
+    "title": "The lamp across the street",
+    "source": "stories/window.md",
+    "text": "A short story about a woman who watches her neighbor's lamp switch on every evening. When the lamp stays dark for a week she climbs the stairs to knock. The door is answered by a stranger."
+  },
+  {
+    "id": "story-dog",
+    "title": "The autumn dog",
+    "source": "stories/dog.md",
+    "text": "A short story about a lost dog that wanders back to an empty house every autumn. A new owner leaves the gate open and watches it cross the yard to sit on the old porch."
   }
 ]

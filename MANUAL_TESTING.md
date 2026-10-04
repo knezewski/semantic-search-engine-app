@@ -335,3 +335,14 @@ curl -s "http://localhost:6333/collections/document_chunks" | python3 -m json.to
 # replay неуспешного документа (воркеры должны быть запущены)
 bun run jobs:replay -- <documentId>
 ```
+
+---
+
+## 10. Результаты прогона (2026-10-04)
+
+Полный прогон по всем разделам выполнен, все High-приоритетные кейсы проходят. После исправления двух дефектов:
+
+- **SRCH-06** — PASS: режим `rerank` возвращает реальные score (сырые логиты cross-encoder, `src/services/rerank/index.ts`) и изменяет порядок выдачи относительно `hybrid`.
+- **ERR-04** — PASS: при недоступном Redis `POST /documents` отвечает `503 NOT_READY`, документ переводится в `failed` (`src/services/document/submit.ts`, `src/utils/timeout.ts`), а не зависает в `queued`.
+
+См. также `README.md`: `RERANK_CANDIDATES` теперь задаёт потолок пула кандидатов (дефолт 15) для контроля латентности rerank.

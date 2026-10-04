@@ -1,13 +1,28 @@
-import { pipeline } from "@huggingface/transformers"
+import { AutoModelForSequenceClassification, AutoTokenizer } from "@huggingface/transformers"
 import { env } from "../../config/env"
 import type { RerankPort } from "../../domain/rerank"
 
-type Classifier = (input: unknown, options?: { topk?: number }) => Promise<unknown>
+type Tokenizer = (texts: string[], options: { text_pair: string[]; padding: boolean; truncation: boolean }) => unknown
+
+type SequenceClassifier = (inputs: unknown) => Promise<{ logits: { tolist(): number[][] } }>
+
+/**
+ * Cross-encoder rerankers (e.g. ms-marco) emit a single relevance logit per
+ * (query, passage) pair: higher means more relevant. We return the raw logit
+ * rather than a softmax probability — with a single output label softmax is
+ * always 1.0 and carries no ranking signal. Multi-label heads put the
+ * "relevant" class last.
+ */
+const readRerankScore = (row: number[]): number => {
+  if (row.length === 0) return 0
+  return row[row.length - 1] ?? 0
+}
 
 class HuggingFaceRerankService implements RerankPort {
   readonly modelId: string
-  private classifier: Classifier | null = null
-  private loading: Promise<Classifier> | null = null
+  private tokenizer: Tokenizer | null = null
+  private classifier: SequenceClassifier | null = null
+  private loading: Promise<void> | null = null
 
   constructor(modelId: string) {
     this.modelId = modelId
@@ -15,49 +30,35 @@ class HuggingFaceRerankService implements RerankPort {
 
   async score(query: string, passages: string[]): Promise<number[]> {
     if (passages.length === 0) return []
-    const classifier = await this.getClassifier()
+    await this.load()
 
-    // Prefer a single batched call; fall back to per-passage scoring if the
-    // pipeline does not support batched text pairs.
-    try {
-      const output = await classifier(passages.map(passage => ({ text: query, text_pair: passage })))
-      const rows = Array.isArray(output) ? output : [output]
-      if (rows.length === passages.length) {
-        return rows.map(row => HuggingFaceRerankService.readScore(row))
-      }
-    } catch {
-      // fall through to sequential scoring
+    const tokenizer = this.tokenizer as Tokenizer
+    const classifier = this.classifier as SequenceClassifier
+    const inputs = tokenizer(
+      passages.map(() => query),
+      { text_pair: passages, padding: true, truncation: true }
+    )
+    const { logits } = await classifier(inputs)
+    const rows = logits.tolist()
+    if (rows.length !== passages.length) {
+      throw new Error(`Rerank batch size mismatch: input ${passages.length}, output ${rows.length}`)
     }
-
-    const scores: number[] = []
-    for (const passage of passages) {
-      const output = await classifier({ text: query, text_pair: passage })
-      scores.push(HuggingFaceRerankService.readScore(output))
-    }
-    return scores
+    return rows.map(readRerankScore)
   }
 
-  private async getClassifier(): Promise<Classifier> {
-    if (this.classifier) return this.classifier
+  private async load(): Promise<void> {
+    if (this.tokenizer && this.classifier) return
     if (!this.loading) {
-      this.loading = pipeline("text-classification", this.modelId).then(pipe => {
-        this.classifier = pipe as unknown as Classifier
-        return this.classifier
+      this.loading = Promise.all([
+        AutoTokenizer.from_pretrained(this.modelId),
+        // Quantized weights keep cross-encoder latency down on CPU.
+        AutoModelForSequenceClassification.from_pretrained(this.modelId, { dtype: "q8" })
+      ]).then(([tokenizer, classifier]) => {
+        this.tokenizer = tokenizer as unknown as Tokenizer
+        this.classifier = classifier as unknown as SequenceClassifier
       })
     }
     return this.loading
-  }
-
-  private static readScore(output: unknown): number {
-    const rows = Array.isArray(output) ? output : [output]
-    const first = rows[0] as { score?: number; label?: string } | undefined
-    if (typeof first?.score === "number") {
-      if (typeof first.label === "string" && /neg|0/i.test(first.label)) {
-        return 1 - first.score
-      }
-      return first.score
-    }
-    return 0
   }
 }
 
@@ -75,4 +76,4 @@ const warmupRerank = async (): Promise<void> => {
   await getRerankService().score("warmup", ["warmup passage"])
 }
 
-export { getRerankService, HuggingFaceRerankService, warmupRerank }
+export { getRerankService, HuggingFaceRerankService, readRerankScore, warmupRerank }

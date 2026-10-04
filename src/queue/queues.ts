@@ -52,12 +52,7 @@ const clearPipelineJobs = async (documentId: string): Promise<void> => {
 }
 
 const closeQueues = async (): Promise<void> => {
-  await Promise.all([
-    ingestQueue.close(),
-    chunkQueue.close(),
-    embeddingQueue.close(),
-    indexQueue.close()
-  ])
+  await Promise.all([ingestQueue.close(), chunkQueue.close(), embeddingQueue.close(), indexQueue.close()])
 }
 
 export {

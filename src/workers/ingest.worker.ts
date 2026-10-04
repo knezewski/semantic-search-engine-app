@@ -10,6 +10,13 @@ const startIngestWorker = (): Worker<DocumentJob> => {
     QUEUE_NAMES.ingest,
     async job => {
       const document = await documentStore.require(job.data.documentId)
+      if (document.status !== "queued") {
+        // Defence in depth: a stale ingest job (e.g. one buffered while Redis was
+        // unavailable) must not resurrect a document that already left the queue
+        // stage or was marked failed.
+        console.warn(`Skipping ingest for ${document.id}: status is "${document.status}"`)
+        return
+      }
       if (!document.text.trim()) {
         throw new Error(`Document ${document.id} has empty text`)
       }

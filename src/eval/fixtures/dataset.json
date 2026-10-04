@@ -123,5 +123,245 @@
     "id": "q25",
     "query": "expired tokens must be rejected after login",
     "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q26",
+    "query": "stateless login where the server checks a signature instead of a session table",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q27",
+    "query": "why one vector per document averages away paragraph meaning",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q28",
+    "query": "what makes a metadata-filtered vector search avoid a full scan",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q29",
+    "query": "a team descends through nested dream levels to plant a thought",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q30",
+    "query": "a linguist decodes a circular alien script and time bends",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q31",
+    "query": "a poor family cons its way into a mansion with a basement secret",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q32",
+    "query": "short-lived credential presented on every request, verified by signature",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q33",
+    "query": "search should point at a paragraph, not an averaged whole essay",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q34",
+    "query": "filtering vector points by a tag is slow without an index on that tag",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q35",
+    "query": "stealing secrets inside dreams with a spinning top as a clue",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q36",
+    "query": "non-linear alien language changes how the protagonist sees time",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q37",
+    "query": "violent birthday party reveals class conflict in a rich household",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q38",
+    "query": "no session storage: the token itself carries the user's claims",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q39",
+    "query": "overlapping windows keep a split sentence from losing its meaning",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q40",
+    "query": "indexing the source field makes filtered lookups cheap",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q41",
+    "query": "corporate heir, dream heist, totem that keeps spinning",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q42",
+    "query": "recruited by the military to talk to visitors from space",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q43",
+    "query": "posing as workers to get jobs in a wealthy house",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q44",
+    "query": "the browser holds only a session id and the server keeps the state in a database",
+    "relevantDocumentIds": ["docs-cookies"]
+  },
+  {
+    "id": "q45",
+    "query": "a static secret in a header that identifies a machine, with no signature and no expiry",
+    "relevantDocumentIds": ["docs-api-keys"]
+  },
+  {
+    "id": "q46",
+    "query": "enterprise single sign-on via a signed XML assertion from an identity provider",
+    "relevantDocumentIds": ["docs-saml"]
+  },
+  {
+    "id": "q47",
+    "query": "delegate access to a third party without revealing your password",
+    "relevantDocumentIds": ["docs-oauth"]
+  },
+  {
+    "id": "q48",
+    "query": "a signed credential the client re-sends and the server verifies without a session table",
+    "relevantDocumentIds": ["docs-jwt"]
+  },
+  {
+    "id": "q49",
+    "query": "aware you are asleep, you reshape your own nightmares and mark a red door",
+    "relevantDocumentIds": ["movie-lucid"]
+  },
+  {
+    "id": "q50",
+    "query": "going several dream levels deep to plant an idea in a corporate heir",
+    "relevantDocumentIds": ["movie-inception"]
+  },
+  {
+    "id": "q51",
+    "query": "a studio records dreams and a burglar steals them from a board at night",
+    "relevantDocumentIds": ["movie-dream-machine"]
+  },
+  {
+    "id": "q52",
+    "query": "a burst of prime numbers from space and a machine built to meet the sender",
+    "relevantDocumentIds": ["movie-signal"]
+  },
+  {
+    "id": "q53",
+    "query": "a circular script lets a linguist perceive time non-linearly",
+    "relevantDocumentIds": ["movie-arrival"]
+  },
+  {
+    "id": "q54",
+    "query": "an astronomer joins a linguist to decode a repeating transmission",
+    "relevantDocumentIds": ["movie-contact"]
+  },
+  {
+    "id": "q55",
+    "query": "a leaking shared pipe turns a duplex into a feud between two households",
+    "relevantDocumentIds": ["movie-tenants"]
+  },
+  {
+    "id": "q56",
+    "query": "a family poses as skilled workers to get jobs in a rich house",
+    "relevantDocumentIds": ["movie-parasite"]
+  },
+  {
+    "id": "q57",
+    "query": "a hired driver discovers a hidden room beneath his employer's mansion",
+    "relevantDocumentIds": ["movie-mansion"]
+  },
+  {
+    "id": "q58",
+    "query": "compressing vectors to 8-bit integers saves memory at a small recall cost",
+    "relevantDocumentIds": ["docs-quantization"]
+  },
+  {
+    "id": "q59",
+    "query": "a keyword index stops a metadata filter from scanning every point",
+    "relevantDocumentIds": ["docs-qdrant"]
+  },
+  {
+    "id": "q60",
+    "query": "a layered graph of neighbors makes approximate search fast",
+    "relevantDocumentIds": ["docs-hnsw"]
+  },
+  {
+    "id": "q61",
+    "query": "choosing a partition key so load spreads evenly across shards",
+    "relevantDocumentIds": ["docs-vector-scale"]
+  },
+  {
+    "id": "q62",
+    "query": "measuring how alike two vectors are by the angle between them",
+    "relevantDocumentIds": ["docs-embedding"]
+  },
+  {
+    "id": "q63",
+    "query": "overlapping windows keep a split sentence from losing its meaning",
+    "relevantDocumentIds": ["docs-chunking"]
+  },
+  {
+    "id": "q64",
+    "query": "pavement keeps radiating heat after sunset",
+    "relevantDocumentIds": ["column-city-heat"]
+  },
+  {
+    "id": "q65",
+    "query": "students lose a quiet desk and a printer after six",
+    "relevantDocumentIds": ["column-library-hours"]
+  },
+  {
+    "id": "q66",
+    "query": "two-hour crossings and lost shifts during a bus stoppage",
+    "relevantDocumentIds": ["column-transit-strike"]
+  },
+  {
+    "id": "q67",
+    "query": "landlords raise rent faster than wages and tenants leave the city",
+    "relevantDocumentIds": ["column-rent"]
+  },
+  {
+    "id": "q68",
+    "query": "meter fines drive shoppers out to malls outside the city",
+    "relevantDocumentIds": ["column-parking"]
+  },
+  {
+    "id": "q69",
+    "query": "a neighbor's lamp stays dark for a week so she knocks on the door",
+    "relevantDocumentIds": ["story-window"]
+  },
+  {
+    "id": "q70",
+    "query": "a lost dog returns to an empty house every autumn and sits on the porch",
+    "relevantDocumentIds": ["story-dog"]
+  },
+  {
+    "id": "q71",
+    "query": "the keeper stops tending the lamp on foggy nights and writes unanswered letters",
+    "relevantDocumentIds": ["story-lighthouse"]
+  },
+  {
+    "id": "q72",
+    "query": "one bruised orange left at the edge of the crate each Tuesday",
+    "relevantDocumentIds": ["story-market"]
+  },
+  {
+    "id": "q73",
+    "query": "a forgotten scarf on a night train where stations drift like unused sentences",
+    "relevantDocumentIds": ["story-train"]
   }
 ]
