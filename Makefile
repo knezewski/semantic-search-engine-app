@@ -7,7 +7,11 @@
 
 COMPOSE := docker compose -f docker/docker-compose.yml
 
-.PHONY: help setup infra-init infra-up start start-infra build stop prune restart test api worker redis redisinsight clean
+# Local mode: force local Redis + Qdrant regardless of .env.
+# Command-line env vars take precedence over .env files in Bun (verified).
+LOCAL_ENV := QDRANT_URL=http://localhost:6333 QDRANT_API_KEY= REDIS_URL=redis://localhost:6379
+
+.PHONY: help setup infra-init infra-up start start-local start-cloud start-infra build stop prune restart test api worker redis redisinsight clean
 
 help: ## show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | awk 'BEGIN {FS = ":.*?## "}; {printf "  make %-14s %s\n", $$1, $$2}'
@@ -33,8 +37,15 @@ build: ## build (type-check) and prune docker
 	bun run build
 	docker system prune -f
 
-start: ## bring up infrastructure + API + workers (Ctrl+C stops everything)
+start-local: ## local: Redis + Qdrant in Docker, ignores cloud creds in .env
 	make infra-up
+	@mkdir -p .run
+	@trap 'kill 0; rm -f .run/api.pid .run/worker.pid' INT TERM EXIT; \
+	$(LOCAL_ENV) bun run dev & echo $$! > .run/api.pid; \
+	$(LOCAL_ENV) bun run dev:worker & echo $$! > .run/worker.pid; \
+	wait
+
+start: ## cloud: Redis Cloud + Qdrant Cloud from env; no local containers
 	@mkdir -p .run
 	@trap 'kill 0; rm -f .run/api.pid .run/worker.pid' INT TERM EXIT; \
 	bun run dev & echo $$! > .run/api.pid; \

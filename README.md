@@ -31,7 +31,9 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 
 | Metric | p50 | p95 |
 | --- | --- | --- |
-| `/search` latency (ms) | 1124 | 1709 |
+| `/search` latency (ms) | 36.6 | 43.6 |
+
+> Latency measured with `hybrid` as the default mode; `mode:"rerank"` adds cross-encoder time (~0.5–1.1 s per request).
 
 > Status (2026-10-04): reranking returns real cross-encoder scores (the previous implementation always returned 0), and ingest fails fast with `503 NOT_READY` when Redis is down. Manual test cases **SRCH-06** and **ERR-04** now pass.
 
