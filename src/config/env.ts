@@ -52,7 +52,7 @@ const env = {
   searchHnswEf: integer("SEARCH_HNSW_EF", 64),
   embeddingCacheSize: integer("EMBEDDING_CACHE_SIZE", 256),
 
-  rerankEnabled: flag("RERANK_ENABLED", true),
+  rerankEnabled: flag("RERANK_ENABLED", false),
   rerankModel: optional("RERANK_MODEL") ?? "Xenova/ms-marco-MiniLM-L-6-v2",
   rerankCandidates: integer("RERANK_CANDIDATES", 15)
 } as const
