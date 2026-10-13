@@ -1,0 +1,3598 @@
+[
+  {
+    "id": "fiqa-q4641",
+    "query": "Where should I park my rainy-day / emergency fund?",
+    "relevantDocumentIds": ["fiqa-44594", "fiqa-406219", "fiqa-319954", "fiqa-397358", "fiqa-88327"]
+  },
+  {
+    "id": "fiqa-q5503",
+    "query": "Tax considerations for selling a property below appraised value to family?",
+    "relevantDocumentIds": ["fiqa-146277", "fiqa-64279"]
+  },
+  {
+    "id": "fiqa-q7803",
+    "query": "Can the Delta be used to calculate the option premium given a certain target?",
+    "relevantDocumentIds": ["fiqa-565926", "fiqa-157504"]
+  },
+  {
+    "id": "fiqa-q7017",
+    "query": "Basic Algorithmic Trading Strategy",
+    "relevantDocumentIds": ["fiqa-28271"]
+  },
+  {
+    "id": "fiqa-q10152",
+    "query": "What does a high operating margin but a small but positive ROE imply about a company?",
+    "relevantDocumentIds": ["fiqa-113585"]
+  },
+  {
+    "id": "fiqa-q3451",
+    "query": "Should you keep your stocks if you are too late to sell?",
+    "relevantDocumentIds": [
+      "fiqa-26292",
+      "fiqa-192307",
+      "fiqa-276883",
+      "fiqa-588448",
+      "fiqa-165970",
+      "fiqa-490170",
+      "fiqa-99132"
+    ]
+  },
+  {
+    "id": "fiqa-q4804",
+    "query": "How do financial services aimed at women differ from conventional services?",
+    "relevantDocumentIds": ["fiqa-583651", "fiqa-104395"]
+  },
+  {
+    "id": "fiqa-q7911",
+    "query": "What is the difference between a 'trader' and a 'stockbroker'?",
+    "relevantDocumentIds": ["fiqa-57711", "fiqa-131996"]
+  },
+  {
+    "id": "fiqa-q10809",
+    "query": "Definitions of leverage and of leverage factor",
+    "relevantDocumentIds": ["fiqa-103362", "fiqa-286141", "fiqa-242524"]
+  },
+  {
+    "id": "fiqa-q6715",
+    "query": "What does it mean if “IPOs - normally are sold with an `underwriting discount` (a built in commission)”",
+    "relevantDocumentIds": ["fiqa-568526", "fiqa-13732"]
+  },
+  {
+    "id": "fiqa-q2388",
+    "query": "Do financial advisors get better deals on mortgages?",
+    "relevantDocumentIds": ["fiqa-104988"]
+  },
+  {
+    "id": "fiqa-q753",
+    "query": "Taxes due for hobbyist Group Buy",
+    "relevantDocumentIds": ["fiqa-466718", "fiqa-243503"]
+  },
+  {
+    "id": "fiqa-q4465",
+    "query": "How to donate to charity that will make a difference?",
+    "relevantDocumentIds": ["fiqa-376575", "fiqa-344041", "fiqa-299242"]
+  },
+  {
+    "id": "fiqa-q7326",
+    "query": "Do brokers execute every trade on the exchange?",
+    "relevantDocumentIds": ["fiqa-584295"]
+  },
+  {
+    "id": "fiqa-q5951",
+    "query": "Why can't house prices be out of tune with salaries",
+    "relevantDocumentIds": [
+      "fiqa-418034",
+      "fiqa-259777",
+      "fiqa-31663",
+      "fiqa-151774",
+      "fiqa-374480",
+      "fiqa-473765",
+      "fiqa-298065",
+      "fiqa-596834",
+      "fiqa-497260"
+    ]
+  },
+  {
+    "id": "fiqa-q5653",
+    "query": "Steps and timing of the SEIS investment (in the UK)",
+    "relevantDocumentIds": ["fiqa-588247"]
+  },
+  {
+    "id": "fiqa-q10827",
+    "query": "How much should I be contributing to my 401k given my employer's contribution?",
+    "relevantDocumentIds": ["fiqa-160786", "fiqa-42301", "fiqa-7748", "fiqa-107554", "fiqa-95282"]
+  },
+  {
+    "id": "fiqa-q9771",
+    "query": "Is there any emprical research done on 'adding to a loser'",
+    "relevantDocumentIds": ["fiqa-263955", "fiqa-28740"]
+  },
+  {
+    "id": "fiqa-q7105",
+    "query": "What is the difference between fixed-income duration and equity duration?",
+    "relevantDocumentIds": ["fiqa-72652"]
+  },
+  {
+    "id": "fiqa-q9332",
+    "query": "What can I do with a physical stock certificate for a now-mutual company?",
+    "relevantDocumentIds": ["fiqa-271766"]
+  },
+  {
+    "id": "fiqa-q3724",
+    "query": "Should you always max out contributions to your 401k?",
+    "relevantDocumentIds": [
+      "fiqa-302512",
+      "fiqa-273497",
+      "fiqa-309200",
+      "fiqa-508921",
+      "fiqa-434190",
+      "fiqa-279570",
+      "fiqa-497216",
+      "fiqa-552887",
+      "fiqa-341146",
+      "fiqa-199970"
+    ]
+  },
+  {
+    "id": "fiqa-q5853",
+    "query": "Paying Off Principal of Home vs. Investing In Mutual Fund",
+    "relevantDocumentIds": [
+      "fiqa-284318",
+      "fiqa-476663",
+      "fiqa-160105",
+      "fiqa-495699",
+      "fiqa-439459",
+      "fiqa-473647",
+      "fiqa-431811",
+      "fiqa-424598"
+    ]
+  },
+  {
+    "id": "fiqa-q6832",
+    "query": "incorrect printed information on check stock",
+    "relevantDocumentIds": ["fiqa-377853", "fiqa-573874"]
+  },
+  {
+    "id": "fiqa-q6807",
+    "query": "How to incorporate dividends while calculating annual return of a Stock",
+    "relevantDocumentIds": ["fiqa-332567"]
+  },
+  {
+    "id": "fiqa-q570",
+    "query": "Employer options when setting up 401k for employees",
+    "relevantDocumentIds": ["fiqa-363591"]
+  },
+  {
+    "id": "fiqa-q7279",
+    "query": "If I invest in securities denominated in a foreign currency, should I hedge my currency risk?",
+    "relevantDocumentIds": ["fiqa-476834", "fiqa-322456", "fiqa-81483", "fiqa-464502"]
+  },
+  {
+    "id": "fiqa-q594",
+    "query": "Should a retail trader bother about reading SEC filings",
+    "relevantDocumentIds": ["fiqa-377322", "fiqa-534059"]
+  },
+  {
+    "id": "fiqa-q10122",
+    "query": "Why diversify stocks/investments?",
+    "relevantDocumentIds": ["fiqa-570787", "fiqa-139368", "fiqa-273718", "fiqa-259084"]
+  },
+  {
+    "id": "fiqa-q3091",
+    "query": "Am I considered in debt if I pay a mortgage?",
+    "relevantDocumentIds": [
+      "fiqa-159936",
+      "fiqa-108302",
+      "fiqa-366448",
+      "fiqa-187739",
+      "fiqa-534099",
+      "fiqa-274870",
+      "fiqa-95778"
+    ]
+  },
+  {
+    "id": "fiqa-q904",
+    "query": "How do I set up Quickbooks for a small property rental company that holds its properties in separate LLC's?",
+    "relevantDocumentIds": ["fiqa-415514"]
+  },
+  {
+    "id": "fiqa-q4037",
+    "query": "How separate individual expenses from family expenses in Gnucash?",
+    "relevantDocumentIds": ["fiqa-10275", "fiqa-298099"]
+  },
+  {
+    "id": "fiqa-q8537",
+    "query": "What is an “Options Account”?",
+    "relevantDocumentIds": ["fiqa-6574"]
+  },
+  {
+    "id": "fiqa-q3357",
+    "query": "Why big clients want the contractor to be incorporated before giving them work",
+    "relevantDocumentIds": ["fiqa-209974"]
+  },
+  {
+    "id": "fiqa-q1783",
+    "query": "Freelancing Tax implication",
+    "relevantDocumentIds": ["fiqa-332314"]
+  },
+  {
+    "id": "fiqa-q6004",
+    "query": "Put-Call parity - what is the difference between the two representations?",
+    "relevantDocumentIds": ["fiqa-149555"]
+  },
+  {
+    "id": "fiqa-q2923",
+    "query": "Should I give to charity by check or credit card?",
+    "relevantDocumentIds": ["fiqa-82744", "fiqa-161667", "fiqa-46381", "fiqa-390089", "fiqa-264271"]
+  },
+  {
+    "id": "fiqa-q5271",
+    "query": "Why are auto leases stubbornly strict about visa status and how to work around that?",
+    "relevantDocumentIds": ["fiqa-58599", "fiqa-221439", "fiqa-67663"]
+  },
+  {
+    "id": "fiqa-q2108",
+    "query": "Can I pay taxes using bill pay from my on-line checking account?",
+    "relevantDocumentIds": ["fiqa-525200", "fiqa-309171", "fiqa-155389"]
+  },
+  {
+    "id": "fiqa-q7590",
+    "query": "Why are US target retirement funds weighted so heavily towards US stocks?",
+    "relevantDocumentIds": ["fiqa-105165", "fiqa-222505"]
+  },
+  {
+    "id": "fiqa-q932",
+    "query": "Is freelance income earned by a U.S. citizen while living abroad subject to state income tax?",
+    "relevantDocumentIds": ["fiqa-48722", "fiqa-387010"]
+  },
+  {
+    "id": "fiqa-q5981",
+    "query": "Is it a good investment for a foreigner to purchase a flat/apartment in China?",
+    "relevantDocumentIds": ["fiqa-564554", "fiqa-245532", "fiqa-171483", "fiqa-286182", "fiqa-210439"]
+  },
+  {
+    "id": "fiqa-q4837",
+    "query": "When applying for a mortgage, can it also cover outstanding debts?",
+    "relevantDocumentIds": ["fiqa-531841", "fiqa-20958"]
+  },
+  {
+    "id": "fiqa-q4415",
+    "query": "How much is inflation?",
+    "relevantDocumentIds": ["fiqa-238234", "fiqa-147646", "fiqa-414188", "fiqa-67676"]
+  },
+  {
+    "id": "fiqa-q1915",
+    "query": "Should I pay a company who failed to collect VAT from me over 6 months ago?",
+    "relevantDocumentIds": ["fiqa-318266", "fiqa-433801"]
+  },
+  {
+    "id": "fiqa-q8378",
+    "query": "Should I wait a few days to sell ESPP Stock?",
+    "relevantDocumentIds": ["fiqa-178684", "fiqa-102237", "fiqa-125298"]
+  },
+  {
+    "id": "fiqa-q2316",
+    "query": "What exchange rate does El Al use when converting final payment amount to shekels?",
+    "relevantDocumentIds": ["fiqa-482343", "fiqa-348955"]
+  },
+  {
+    "id": "fiqa-q8102",
+    "query": "When do I sell a stock that I hold as a long-term position?",
+    "relevantDocumentIds": ["fiqa-552707", "fiqa-557877", "fiqa-378173", "fiqa-90294"]
+  },
+  {
+    "id": "fiqa-q3405",
+    "query": "Non Resident aliens - Question of standard vs itemized",
+    "relevantDocumentIds": ["fiqa-495467"]
+  },
+  {
+    "id": "fiqa-q7928",
+    "query": "If I believe a stock is going to fall, what options do I have to invest on this?",
+    "relevantDocumentIds": ["fiqa-480967", "fiqa-118633", "fiqa-501504", "fiqa-499811"]
+  },
+  {
+    "id": "fiqa-q603",
+    "query": "Will one’s education loan application be rejected if one doesn't have a payslip providing collateral?",
+    "relevantDocumentIds": ["fiqa-456440"]
+  },
+  {
+    "id": "fiqa-q1281",
+    "query": "How FTB and IRS find mistakes in amended tax returns? Are their processes reliable?",
+    "relevantDocumentIds": ["fiqa-361415"]
+  },
+  {
+    "id": "fiqa-q3830",
+    "query": "US citizen transferring money to Indian fiance to buy property",
+    "relevantDocumentIds": ["fiqa-54952"]
+  },
+  {
+    "id": "fiqa-q3837",
+    "query": "Opening a Roth IRA account, what is the fee structure for Vanguard, Scottrade and TIAA-CREF",
+    "relevantDocumentIds": ["fiqa-345533"]
+  },
+  {
+    "id": "fiqa-q4447",
+    "query": "Should I always hold short term bonds till maturity?",
+    "relevantDocumentIds": ["fiqa-286226"]
+  },
+  {
+    "id": "fiqa-q2376",
+    "query": "Why do gas stations charge different amounts in the same local area?",
+    "relevantDocumentIds": [
+      "fiqa-64263",
+      "fiqa-549833",
+      "fiqa-91545",
+      "fiqa-324411",
+      "fiqa-114417",
+      "fiqa-407455",
+      "fiqa-402249",
+      "fiqa-244961"
+    ]
+  },
+  {
+    "id": "fiqa-q4777",
+    "query": "How to finance necessary repairs to our home in order to sell it?",
+    "relevantDocumentIds": ["fiqa-590710"]
+  },
+  {
+    "id": "fiqa-q5741",
+    "query": "Learning investing and the stock market",
+    "relevantDocumentIds": ["fiqa-259081", "fiqa-25943"]
+  },
+  {
+    "id": "fiqa-q2318",
+    "query": "F1 student and eBay selling tax",
+    "relevantDocumentIds": ["fiqa-428533"]
+  },
+  {
+    "id": "fiqa-q620",
+    "query": "Is it wise to have plenty of current accounts in different banks?",
+    "relevantDocumentIds": ["fiqa-331332", "fiqa-417301", "fiqa-189303", "fiqa-180673", "fiqa-487067"]
+  },
+  {
+    "id": "fiqa-q8271",
+    "query": "Income in zero-interest environment",
+    "relevantDocumentIds": ["fiqa-415511", "fiqa-376709"]
+  },
+  {
+    "id": "fiqa-q4865",
+    "query": "Why are historical prices of stocks different on different websites? Which one should I believe?",
+    "relevantDocumentIds": ["fiqa-100485"]
+  },
+  {
+    "id": "fiqa-q864",
+    "query": "Why use accounting software like Quickbooks instead of Excel spreadsheets?",
+    "relevantDocumentIds": ["fiqa-472924", "fiqa-30142", "fiqa-211364", "fiqa-24890", "fiqa-566337", "fiqa-152072"]
+  },
+  {
+    "id": "fiqa-q5888",
+    "query": "Interest charges on balance transfer when purchases are involved",
+    "relevantDocumentIds": ["fiqa-336792", "fiqa-540806"]
+  },
+  {
+    "id": "fiqa-q2568",
+    "query": "How to pay with cash when car shopping?",
+    "relevantDocumentIds": [
+      "fiqa-139047",
+      "fiqa-388798",
+      "fiqa-296769",
+      "fiqa-346042",
+      "fiqa-108739",
+      "fiqa-590082",
+      "fiqa-127353"
+    ]
+  },
+  {
+    "id": "fiqa-q5150",
+    "query": "What credit card information are offline US merchants allowed to collect for purposes other than the transaction?",
+    "relevantDocumentIds": ["fiqa-229937"]
+  },
+  {
+    "id": "fiqa-q7124",
+    "query": "How come we can find stocks with a Price-to-Book ratio less than 1?",
+    "relevantDocumentIds": ["fiqa-74615", "fiqa-154725", "fiqa-558617", "fiqa-526110"]
+  },
+  {
+    "id": "fiqa-q2857",
+    "query": "I have around 60K $. Thinking about investing in Oil, how to proceed?",
+    "relevantDocumentIds": ["fiqa-233732", "fiqa-501384", "fiqa-60175", "fiqa-295864"]
+  },
+  {
+    "id": "fiqa-q8539",
+    "query": "Can the risk of investing in an asset be different for different investors?",
+    "relevantDocumentIds": ["fiqa-218728", "fiqa-292609", "fiqa-196304", "fiqa-396038"]
+  },
+  {
+    "id": "fiqa-q6896",
+    "query": "Selling high, pay capital gains, re-purchase later",
+    "relevantDocumentIds": ["fiqa-251704"]
+  },
+  {
+    "id": "fiqa-q1085",
+    "query": "How do disputed debts work on credit reports?",
+    "relevantDocumentIds": ["fiqa-467737", "fiqa-393710"]
+  },
+  {
+    "id": "fiqa-q5422",
+    "query": "What are some good books for learning stocks, bonds, derivatives e.t.c for beginner with a math background?",
+    "relevantDocumentIds": ["fiqa-273906", "fiqa-79517", "fiqa-151973", "fiqa-13513"]
+  },
+  {
+    "id": "fiqa-q8247",
+    "query": "Tax on Stocks or ETF's",
+    "relevantDocumentIds": ["fiqa-42521", "fiqa-475170", "fiqa-321114", "fiqa-465313"]
+  },
+  {
+    "id": "fiqa-q4946",
+    "query": "Something looks off about Mitsubishi financial data",
+    "relevantDocumentIds": ["fiqa-121690"]
+  },
+  {
+    "id": "fiqa-q10482",
+    "query": "Rollover into bond fund to do dollar cost averaging [duplicate]",
+    "relevantDocumentIds": ["fiqa-549072"]
+  },
+  {
+    "id": "fiqa-q4571",
+    "query": "HSBC Hong Kong's “Deposit Plus” Product: What is it, and what strategies to employ?",
+    "relevantDocumentIds": ["fiqa-496857", "fiqa-282392", "fiqa-213824"]
+  },
+  {
+    "id": "fiqa-q8789",
+    "query": "What does “profits to the shareholders jumped to 15 cents a share” mean?",
+    "relevantDocumentIds": ["fiqa-87349", "fiqa-70853", "fiqa-41912"]
+  },
+  {
+    "id": "fiqa-q8034",
+    "query": "What is the average cost of a portfolio on a trading site?",
+    "relevantDocumentIds": ["fiqa-597351"]
+  },
+  {
+    "id": "fiqa-q4600",
+    "query": "Why government bonds fluctuate so much, even though interest rates don't change that often?",
+    "relevantDocumentIds": ["fiqa-482415"]
+  },
+  {
+    "id": "fiqa-q2423",
+    "query": "At what age should I start or stop saving money?",
+    "relevantDocumentIds": [
+      "fiqa-81106",
+      "fiqa-396127",
+      "fiqa-553288",
+      "fiqa-551954",
+      "fiqa-529444",
+      "fiqa-305946",
+      "fiqa-538023"
+    ]
+  },
+  {
+    "id": "fiqa-q8475",
+    "query": "Why I cannot find a “Pure Cash” option in 401k investments?",
+    "relevantDocumentIds": [
+      "fiqa-494655",
+      "fiqa-240562",
+      "fiqa-293320",
+      "fiqa-104793",
+      "fiqa-437427",
+      "fiqa-444107",
+      "fiqa-481728"
+    ]
+  },
+  {
+    "id": "fiqa-q4523",
+    "query": "What should I do with my $25k to invest as a 20 years old?",
+    "relevantDocumentIds": ["fiqa-594257", "fiqa-119165", "fiqa-393009", "fiqa-129255", "fiqa-66626"]
+  },
+  {
+    "id": "fiqa-q8513",
+    "query": "Buy on dip when earnings fail?",
+    "relevantDocumentIds": ["fiqa-270573"]
+  },
+  {
+    "id": "fiqa-q1198",
+    "query": "What are the consequences of IRS “reclassification” on both employer and employee?",
+    "relevantDocumentIds": ["fiqa-56718"]
+  },
+  {
+    "id": "fiqa-q9291",
+    "query": "Are there any consequences for investing in Vanguard's Admiral Shares funds instead of ETF's in a Roth IRA?",
+    "relevantDocumentIds": ["fiqa-96926", "fiqa-480315"]
+  },
+  {
+    "id": "fiqa-q8532",
+    "query": "What do these options trading terms mean?",
+    "relevantDocumentIds": ["fiqa-416307", "fiqa-27401", "fiqa-320101"]
+  },
+  {
+    "id": "fiqa-q1824",
+    "query": "Is there a way to open a U.S. bank account for my LLC remotely?",
+    "relevantDocumentIds": ["fiqa-244808"]
+  },
+  {
+    "id": "fiqa-q5054",
+    "query": "How to stress test an investment plan?",
+    "relevantDocumentIds": ["fiqa-28119"]
+  },
+  {
+    "id": "fiqa-q1159",
+    "query": "what is the best way to do a freelancing job over the summer for a student",
+    "relevantDocumentIds": ["fiqa-496064"]
+  },
+  {
+    "id": "fiqa-q4920",
+    "query": "Does financing a portfolio on margin affect the variance of a portfolio?",
+    "relevantDocumentIds": ["fiqa-306815", "fiqa-228341", "fiqa-82294"]
+  },
+  {
+    "id": "fiqa-q68",
+    "query": "Intentions of Deductible Amount for Small Business",
+    "relevantDocumentIds": ["fiqa-19183"]
+  },
+  {
+    "id": "fiqa-q7269",
+    "query": "How do I track investment performance in Quicken across rollovers?",
+    "relevantDocumentIds": ["fiqa-486696"]
+  },
+  {
+    "id": "fiqa-q750",
+    "query": "Paid part of my state refund back last year; now must declare the initial amount as income?",
+    "relevantDocumentIds": ["fiqa-419768", "fiqa-33602"]
+  },
+  {
+    "id": "fiqa-q9701",
+    "query": "How to bet against the London housing market?",
+    "relevantDocumentIds": ["fiqa-387141", "fiqa-357739"]
+  },
+  {
+    "id": "fiqa-q6199",
+    "query": "How can all these countries owe so much money?  Why & where did they borrow it from?",
+    "relevantDocumentIds": ["fiqa-414693", "fiqa-584273", "fiqa-239214", "fiqa-169921"]
+  },
+  {
+    "id": "fiqa-q9126",
+    "query": "Short an option - random assignment?",
+    "relevantDocumentIds": ["fiqa-514831"]
+  },
+  {
+    "id": "fiqa-q34",
+    "query": "401k Transfer After Business Closure",
+    "relevantDocumentIds": ["fiqa-599545"]
+  },
+  {
+    "id": "fiqa-q4011",
+    "query": "How can I deal with a spouse who compulsively spends?",
+    "relevantDocumentIds": ["fiqa-136367", "fiqa-470", "fiqa-67699"]
+  },
+  {
+    "id": "fiqa-q4700",
+    "query": "Better to get loan from finance company or bank considering the drop of credit score?",
+    "relevantDocumentIds": ["fiqa-345137"]
+  },
+  {
+    "id": "fiqa-q6395",
+    "query": "Option settlement for calendar spreads",
+    "relevantDocumentIds": ["fiqa-166227"]
+  },
+  {
+    "id": "fiqa-q852",
+    "query": "Dalbar: How can the average investor lose money?",
+    "relevantDocumentIds": ["fiqa-245702", "fiqa-531288", "fiqa-431735"]
+  },
+  {
+    "id": "fiqa-q9115",
+    "query": "Why does the calculation for percentage profit vary based on whether a position is short vs. long?",
+    "relevantDocumentIds": ["fiqa-158520", "fiqa-207325", "fiqa-422467"]
+  },
+  {
+    "id": "fiqa-q1297",
+    "query": "Why aren't there solutions for electronic itemized receipt for retail in-store purchases?",
+    "relevantDocumentIds": ["fiqa-171761"]
+  },
+  {
+    "id": "fiqa-q5085",
+    "query": "What is vested stock and yearly dividends?",
+    "relevantDocumentIds": ["fiqa-102436"]
+  },
+  {
+    "id": "fiqa-q4767",
+    "query": "New car: buy with cash or 0% financing",
+    "relevantDocumentIds": ["fiqa-280805", "fiqa-568670", "fiqa-224057", "fiqa-22804", "fiqa-125986"]
+  },
+  {
+    "id": "fiqa-q2593",
+    "query": "Am I “cheating the system” by opening up a tiny account with a credit union and then immediately applying for a huge loan?",
+    "relevantDocumentIds": ["fiqa-147343", "fiqa-231614", "fiqa-528132"]
+  },
+  {
+    "id": "fiqa-q2724",
+    "query": "How do you determine the dividend payout date for Mutual Funds?",
+    "relevantDocumentIds": ["fiqa-491472", "fiqa-32172"]
+  },
+  {
+    "id": "fiqa-q11088",
+    "query": "Am I required to have a lawyer create / oversee creation of my will?",
+    "relevantDocumentIds": ["fiqa-437100"]
+  },
+  {
+    "id": "fiqa-q18",
+    "query": "1 EIN doing business under multiple business names",
+    "relevantDocumentIds": ["fiqa-88124"]
+  },
+  {
+    "id": "fiqa-q109",
+    "query": "How to account for money earned and spent prior to establishing business bank accounts?",
+    "relevantDocumentIds": ["fiqa-73427"]
+  },
+  {
+    "id": "fiqa-q8351",
+    "query": "What happens when a calendar spread is assigned in a non-margin account?",
+    "relevantDocumentIds": ["fiqa-273142", "fiqa-472516"]
+  },
+  {
+    "id": "fiqa-q6131",
+    "query": "Is it ever a good idea to close credit cards?",
+    "relevantDocumentIds": [
+      "fiqa-326094",
+      "fiqa-365263",
+      "fiqa-218088",
+      "fiqa-252534",
+      "fiqa-381720",
+      "fiqa-235452",
+      "fiqa-170204",
+      "fiqa-416679",
+      "fiqa-334111",
+      "fiqa-2460",
+      "fiqa-368806",
+      "fiqa-258465"
+    ]
+  },
+  {
+    "id": "fiqa-q3480",
+    "query": "Why is OkPay not allowed in the United States?",
+    "relevantDocumentIds": ["fiqa-53468", "fiqa-418352", "fiqa-221015", "fiqa-75568"]
+  },
+  {
+    "id": "fiqa-q7992",
+    "query": "What type of pension should I get?",
+    "relevantDocumentIds": ["fiqa-559654", "fiqa-264476"]
+  },
+  {
+    "id": "fiqa-q858",
+    "query": "Is it bad practice to invest in stocks that fluctuate by single points throughout the day?",
+    "relevantDocumentIds": ["fiqa-146632", "fiqa-45185", "fiqa-122485", "fiqa-278450"]
+  },
+  {
+    "id": "fiqa-q4019",
+    "query": "How and Should I Invest (As a college 18 year old with minimal living expenses)?",
+    "relevantDocumentIds": ["fiqa-287991", "fiqa-379948", "fiqa-332749", "fiqa-6881", "fiqa-125477"]
+  },
+  {
+    "id": "fiqa-q6080",
+    "query": "Is ScholarShare a legitimate entity for a 529 plan in California?",
+    "relevantDocumentIds": ["fiqa-164513", "fiqa-22856"]
+  },
+  {
+    "id": "fiqa-q2580",
+    "query": "Stock market vs. baseball card trading analogy",
+    "relevantDocumentIds": ["fiqa-344118", "fiqa-503934", "fiqa-11988"]
+  },
+  {
+    "id": "fiqa-q7513",
+    "query": "Where are Bogleheadian World ETFs or Index funds?",
+    "relevantDocumentIds": ["fiqa-115372", "fiqa-273861", "fiqa-567362"]
+  },
+  {
+    "id": "fiqa-q6959",
+    "query": "What is the term for the quantity (high price minus low price) for a stock?",
+    "relevantDocumentIds": ["fiqa-208331", "fiqa-205010"]
+  },
+  {
+    "id": "fiqa-q5402",
+    "query": "Is it impossible to get a home loan with a poor credit history after a divorce?",
+    "relevantDocumentIds": ["fiqa-491350", "fiqa-227485"]
+  },
+  {
+    "id": "fiqa-q4504",
+    "query": "what is the best way of investment which gives returns forever?",
+    "relevantDocumentIds": ["fiqa-2981", "fiqa-566458"]
+  },
+  {
+    "id": "fiqa-q6562",
+    "query": "Cheapest way to “wire” money in an Australian bank account to a person in England, while I'm in Laos?",
+    "relevantDocumentIds": ["fiqa-135675", "fiqa-582414", "fiqa-561344", "fiqa-501157"]
+  },
+  {
+    "id": "fiqa-q4775",
+    "query": "Should I finance a car to build credit for a mortgage next year?",
+    "relevantDocumentIds": ["fiqa-72021"]
+  },
+  {
+    "id": "fiqa-q9565",
+    "query": "What are the tax benefits of dividends vs selling stock",
+    "relevantDocumentIds": ["fiqa-292559", "fiqa-478291"]
+  },
+  {
+    "id": "fiqa-q10734",
+    "query": "How do you translate a per year salary into a part-time per hour job?",
+    "relevantDocumentIds": ["fiqa-589970", "fiqa-263481", "fiqa-470289", "fiqa-225718", "fiqa-426278", "fiqa-62882"]
+  },
+  {
+    "id": "fiqa-q701",
+    "query": "What are the ins/outs of writing-off part of one's rent for working at home?",
+    "relevantDocumentIds": ["fiqa-288537", "fiqa-339488", "fiqa-389446"]
+  },
+  {
+    "id": "fiqa-q585",
+    "query": "Following an investment guru a good idea?",
+    "relevantDocumentIds": ["fiqa-140226", "fiqa-552375"]
+  },
+  {
+    "id": "fiqa-q8934",
+    "query": "Dividend yield for multiple years?",
+    "relevantDocumentIds": ["fiqa-244334", "fiqa-116675"]
+  },
+  {
+    "id": "fiqa-q11054",
+    "query": "Short Term Capital Gains tax vs. IRA Withdrawal Tax w/o Quarterly Est. Taxes",
+    "relevantDocumentIds": ["fiqa-155053", "fiqa-321015"]
+  },
+  {
+    "id": "fiqa-q56",
+    "query": "Can a entrepreneur hire a self-employed business owner?",
+    "relevantDocumentIds": ["fiqa-572690"]
+  },
+  {
+    "id": "fiqa-q6862",
+    "query": "Canada discount stock brokers: Interactive Brokers vs. Questrade?",
+    "relevantDocumentIds": ["fiqa-386796"]
+  },
+  {
+    "id": "fiqa-q9598",
+    "query": "How do index funds actually work?",
+    "relevantDocumentIds": ["fiqa-379311"]
+  },
+  {
+    "id": "fiqa-q4265",
+    "query": "Does it make any sense to directly contribute to reducing the US national debt?",
+    "relevantDocumentIds": ["fiqa-392163", "fiqa-293111", "fiqa-140947", "fiqa-349710", "fiqa-157553", "fiqa-93881"]
+  },
+  {
+    "id": "fiqa-q90",
+    "query": "Filing personal with 1099s versus business s-corp?",
+    "relevantDocumentIds": ["fiqa-31793"]
+  },
+  {
+    "id": "fiqa-q8592",
+    "query": "Tax implications of exercising ISOs and using proceeds to exercise more ISOs",
+    "relevantDocumentIds": ["fiqa-340264", "fiqa-441718", "fiqa-261258"]
+  },
+  {
+    "id": "fiqa-q10547",
+    "query": "How much do brokerages pay exchanges per trade?",
+    "relevantDocumentIds": ["fiqa-571306"]
+  },
+  {
+    "id": "fiqa-q5231",
+    "query": "Where to find CSV or JSON data for publicly traded companies listed with their IPO date?",
+    "relevantDocumentIds": ["fiqa-146188"]
+  },
+  {
+    "id": "fiqa-q7674",
+    "query": "Choosing the limit when making a limit order?",
+    "relevantDocumentIds": ["fiqa-193318", "fiqa-519390", "fiqa-494295"]
+  },
+  {
+    "id": "fiqa-q3103",
+    "query": "AVS Address Verification System of BOTH Credit and Debit Cards - WHERE, HOW?",
+    "relevantDocumentIds": ["fiqa-176596"]
+  },
+  {
+    "id": "fiqa-q10137",
+    "query": "F-1 student investing in foreign markets",
+    "relevantDocumentIds": ["fiqa-57168"]
+  },
+  {
+    "id": "fiqa-q1415",
+    "query": "I am not VAT registered. Do I need to buy from my supplier with excl VAT prices or incl VAT?",
+    "relevantDocumentIds": ["fiqa-387165", "fiqa-306144", "fiqa-66246", "fiqa-393953"]
+  },
+  {
+    "id": "fiqa-q5940",
+    "query": "How does investment into a private company work?",
+    "relevantDocumentIds": ["fiqa-486243", "fiqa-433827", "fiqa-93936"]
+  },
+  {
+    "id": "fiqa-q6612",
+    "query": "If I have a lot of debt and the housing market is rising, should I rent and slowly pay off my debt or buy and roll the debt into a mortgage?",
+    "relevantDocumentIds": ["fiqa-254454", "fiqa-205522", "fiqa-322900"]
+  },
+  {
+    "id": "fiqa-q945",
+    "query": "Paid by an American company but working from France: where should I pay taxes?",
+    "relevantDocumentIds": ["fiqa-352052"]
+  },
+  {
+    "id": "fiqa-q2549",
+    "query": "How to graph the market year over year? for example Dow Jones Index",
+    "relevantDocumentIds": ["fiqa-58451", "fiqa-21103"]
+  },
+  {
+    "id": "fiqa-q4714",
+    "query": "Personal finance app where I can mark transactions as “reviewed”?",
+    "relevantDocumentIds": ["fiqa-505057", "fiqa-584450", "fiqa-450819", "fiqa-324833"]
+  },
+  {
+    "id": "fiqa-q588",
+    "query": "Is there a reason to buy a 0% yield bond?",
+    "relevantDocumentIds": ["fiqa-570546", "fiqa-203710"]
+  },
+  {
+    "id": "fiqa-q4233",
+    "query": "Are personal finance / money management classes taught in high school, anywhere?",
+    "relevantDocumentIds": ["fiqa-16270", "fiqa-590836", "fiqa-154886", "fiqa-31377", "fiqa-187129"]
+  },
+  {
+    "id": "fiqa-q6441",
+    "query": "Trading with Settled / Unsettled Funds (T+3)",
+    "relevantDocumentIds": ["fiqa-254279"]
+  },
+  {
+    "id": "fiqa-q8456",
+    "query": "What typically happens to unvested stock during an acquisition?",
+    "relevantDocumentIds": ["fiqa-257853", "fiqa-510875", "fiqa-486333"]
+  },
+  {
+    "id": "fiqa-q10213",
+    "query": "Looking for good investment vehicle for seasonal work and savings",
+    "relevantDocumentIds": ["fiqa-380942", "fiqa-270221", "fiqa-545712"]
+  },
+  {
+    "id": "fiqa-q106",
+    "query": "What approaches are there for pricing a small business?",
+    "relevantDocumentIds": ["fiqa-76695"]
+  },
+  {
+    "id": "fiqa-q4306",
+    "query": "How do currency markets work? What factors are behind why currencies go up or down?",
+    "relevantDocumentIds": ["fiqa-450694", "fiqa-221435", "fiqa-233718", "fiqa-61819"]
+  },
+  {
+    "id": "fiqa-q5196",
+    "query": "I might use a credit card convenience check. What should I consider?",
+    "relevantDocumentIds": ["fiqa-172128", "fiqa-565745", "fiqa-114829"]
+  },
+  {
+    "id": "fiqa-q3006",
+    "query": "Strategies for putting away money for a child's future (college, etc.)?",
+    "relevantDocumentIds": ["fiqa-127838", "fiqa-512096", "fiqa-269851", "fiqa-403137", "fiqa-568473", "fiqa-328300"]
+  },
+  {
+    "id": "fiqa-q7205",
+    "query": "Is it possible to see option prices from the past?",
+    "relevantDocumentIds": ["fiqa-159966"]
+  },
+  {
+    "id": "fiqa-q3909",
+    "query": "How to rescue my money from negative interest?",
+    "relevantDocumentIds": [
+      "fiqa-404352",
+      "fiqa-200690",
+      "fiqa-312248",
+      "fiqa-404356",
+      "fiqa-374400",
+      "fiqa-61586",
+      "fiqa-514003",
+      "fiqa-193459",
+      "fiqa-245616",
+      "fiqa-353028"
+    ]
+  },
+  {
+    "id": "fiqa-q4116",
+    "query": "Would the effects of an anticipated default by a nation be mostly symbolic?",
+    "relevantDocumentIds": ["fiqa-234674", "fiqa-109149"]
+  },
+  {
+    "id": "fiqa-q4942",
+    "query": "find stock composition of a publicly traded fund",
+    "relevantDocumentIds": ["fiqa-357685"]
+  },
+  {
+    "id": "fiqa-q6907",
+    "query": "Nominal value of shares",
+    "relevantDocumentIds": ["fiqa-251604"]
+  },
+  {
+    "id": "fiqa-q5464",
+    "query": "Resources on Buying Rental Properties",
+    "relevantDocumentIds": ["fiqa-350399", "fiqa-294549", "fiqa-86691"]
+  },
+  {
+    "id": "fiqa-q2385",
+    "query": "As director, can I invoice my self-owned company?",
+    "relevantDocumentIds": ["fiqa-407654", "fiqa-373059"]
+  },
+  {
+    "id": "fiqa-q691",
+    "query": "How to categorize credit card payments?",
+    "relevantDocumentIds": ["fiqa-395912"]
+  },
+  {
+    "id": "fiqa-q3177",
+    "query": "Vanguard ETF vs mutual fund",
+    "relevantDocumentIds": ["fiqa-17208", "fiqa-536120", "fiqa-268289"]
+  },
+  {
+    "id": "fiqa-q10034",
+    "query": "Tax implications of holding EWU (or other such UK ETFs) as a US citizen?",
+    "relevantDocumentIds": ["fiqa-480749", "fiqa-181942"]
+  },
+  {
+    "id": "fiqa-q5090",
+    "query": "Should I take a student loan to pursue my undergraduate studies in France?",
+    "relevantDocumentIds": ["fiqa-436493", "fiqa-12988"]
+  },
+  {
+    "id": "fiqa-q2088",
+    "query": "How would I go about selling the stock of a privately held company?",
+    "relevantDocumentIds": ["fiqa-399875", "fiqa-599524"]
+  },
+  {
+    "id": "fiqa-q9391",
+    "query": "Should I replace bonds in a passive investment strategy",
+    "relevantDocumentIds": ["fiqa-136515", "fiqa-283202", "fiqa-248158", "fiqa-503637"]
+  },
+  {
+    "id": "fiqa-q529",
+    "query": "Sole proprietorship or LLC?",
+    "relevantDocumentIds": ["fiqa-510701"]
+  },
+  {
+    "id": "fiqa-q2118",
+    "query": "What happened in Argentina in 2001 bank sector? did the banks closed? all or some?",
+    "relevantDocumentIds": ["fiqa-411061"]
+  },
+  {
+    "id": "fiqa-q3148",
+    "query": "Can a car company refuse to give me a copy of my contract or balance details?",
+    "relevantDocumentIds": ["fiqa-178127", "fiqa-584305", "fiqa-438000", "fiqa-92888", "fiqa-172855"]
+  },
+  {
+    "id": "fiqa-q4955",
+    "query": "How to calculate the value of a bond that is priced to yield X%",
+    "relevantDocumentIds": ["fiqa-581318"]
+  },
+  {
+    "id": "fiqa-q8275",
+    "query": "Buy/Selling prices at the stock exchange represent someone Selling/Buying at that price?",
+    "relevantDocumentIds": ["fiqa-294867"]
+  },
+  {
+    "id": "fiqa-q4678",
+    "query": "Finance, Cash or Lease?",
+    "relevantDocumentIds": ["fiqa-305153"]
+  },
+  {
+    "id": "fiqa-q2398",
+    "query": "Frustrated Landlord",
+    "relevantDocumentIds": ["fiqa-118730", "fiqa-509391", "fiqa-363810", "fiqa-224654", "fiqa-590489"]
+  },
+  {
+    "id": "fiqa-q3569",
+    "query": "Funds in closed bank account have gone to the government",
+    "relevantDocumentIds": ["fiqa-450135"]
+  },
+  {
+    "id": "fiqa-q8072",
+    "query": "What does it mean “sell on ask” , “sell on bid” in stocks?",
+    "relevantDocumentIds": ["fiqa-394244", "fiqa-169062", "fiqa-31465"]
+  },
+  {
+    "id": "fiqa-q7734",
+    "query": "Can PE ratio of stocks be compared to other investments?",
+    "relevantDocumentIds": ["fiqa-226070", "fiqa-433905"]
+  },
+  {
+    "id": "fiqa-q8947",
+    "query": "Can a Roth IRA be used as a savings account?",
+    "relevantDocumentIds": ["fiqa-455398", "fiqa-461592"]
+  },
+  {
+    "id": "fiqa-q6746",
+    "query": "What happens if stock purchased on margin plummets below what I have in the brokerage?",
+    "relevantDocumentIds": ["fiqa-210887", "fiqa-333674"]
+  },
+  {
+    "id": "fiqa-q5511",
+    "query": "Pay off car loan entirely or leave $1 until the end of the loan period?",
+    "relevantDocumentIds": [
+      "fiqa-169893",
+      "fiqa-107898",
+      "fiqa-529123",
+      "fiqa-560325",
+      "fiqa-478426",
+      "fiqa-383193",
+      "fiqa-114303",
+      "fiqa-278699",
+      "fiqa-12746",
+      "fiqa-51873"
+    ]
+  },
+  {
+    "id": "fiqa-q6009",
+    "query": "Why can low volume move a stock price drastically?",
+    "relevantDocumentIds": ["fiqa-228983"]
+  },
+  {
+    "id": "fiqa-q813",
+    "query": "Income Tax and Investments",
+    "relevantDocumentIds": ["fiqa-106501", "fiqa-436701"]
+  },
+  {
+    "id": "fiqa-q8834",
+    "query": "Pros/Cons of Buying Discounted Company Stock",
+    "relevantDocumentIds": ["fiqa-133644", "fiqa-521095", "fiqa-12232", "fiqa-197151", "fiqa-203139", "fiqa-569303"]
+  },
+  {
+    "id": "fiqa-q1157",
+    "query": "Personal taxes for Shopify / Paypal shop?",
+    "relevantDocumentIds": ["fiqa-272425", "fiqa-405777"]
+  },
+  {
+    "id": "fiqa-q988",
+    "query": "Where should I invest my savings?",
+    "relevantDocumentIds": ["fiqa-226053", "fiqa-107688"]
+  },
+  {
+    "id": "fiqa-q3369",
+    "query": "Why should one only contribute up to the employer's match in a 401(k)?",
+    "relevantDocumentIds": ["fiqa-371886", "fiqa-163834", "fiqa-231012", "fiqa-145716", "fiqa-411910", "fiqa-395840"]
+  },
+  {
+    "id": "fiqa-q9296",
+    "query": "Why would Two ETFs tracking Identical Indexes Produce different Returns?",
+    "relevantDocumentIds": ["fiqa-435746", "fiqa-206744"]
+  },
+  {
+    "id": "fiqa-q9643",
+    "query": "Is there any public data available to determine an ETF's holdings?",
+    "relevantDocumentIds": ["fiqa-112208"]
+  },
+  {
+    "id": "fiqa-q9245",
+    "query": "Stock Options for a company bought out in cash and stock",
+    "relevantDocumentIds": ["fiqa-194561"]
+  },
+  {
+    "id": "fiqa-q3490",
+    "query": "Tax Witholding for Stock Sale",
+    "relevantDocumentIds": ["fiqa-420529"]
+  },
+  {
+    "id": "fiqa-q5763",
+    "query": "What is the best way to get a “rough” home appraisal prior to starting the refinance process?",
+    "relevantDocumentIds": ["fiqa-89964", "fiqa-515361", "fiqa-462019"]
+  },
+  {
+    "id": "fiqa-q26",
+    "query": "Applying for and receiving business credit",
+    "relevantDocumentIds": ["fiqa-285255", "fiqa-350819"]
+  },
+  {
+    "id": "fiqa-q4962",
+    "query": "Net Cash Flows from Selling the Bond and Investing",
+    "relevantDocumentIds": ["fiqa-158363", "fiqa-599925"]
+  },
+  {
+    "id": "fiqa-q4846",
+    "query": "Is there anything comparable to/resembling CNN's Fear and Greed Index?",
+    "relevantDocumentIds": ["fiqa-151104", "fiqa-323749"]
+  },
+  {
+    "id": "fiqa-q2460",
+    "query": "What are the consequences of not respecting a notice period when leaving a job?",
+    "relevantDocumentIds": ["fiqa-584337", "fiqa-549180", "fiqa-530037"]
+  },
+  {
+    "id": "fiqa-q9403",
+    "query": "Abundance of Cash - What should I do?",
+    "relevantDocumentIds": ["fiqa-6666", "fiqa-328086", "fiqa-345199"]
+  },
+  {
+    "id": "fiqa-q5646",
+    "query": "Do I need multiple credit monitoring services?",
+    "relevantDocumentIds": ["fiqa-200972", "fiqa-426510", "fiqa-516413"]
+  },
+  {
+    "id": "fiqa-q3503",
+    "query": "Is there any instance where less leverage will get you a better return on a rental property?",
+    "relevantDocumentIds": [
+      "fiqa-345294",
+      "fiqa-297764",
+      "fiqa-63091",
+      "fiqa-177563",
+      "fiqa-482077",
+      "fiqa-360621",
+      "fiqa-89509"
+    ]
+  },
+  {
+    "id": "fiqa-q2676",
+    "query": "Tax question about selling a car",
+    "relevantDocumentIds": ["fiqa-55666"]
+  },
+  {
+    "id": "fiqa-q929",
+    "query": "Freelancer: Should I start a second bank account?",
+    "relevantDocumentIds": ["fiqa-367754"]
+  },
+  {
+    "id": "fiqa-q5993",
+    "query": "Why would anyone want to pay off their debts in a way other than “highest interest” first?",
+    "relevantDocumentIds": [
+      "fiqa-94373",
+      "fiqa-367375",
+      "fiqa-287571",
+      "fiqa-224918",
+      "fiqa-128574",
+      "fiqa-431212",
+      "fiqa-272866",
+      "fiqa-230215",
+      "fiqa-55084",
+      "fiqa-160193",
+      "fiqa-5827",
+      "fiqa-352638",
+      "fiqa-63690",
+      "fiqa-426120",
+      "fiqa-63501"
+    ]
+  },
+  {
+    "id": "fiqa-q10845",
+    "query": "Rationale behind using 12, 26 and 9 to calculate MACD",
+    "relevantDocumentIds": ["fiqa-191588"]
+  },
+  {
+    "id": "fiqa-q8116",
+    "query": "A-B-C Class Shares: What's the difference?",
+    "relevantDocumentIds": ["fiqa-236482", "fiqa-433032"]
+  },
+  {
+    "id": "fiqa-q9633",
+    "query": "Video recommendation for stock market education",
+    "relevantDocumentIds": ["fiqa-534418", "fiqa-585447"]
+  },
+  {
+    "id": "fiqa-q5710",
+    "query": "Bucketing investments to track individual growths",
+    "relevantDocumentIds": ["fiqa-232311"]
+  },
+  {
+    "id": "fiqa-q9824",
+    "query": "Where can end-of-day data be downloaded for corporate bonds?",
+    "relevantDocumentIds": ["fiqa-574777"]
+  },
+  {
+    "id": "fiqa-q7529",
+    "query": "Does the expense ratio of a fund-of-funds include the expense ratios of its holdings?",
+    "relevantDocumentIds": ["fiqa-66607", "fiqa-293626"]
+  },
+  {
+    "id": "fiqa-q475",
+    "query": "Do I need a new EIN since I am hiring employees for my LLC?",
+    "relevantDocumentIds": ["fiqa-366761"]
+  },
+  {
+    "id": "fiqa-q5021",
+    "query": "Is there a more flexible stock chart service, e.g. permitting choice of colours when comparing multiple stocks?",
+    "relevantDocumentIds": ["fiqa-589285"]
+  },
+  {
+    "id": "fiqa-q9548",
+    "query": "How do I research, analyze, and choose the right mutual fund for a roth ira?",
+    "relevantDocumentIds": ["fiqa-297290"]
+  },
+  {
+    "id": "fiqa-q7592",
+    "query": "few question about debit credit and liabilities",
+    "relevantDocumentIds": ["fiqa-273947"]
+  },
+  {
+    "id": "fiqa-q2968",
+    "query": "Should I prioritize retirement savings inside of my HSA?",
+    "relevantDocumentIds": ["fiqa-242124", "fiqa-388646"]
+  },
+  {
+    "id": "fiqa-q7758",
+    "query": "Bid/ask spreads for index funds",
+    "relevantDocumentIds": ["fiqa-574327"]
+  },
+  {
+    "id": "fiqa-q3612",
+    "query": "How can I buy and sell the same stock on the same day?",
+    "relevantDocumentIds": ["fiqa-402726", "fiqa-584291", "fiqa-259625", "fiqa-212687"]
+  },
+  {
+    "id": "fiqa-q10596",
+    "query": "Does a market maker sell (buy) at a bid or ask price?",
+    "relevantDocumentIds": ["fiqa-284235", "fiqa-316838", "fiqa-208070", "fiqa-164008", "fiqa-413041"]
+  },
+  {
+    "id": "fiqa-q4153",
+    "query": "How do I invest in emerging markets",
+    "relevantDocumentIds": ["fiqa-459596"]
+  },
+  {
+    "id": "fiqa-q4409",
+    "query": "My friend wants to put my name down for a house he's buying. What risks would I be taking?",
+    "relevantDocumentIds": [
+      "fiqa-426676",
+      "fiqa-102326",
+      "fiqa-115066",
+      "fiqa-499128",
+      "fiqa-97925",
+      "fiqa-100306",
+      "fiqa-245903",
+      "fiqa-147439",
+      "fiqa-102088",
+      "fiqa-360682"
+    ]
+  },
+  {
+    "id": "fiqa-q5369",
+    "query": "Paying for things on credit and immediately paying them off: any help for credit rating?",
+    "relevantDocumentIds": ["fiqa-171339", "fiqa-44223"]
+  },
+  {
+    "id": "fiqa-q2070",
+    "query": "Advantage of credit union or local community bank over larger nationwide banks such as BOA, Chase, etc.?",
+    "relevantDocumentIds": ["fiqa-136438", "fiqa-363678", "fiqa-30253"]
+  },
+  {
+    "id": "fiqa-q5505",
+    "query": "Can I deduct interest and fees on a loan for qualified medical expenses?",
+    "relevantDocumentIds": ["fiqa-100387"]
+  },
+  {
+    "id": "fiqa-q6611",
+    "query": "How does Vanguard determine the optimal asset allocation for their Target Retirement Funds?",
+    "relevantDocumentIds": ["fiqa-293679", "fiqa-198764"]
+  },
+  {
+    "id": "fiqa-q11039",
+    "query": "Pay off credit card debt or earn employer 401(k) match?",
+    "relevantDocumentIds": [
+      "fiqa-53544",
+      "fiqa-202768",
+      "fiqa-353625",
+      "fiqa-293531",
+      "fiqa-249063",
+      "fiqa-79363",
+      "fiqa-330058",
+      "fiqa-91183"
+    ]
+  },
+  {
+    "id": "fiqa-q5460",
+    "query": "Paying off a loan with a loan to get a better interest rate",
+    "relevantDocumentIds": ["fiqa-93248", "fiqa-184337", "fiqa-21174", "fiqa-108514", "fiqa-463885"]
+  },
+  {
+    "id": "fiqa-q7925",
+    "query": "Can I sell a stock immediately?",
+    "relevantDocumentIds": ["fiqa-318185", "fiqa-251100", "fiqa-503912", "fiqa-310636", "fiqa-402482", "fiqa-438974"]
+  },
+  {
+    "id": "fiqa-q4286",
+    "query": "Given advice “buy term insurance and invest the rest”, how should one “invest the rest”?",
+    "relevantDocumentIds": ["fiqa-70460", "fiqa-566069"]
+  },
+  {
+    "id": "fiqa-q3789",
+    "query": "How to work around the Owner Occupancy Affidavit to buy another home in less than a year?",
+    "relevantDocumentIds": ["fiqa-459724", "fiqa-274573", "fiqa-492856", "fiqa-571131"]
+  },
+  {
+    "id": "fiqa-q5228",
+    "query": "How does the bank/IRS know whether a bank transfer over $14k is a gift or loan repayment?",
+    "relevantDocumentIds": ["fiqa-232451"]
+  },
+  {
+    "id": "fiqa-q2685",
+    "query": "What ways are there for us to earn a little extra side money?",
+    "relevantDocumentIds": [
+      "fiqa-384532",
+      "fiqa-154113",
+      "fiqa-370300",
+      "fiqa-37900",
+      "fiqa-382005",
+      "fiqa-303293",
+      "fiqa-594182",
+      "fiqa-468923"
+    ]
+  },
+  {
+    "id": "fiqa-q8702",
+    "query": "Why is early exercise generally not recommended for an in-the-money option?",
+    "relevantDocumentIds": ["fiqa-135363", "fiqa-345410", "fiqa-157759"]
+  },
+  {
+    "id": "fiqa-q1877",
+    "query": "As a Sole Proprietor, will “employer” Solo 401k contributions count towards gross income?",
+    "relevantDocumentIds": ["fiqa-178697"]
+  },
+  {
+    "id": "fiqa-q10645",
+    "query": "Explain the details and benefits of rebalancing a retirement portfolio?",
+    "relevantDocumentIds": ["fiqa-588607", "fiqa-22221"]
+  },
+  {
+    "id": "fiqa-q1090",
+    "query": "Need a formula to determine monthly payments received at time t if I'm reinvesting my returns",
+    "relevantDocumentIds": ["fiqa-518896", "fiqa-203091"]
+  },
+  {
+    "id": "fiqa-q7080",
+    "query": "Wash sale rule with dividend reinvestment",
+    "relevantDocumentIds": ["fiqa-517577", "fiqa-596518"]
+  },
+  {
+    "id": "fiqa-q6122",
+    "query": "Better to rent condo to daughter or put her on title?",
+    "relevantDocumentIds": ["fiqa-496166", "fiqa-169824", "fiqa-44344"]
+  },
+  {
+    "id": "fiqa-q3682",
+    "query": "Short selling - lender's motivation",
+    "relevantDocumentIds": ["fiqa-356161", "fiqa-329662"]
+  },
+  {
+    "id": "fiqa-q4514",
+    "query": "What intrinsic, non-monetary value does gold have as a commodity?",
+    "relevantDocumentIds": ["fiqa-352485", "fiqa-69485", "fiqa-337764", "fiqa-156211", "fiqa-426270", "fiqa-209804"]
+  },
+  {
+    "id": "fiqa-q8507",
+    "query": "When to sell a stock?",
+    "relevantDocumentIds": ["fiqa-509819", "fiqa-370995", "fiqa-351615"]
+  },
+  {
+    "id": "fiqa-q6221",
+    "query": "To pay off a student loan, should I save up a lump sum payoff payment or pay extra each month?",
+    "relevantDocumentIds": [
+      "fiqa-128698",
+      "fiqa-470716",
+      "fiqa-257248",
+      "fiqa-519675",
+      "fiqa-76414",
+      "fiqa-169688",
+      "fiqa-455614",
+      "fiqa-115717"
+    ]
+  },
+  {
+    "id": "fiqa-q1819",
+    "query": "Found an old un-cashed paycheck. How long is it good for? What to do if it's expired?",
+    "relevantDocumentIds": ["fiqa-376499", "fiqa-66058", "fiqa-212713", "fiqa-267362", "fiqa-250285", "fiqa-220691"]
+  },
+  {
+    "id": "fiqa-q6468",
+    "query": "Why deep in the money options have very low liquidity",
+    "relevantDocumentIds": ["fiqa-548970", "fiqa-332069"]
+  },
+  {
+    "id": "fiqa-q3008",
+    "query": "What are my chances at getting a mortgage with Terrible credit but High income",
+    "relevantDocumentIds": ["fiqa-231688", "fiqa-180192", "fiqa-407401", "fiqa-323406"]
+  },
+  {
+    "id": "fiqa-q9925",
+    "query": "What does Chapter 11 Bankruptcy mean to an investor holding shares of a Chapter 11 Company?",
+    "relevantDocumentIds": ["fiqa-374309", "fiqa-289120"]
+  },
+  {
+    "id": "fiqa-q4007",
+    "query": "What is a reasonable salary for the owner and sole member of a small S-Corp?",
+    "relevantDocumentIds": ["fiqa-556220", "fiqa-388704", "fiqa-521657"]
+  },
+  {
+    "id": "fiqa-q6644",
+    "query": "How to know precisely when a SWIFT is issued by a bank?",
+    "relevantDocumentIds": ["fiqa-175035"]
+  },
+  {
+    "id": "fiqa-q6420",
+    "query": "Does the bid/ask concept exist in dealer markets?",
+    "relevantDocumentIds": ["fiqa-565568", "fiqa-127452"]
+  },
+  {
+    "id": "fiqa-q6713",
+    "query": "Will my father still be eligible for SNAP if I claim him as my dependent?",
+    "relevantDocumentIds": ["fiqa-147853", "fiqa-357571"]
+  },
+  {
+    "id": "fiqa-q4844",
+    "query": "How to read bond yield quotes? What do the time, coupon, price, yield, and time mean?",
+    "relevantDocumentIds": ["fiqa-275257", "fiqa-192193"]
+  },
+  {
+    "id": "fiqa-q7463",
+    "query": "Pros/cons of borrowing money using a mortgage loan and investing it in a low-fee index fund?",
+    "relevantDocumentIds": ["fiqa-577951", "fiqa-582005", "fiqa-105634", "fiqa-305287", "fiqa-5152"]
+  },
+  {
+    "id": "fiqa-q6479",
+    "query": "Trading on exchanges or via brokerage companies?",
+    "relevantDocumentIds": ["fiqa-272008", "fiqa-404339"]
+  },
+  {
+    "id": "fiqa-q10267",
+    "query": "How should I prepare for the next financial crisis?",
+    "relevantDocumentIds": ["fiqa-17652", "fiqa-457108", "fiqa-424511", "fiqa-328556", "fiqa-460398"]
+  },
+  {
+    "id": "fiqa-q7622",
+    "query": "Best way to pay off debt?",
+    "relevantDocumentIds": ["fiqa-253369", "fiqa-378594"]
+  },
+  {
+    "id": "fiqa-q10979",
+    "query": "Closing a futures position",
+    "relevantDocumentIds": ["fiqa-148728", "fiqa-164001", "fiqa-362762", "fiqa-121158"]
+  },
+  {
+    "id": "fiqa-q2498",
+    "query": "How do I calculate tax liability on the turnover of a small vendor?",
+    "relevantDocumentIds": ["fiqa-365456"]
+  },
+  {
+    "id": "fiqa-q2010",
+    "query": "Paypal website donations without being a charity",
+    "relevantDocumentIds": ["fiqa-44256", "fiqa-233877", "fiqa-174034"]
+  },
+  {
+    "id": "fiqa-q3767",
+    "query": "What should I be doing to protect myself from identity theft?",
+    "relevantDocumentIds": ["fiqa-368679", "fiqa-153922", "fiqa-392060", "fiqa-520395", "fiqa-320246"]
+  },
+  {
+    "id": "fiqa-q7145",
+    "query": "Are there “buy and hold” passively managed funds?",
+    "relevantDocumentIds": ["fiqa-81458", "fiqa-17923", "fiqa-116865"]
+  },
+  {
+    "id": "fiqa-q6554",
+    "query": "Mutual fund value went down, shares went up, no action taken by me",
+    "relevantDocumentIds": ["fiqa-583203", "fiqa-22469"]
+  },
+  {
+    "id": "fiqa-q9556",
+    "query": "How does pre-market trading work?",
+    "relevantDocumentIds": ["fiqa-37040"]
+  },
+  {
+    "id": "fiqa-q2445",
+    "query": "How do I notify the IRS of a new member to an LLC?",
+    "relevantDocumentIds": ["fiqa-431685"]
+  },
+  {
+    "id": "fiqa-q6410",
+    "query": "Will an ETF immediately reflect a reconstitution of underlying index",
+    "relevantDocumentIds": ["fiqa-471723"]
+  },
+  {
+    "id": "fiqa-q5155",
+    "query": "For insurance, why should you refuse $4,000/year for only 10 years and prefer $500/year indefinitely?",
+    "relevantDocumentIds": ["fiqa-462892"]
+  },
+  {
+    "id": "fiqa-q5030",
+    "query": "Why pay for end-of-day historical prices?",
+    "relevantDocumentIds": ["fiqa-215540"]
+  },
+  {
+    "id": "fiqa-q6252",
+    "query": "Is this mortgage advice good, or is it hooey?",
+    "relevantDocumentIds": [
+      "fiqa-394551",
+      "fiqa-160932",
+      "fiqa-293624",
+      "fiqa-233294",
+      "fiqa-243268",
+      "fiqa-379487",
+      "fiqa-62868"
+    ]
+  },
+  {
+    "id": "fiqa-q885",
+    "query": "How long do credit cards keep working after you disappear?",
+    "relevantDocumentIds": ["fiqa-337165", "fiqa-409184"]
+  },
+  {
+    "id": "fiqa-q7377",
+    "query": "What type of returns Vanguard is quoting?",
+    "relevantDocumentIds": ["fiqa-579557"]
+  },
+  {
+    "id": "fiqa-q4031",
+    "query": "28 years old and just inherited large amount of money and real estate - unsure what to do with it",
+    "relevantDocumentIds": ["fiqa-115741"]
+  },
+  {
+    "id": "fiqa-q766",
+    "query": "Will the ex-homeowner still owe money after a foreclosure?",
+    "relevantDocumentIds": ["fiqa-2996", "fiqa-387218", "fiqa-550172"]
+  },
+  {
+    "id": "fiqa-q8779",
+    "query": "How does a defined contribution plan work",
+    "relevantDocumentIds": ["fiqa-180571", "fiqa-209730"]
+  },
+  {
+    "id": "fiqa-q2183",
+    "query": "Why are there many small banks and more banks in the U.S.?",
+    "relevantDocumentIds": ["fiqa-132678", "fiqa-124427", "fiqa-571625", "fiqa-498146", "fiqa-24994", "fiqa-24344"]
+  },
+  {
+    "id": "fiqa-q6219",
+    "query": "Are there Investable Real Estate Indices which track Geographical Locations?",
+    "relevantDocumentIds": ["fiqa-48946", "fiqa-146924"]
+  },
+  {
+    "id": "fiqa-q6849",
+    "query": "What do the points in a stock market index epresent?",
+    "relevantDocumentIds": ["fiqa-44601"]
+  },
+  {
+    "id": "fiqa-q8079",
+    "query": "Growth rate plus dividend yieid total?",
+    "relevantDocumentIds": ["fiqa-108040", "fiqa-57138", "fiqa-95278"]
+  },
+  {
+    "id": "fiqa-q5086",
+    "query": "Mortgage loan implications when tearing down existing house and building new one?",
+    "relevantDocumentIds": ["fiqa-96606"]
+  },
+  {
+    "id": "fiqa-q8202",
+    "query": "What accounted for DXJR's huge drop in stock price?",
+    "relevantDocumentIds": ["fiqa-513258", "fiqa-93971"]
+  },
+  {
+    "id": "fiqa-q7345",
+    "query": "What do these numbers mean? (futures)",
+    "relevantDocumentIds": ["fiqa-508821", "fiqa-237645", "fiqa-527080"]
+  },
+  {
+    "id": "fiqa-q2648",
+    "query": "How does unemployment insurance work?",
+    "relevantDocumentIds": ["fiqa-307120"]
+  },
+  {
+    "id": "fiqa-q7441",
+    "query": "Since many brokers disallow investors from shorting sub-$5 stocks, why don't all companies split their stock until it is sub-$5",
+    "relevantDocumentIds": ["fiqa-537418", "fiqa-514500", "fiqa-117576"]
+  },
+  {
+    "id": "fiqa-q776",
+    "query": "Can saving/investing 15% of your income starting age 25, likely make you a millionaire?",
+    "relevantDocumentIds": [
+      "fiqa-467044",
+      "fiqa-583640",
+      "fiqa-597247",
+      "fiqa-124027",
+      "fiqa-592680",
+      "fiqa-10440",
+      "fiqa-127263",
+      "fiqa-332373",
+      "fiqa-220127",
+      "fiqa-597880",
+      "fiqa-496899",
+      "fiqa-591516"
+    ]
+  },
+  {
+    "id": "fiqa-q5125",
+    "query": "Regarding Australian CBS takeover of TEN",
+    "relevantDocumentIds": ["fiqa-318728"]
+  },
+  {
+    "id": "fiqa-q89",
+    "query": "How can I deposit a check made out to my business into my personal account?",
+    "relevantDocumentIds": ["fiqa-413229", "fiqa-590102", "fiqa-268026", "fiqa-248624", "fiqa-508754", "fiqa-64556"]
+  },
+  {
+    "id": "fiqa-q9329",
+    "query": "Interactive Brokers: IOPTS and list of structured products",
+    "relevantDocumentIds": ["fiqa-523913", "fiqa-326991"]
+  },
+  {
+    "id": "fiqa-q2516",
+    "query": "Which banks have cash-deposit machines in Germany?",
+    "relevantDocumentIds": ["fiqa-505678", "fiqa-199508", "fiqa-446340", "fiqa-566602"]
+  },
+  {
+    "id": "fiqa-q6629",
+    "query": "Tax treatment of a boxed trade?",
+    "relevantDocumentIds": ["fiqa-444405"]
+  },
+  {
+    "id": "fiqa-q8970",
+    "query": "What's the difference, if any, between stock appreciation and compound interest?",
+    "relevantDocumentIds": ["fiqa-187583", "fiqa-96121"]
+  },
+  {
+    "id": "fiqa-q4484",
+    "query": "Has the likelihood of getting a lower interest rate by calling & asking been reduced by recent credit card regulations?",
+    "relevantDocumentIds": ["fiqa-33990"]
+  },
+  {
+    "id": "fiqa-q1451",
+    "query": "How do you find an ethical, honest independent insurance broker in Canada?",
+    "relevantDocumentIds": ["fiqa-538005"]
+  },
+  {
+    "id": "fiqa-q1889",
+    "query": "Reporting financial gains from my online store",
+    "relevantDocumentIds": ["fiqa-388713"]
+  },
+  {
+    "id": "fiqa-q1920",
+    "query": "Clarification on student expenses - To file the tax for the next year",
+    "relevantDocumentIds": ["fiqa-269943"]
+  },
+  {
+    "id": "fiqa-q8013",
+    "query": "Frequency of investments to maximise returns (and minimise fees)",
+    "relevantDocumentIds": ["fiqa-496159", "fiqa-224231"]
+  },
+  {
+    "id": "fiqa-q3759",
+    "query": "Simplifying money management",
+    "relevantDocumentIds": ["fiqa-527966", "fiqa-67167", "fiqa-522358"]
+  },
+  {
+    "id": "fiqa-q7295",
+    "query": "Selling non-dividend for dividend stocks",
+    "relevantDocumentIds": ["fiqa-244749"]
+  },
+  {
+    "id": "fiqa-q7448",
+    "query": "If an index goes up because an underlying company issues more shares, what happens to the ETF",
+    "relevantDocumentIds": ["fiqa-418150"]
+  },
+  {
+    "id": "fiqa-q7329",
+    "query": "Does Implied Volatilty factor in all known future events?",
+    "relevantDocumentIds": ["fiqa-118520", "fiqa-325330"]
+  },
+  {
+    "id": "fiqa-q10639",
+    "query": "Short term parking of a large inheritance?",
+    "relevantDocumentIds": ["fiqa-431799", "fiqa-495774", "fiqa-278453", "fiqa-163353", "fiqa-187039"]
+  },
+  {
+    "id": "fiqa-q6635",
+    "query": "Why don't share prices of a company rise every other Friday when the company buys shares for its own employees?",
+    "relevantDocumentIds": ["fiqa-102449", "fiqa-587137", "fiqa-3656", "fiqa-156358"]
+  },
+  {
+    "id": "fiqa-q4312",
+    "query": "Is it true that 90% of investors lose their money?",
+    "relevantDocumentIds": [
+      "fiqa-116647",
+      "fiqa-222639",
+      "fiqa-135845",
+      "fiqa-167950",
+      "fiqa-282435",
+      "fiqa-399149",
+      "fiqa-507284"
+    ]
+  },
+  {
+    "id": "fiqa-q1230",
+    "query": "How does Walmart account their expired food",
+    "relevantDocumentIds": ["fiqa-191649"]
+  },
+  {
+    "id": "fiqa-q2486",
+    "query": "Is working on a W2 basis, with benefits paid to me, a good idea?",
+    "relevantDocumentIds": ["fiqa-487791"]
+  },
+  {
+    "id": "fiqa-q6121",
+    "query": "What are my best options if I don't have a lot of credit lines for housing loans?",
+    "relevantDocumentIds": ["fiqa-394460", "fiqa-289231"]
+  },
+  {
+    "id": "fiqa-q859",
+    "query": "Any reason to keep around my account with my old, 'big' bank?",
+    "relevantDocumentIds": ["fiqa-449630", "fiqa-18749"]
+  },
+  {
+    "id": "fiqa-q6525",
+    "query": "Does it make sense to trade my GOOGL shares for GOOG and pocket the difference?",
+    "relevantDocumentIds": ["fiqa-181985", "fiqa-98150", "fiqa-106541"]
+  },
+  {
+    "id": "fiqa-q2590",
+    "query": "Are non-residents or foreigners permitted to buy or own shares of UK companies?",
+    "relevantDocumentIds": ["fiqa-296528", "fiqa-209493", "fiqa-589625"]
+  },
+  {
+    "id": "fiqa-q3781",
+    "query": "What is the rough estimate of salary value for a taxpayer to pay AMT?",
+    "relevantDocumentIds": ["fiqa-131959", "fiqa-413328"]
+  },
+  {
+    "id": "fiqa-q5374",
+    "query": "What were the main causes of the spike and drop of DRYS's stock price?",
+    "relevantDocumentIds": ["fiqa-152688"]
+  },
+  {
+    "id": "fiqa-q1310",
+    "query": "Is is possible to take a mortgage using Bitcoin as collateral?",
+    "relevantDocumentIds": ["fiqa-535651"]
+  },
+  {
+    "id": "fiqa-q8005",
+    "query": "Difference between Vanguard sp500 UCITS and Vanguard sp500",
+    "relevantDocumentIds": ["fiqa-48800"]
+  },
+  {
+    "id": "fiqa-q2994",
+    "query": "Work on the side for my wife's company",
+    "relevantDocumentIds": ["fiqa-419319", "fiqa-318491", "fiqa-569145"]
+  },
+  {
+    "id": "fiqa-q6142",
+    "query": "How does stabilization work during an IPO?",
+    "relevantDocumentIds": ["fiqa-155461", "fiqa-209863"]
+  },
+  {
+    "id": "fiqa-q3125",
+    "query": "Claiming mileage allowances, what are the rules/guidelines?",
+    "relevantDocumentIds": ["fiqa-89008"]
+  },
+  {
+    "id": "fiqa-q8832",
+    "query": "Is it possible to buy commodity ETFs (e.g. silver) through Questrade?",
+    "relevantDocumentIds": ["fiqa-94689"]
+  },
+  {
+    "id": "fiqa-q3683",
+    "query": "Can I trust the Motley Fool?",
+    "relevantDocumentIds": ["fiqa-276975", "fiqa-185909", "fiqa-454501", "fiqa-565016", "fiqa-522713", "fiqa-105973"]
+  },
+  {
+    "id": "fiqa-q939",
+    "query": "How to correct a tax return filed electronically and already approved?",
+    "relevantDocumentIds": ["fiqa-392434"]
+  },
+  {
+    "id": "fiqa-q7206",
+    "query": "Who Bought A Large Number Of Shares?",
+    "relevantDocumentIds": ["fiqa-441155", "fiqa-532211", "fiqa-553066"]
+  },
+  {
+    "id": "fiqa-q10246",
+    "query": "Understanding the T + 3 settlement days rule",
+    "relevantDocumentIds": ["fiqa-512984", "fiqa-77573"]
+  },
+  {
+    "id": "fiqa-q5241",
+    "query": "Mortgage vs. Cash for U.S. home buy now",
+    "relevantDocumentIds": ["fiqa-376123", "fiqa-234286", "fiqa-322157", "fiqa-344740", "fiqa-27489"]
+  },
+  {
+    "id": "fiqa-q8121",
+    "query": "Can I calculate stock value with Williams%R if I know the last set?",
+    "relevantDocumentIds": ["fiqa-432424"]
+  },
+  {
+    "id": "fiqa-q98",
+    "query": "How can I make $250,000.00 from trading/investing/business within 5 years?",
+    "relevantDocumentIds": ["fiqa-575929", "fiqa-527522"]
+  },
+  {
+    "id": "fiqa-q5064",
+    "query": "How much should a graduate student attempt to save?",
+    "relevantDocumentIds": ["fiqa-2003", "fiqa-192811"]
+  },
+  {
+    "id": "fiqa-q4615",
+    "query": "Are solar cell panels and wind mills worth the money?",
+    "relevantDocumentIds": ["fiqa-496427", "fiqa-261900", "fiqa-262934", "fiqa-69523", "fiqa-421365", "fiqa-596196"]
+  },
+  {
+    "id": "fiqa-q7467",
+    "query": "Stocks are traded on secondary markets?",
+    "relevantDocumentIds": ["fiqa-193312"]
+  },
+  {
+    "id": "fiqa-q1676",
+    "query": "W2 vs 1099 Employee status",
+    "relevantDocumentIds": ["fiqa-77245", "fiqa-394871", "fiqa-58937", "fiqa-234436"]
+  },
+  {
+    "id": "fiqa-q503",
+    "query": "Privacy preferences on creditworthiness data",
+    "relevantDocumentIds": ["fiqa-367641"]
+  },
+  {
+    "id": "fiqa-q3264",
+    "query": "Pros and Cons of Interest Only Loans",
+    "relevantDocumentIds": ["fiqa-598807", "fiqa-134764", "fiqa-486525", "fiqa-260383"]
+  },
+  {
+    "id": "fiqa-q6467",
+    "query": "Advice on strategy for when to sell",
+    "relevantDocumentIds": ["fiqa-453256", "fiqa-66834", "fiqa-23217", "fiqa-346641", "fiqa-367313"]
+  },
+  {
+    "id": "fiqa-q4289",
+    "query": "Does the currency exchange rate contain any additional information at all?",
+    "relevantDocumentIds": ["fiqa-288330", "fiqa-24881"]
+  },
+  {
+    "id": "fiqa-q4394",
+    "query": "Transfer $50k to another person's account (in California, USA)",
+    "relevantDocumentIds": ["fiqa-336045", "fiqa-441582"]
+  },
+  {
+    "id": "fiqa-q4047",
+    "query": "Does doing your “research”/“homework” on stocks make any sense?",
+    "relevantDocumentIds": ["fiqa-417840", "fiqa-452175", "fiqa-77652", "fiqa-324779"]
+  },
+  {
+    "id": "fiqa-q1815",
+    "query": "Rules for SEP contributions in an LLC?",
+    "relevantDocumentIds": ["fiqa-446928"]
+  },
+  {
+    "id": "fiqa-q7218",
+    "query": "What margin is required to initiate and maintain a short sale",
+    "relevantDocumentIds": ["fiqa-32290"]
+  },
+  {
+    "id": "fiqa-q8982",
+    "query": "Are Exchange-Traded Funds (ETFs) less safe than regular mutual funds?",
+    "relevantDocumentIds": ["fiqa-454610", "fiqa-200360"]
+  },
+  {
+    "id": "fiqa-q8874",
+    "query": "When can you adjust for (and re-allow) a disallowed year-end (December) wash-sale loss?",
+    "relevantDocumentIds": ["fiqa-403025"]
+  },
+  {
+    "id": "fiqa-q549",
+    "query": "Where to request ACH Direct DEBIT of funds from MY OWN personal bank account?",
+    "relevantDocumentIds": ["fiqa-214024"]
+  },
+  {
+    "id": "fiqa-q2407",
+    "query": "How long to wait after getting a mortgage to increase my credit limit?",
+    "relevantDocumentIds": ["fiqa-294327", "fiqa-2064", "fiqa-319734", "fiqa-173929"]
+  },
+  {
+    "id": "fiqa-q8937",
+    "query": "“In-the-Money” vs “Out-of-the-Money” Call Options",
+    "relevantDocumentIds": ["fiqa-469888"]
+  },
+  {
+    "id": "fiqa-q7344",
+    "query": "How is the Dow divisor calculated?",
+    "relevantDocumentIds": ["fiqa-14368", "fiqa-108403"]
+  },
+  {
+    "id": "fiqa-q2856",
+    "query": "How can I cash out a check internationally?",
+    "relevantDocumentIds": ["fiqa-231727", "fiqa-213331", "fiqa-110848", "fiqa-342212"]
+  },
+  {
+    "id": "fiqa-q7801",
+    "query": "What are some well known or well regarded arguments against investing?",
+    "relevantDocumentIds": ["fiqa-252574", "fiqa-427592"]
+  },
+  {
+    "id": "fiqa-q2395",
+    "query": "Freelance site with lowest commission fees?",
+    "relevantDocumentIds": ["fiqa-179066"]
+  },
+  {
+    "id": "fiqa-q6875",
+    "query": "Where to find free Thailand stock recommendations and research?",
+    "relevantDocumentIds": ["fiqa-224392"]
+  },
+  {
+    "id": "fiqa-q6891",
+    "query": "What is the theory behind Rick Van Ness's risk calculation in the video about diversification?",
+    "relevantDocumentIds": ["fiqa-277217", "fiqa-463837", "fiqa-474351"]
+  },
+  {
+    "id": "fiqa-q7702",
+    "query": "Bond ETFs vs actual bonds",
+    "relevantDocumentIds": ["fiqa-387277", "fiqa-558924"]
+  },
+  {
+    "id": "fiqa-q2695",
+    "query": "Buy a parking spot and rent it out, or invest savings in an interest-bearing account?",
+    "relevantDocumentIds": ["fiqa-305904"]
+  },
+  {
+    "id": "fiqa-q5616",
+    "query": "How and where do companies publish financial reports?",
+    "relevantDocumentIds": ["fiqa-391291"]
+  },
+  {
+    "id": "fiqa-q928",
+    "query": "How can I determine if a FHA loan refinance offer is from a reputable lender",
+    "relevantDocumentIds": ["fiqa-349866", "fiqa-11572"]
+  },
+  {
+    "id": "fiqa-q10447",
+    "query": "Is there an advantage to a traditional but non-deductable IRA over a taxable account? [duplicate]",
+    "relevantDocumentIds": ["fiqa-382236", "fiqa-152096", "fiqa-300721"]
+  },
+  {
+    "id": "fiqa-q5427",
+    "query": "How do auto-loan payments factor into taxes for cars that are solely used by dependent(s)?",
+    "relevantDocumentIds": ["fiqa-200603", "fiqa-323284"]
+  },
+  {
+    "id": "fiqa-q2587",
+    "query": "Typically how many digits are in a cheque number?",
+    "relevantDocumentIds": ["fiqa-89326"]
+  },
+  {
+    "id": "fiqa-q5782",
+    "query": "Pay off credit cards in one lump sum, or spread over a few months?",
+    "relevantDocumentIds": ["fiqa-172084", "fiqa-379891", "fiqa-319773", "fiqa-448614", "fiqa-595455"]
+  },
+  {
+    "id": "fiqa-q9871",
+    "query": "What should I do with the 50k I have sitting in a European bank?",
+    "relevantDocumentIds": ["fiqa-448890", "fiqa-76562", "fiqa-40051", "fiqa-170594"]
+  },
+  {
+    "id": "fiqa-q6668",
+    "query": "Approximate IT company valuation (to proximate stock options value)",
+    "relevantDocumentIds": ["fiqa-275902", "fiqa-457294"]
+  },
+  {
+    "id": "fiqa-q1284",
+    "query": "Tax consequences when foreign currency changes in value",
+    "relevantDocumentIds": ["fiqa-342411"]
+  },
+  {
+    "id": "fiqa-q2443",
+    "query": "What are some way to transfer money from Hong Kong to India on a monthly basis?",
+    "relevantDocumentIds": ["fiqa-305579"]
+  },
+  {
+    "id": "fiqa-q3179",
+    "query": "Calculation, timing, and taxes related to profit distribution of an S-corp?",
+    "relevantDocumentIds": ["fiqa-150219", "fiqa-385073"]
+  },
+  {
+    "id": "fiqa-q3404",
+    "query": "In US, is it a good idea to hire a tax consultant for doing taxes?",
+    "relevantDocumentIds": [
+      "fiqa-442110",
+      "fiqa-556976",
+      "fiqa-160301",
+      "fiqa-488574",
+      "fiqa-498834",
+      "fiqa-395483",
+      "fiqa-277583"
+    ]
+  },
+  {
+    "id": "fiqa-q3453",
+    "query": "How does spot-futures arbitrage work in the gold market?",
+    "relevantDocumentIds": ["fiqa-418626", "fiqa-233635"]
+  },
+  {
+    "id": "fiqa-q5045",
+    "query": "Why are we taxed on revenue and companies on profit?",
+    "relevantDocumentIds": ["fiqa-264554"]
+  },
+  {
+    "id": "fiqa-q5808",
+    "query": "How do you calculate return on investment for a share of stock?",
+    "relevantDocumentIds": ["fiqa-251824"]
+  },
+  {
+    "id": "fiqa-q4845",
+    "query": "What is the difference between fund and portfolio?",
+    "relevantDocumentIds": ["fiqa-40424", "fiqa-339928", "fiqa-41625"]
+  },
+  {
+    "id": "fiqa-q3625",
+    "query": "What should I do with my paper financial documents?",
+    "relevantDocumentIds": ["fiqa-500751", "fiqa-384469", "fiqa-414295"]
+  },
+  {
+    "id": "fiqa-q6679",
+    "query": "Specifically when do options expire?",
+    "relevantDocumentIds": ["fiqa-242298", "fiqa-581672", "fiqa-358492"]
+  },
+  {
+    "id": "fiqa-q6005",
+    "query": "Why might it be advisable to keep student debt vs. paying it off quickly?",
+    "relevantDocumentIds": [
+      "fiqa-135415",
+      "fiqa-478457",
+      "fiqa-345895",
+      "fiqa-73310",
+      "fiqa-384626",
+      "fiqa-176498",
+      "fiqa-149500",
+      "fiqa-572272",
+      "fiqa-414288",
+      "fiqa-507544",
+      "fiqa-390689",
+      "fiqa-414534",
+      "fiqa-270856"
+    ]
+  },
+  {
+    "id": "fiqa-q8544",
+    "query": "Strategies to recover from a bad short-term call options purchase where the underlying dropped instead?",
+    "relevantDocumentIds": ["fiqa-214003", "fiqa-267113"]
+  },
+  {
+    "id": "fiqa-q4464",
+    "query": "Are Australian mutual fund fees large compared to US?",
+    "relevantDocumentIds": ["fiqa-102904"]
+  },
+  {
+    "id": "fiqa-q3822",
+    "query": "How to change a large quantity of U.S. dollars into Euros?",
+    "relevantDocumentIds": ["fiqa-305907", "fiqa-385090", "fiqa-418900", "fiqa-308837"]
+  },
+  {
+    "id": "fiqa-q7879",
+    "query": "Any Tips on How to Get the Highest Returns Within 4 Months by Investing in Stocks?",
+    "relevantDocumentIds": ["fiqa-102029", "fiqa-372551", "fiqa-421285"]
+  },
+  {
+    "id": "fiqa-q3115",
+    "query": "How can I live outside of the rat race of American life with 300k?",
+    "relevantDocumentIds": ["fiqa-129364", "fiqa-183869", "fiqa-234950", "fiqa-389028", "fiqa-233562", "fiqa-316794"]
+  },
+  {
+    "id": "fiqa-q8512",
+    "query": "Is it possible to transfer stock I already own into my Roth IRA without having to sell the stock?",
+    "relevantDocumentIds": ["fiqa-32811"]
+  },
+  {
+    "id": "fiqa-q3995",
+    "query": "I have more than $250,000 in a US Bank account… mistake?",
+    "relevantDocumentIds": ["fiqa-427032", "fiqa-278734", "fiqa-297900", "fiqa-506909", "fiqa-230208"]
+  },
+  {
+    "id": "fiqa-q559",
+    "query": "Challenged an apparently bogus credit card charge, what happens now?",
+    "relevantDocumentIds": ["fiqa-246459"]
+  },
+  {
+    "id": "fiqa-q3791",
+    "query": "\"When people say 'Interest rates are at all time low!\"\" … Which interest rate are they actually referring to?\"",
+    "relevantDocumentIds": ["fiqa-327432", "fiqa-577201", "fiqa-212222"]
+  },
+  {
+    "id": "fiqa-q8002",
+    "query": "What is the tax treatment of scrip dividends in the UK?",
+    "relevantDocumentIds": ["fiqa-118786", "fiqa-265159", "fiqa-34767"]
+  },
+  {
+    "id": "fiqa-q4179",
+    "query": "Why could the serious financial woes of some EU member states lead to the end of the Euro?",
+    "relevantDocumentIds": ["fiqa-278196"]
+  },
+  {
+    "id": "fiqa-q2891",
+    "query": "May I claim money earned but not received in 2012",
+    "relevantDocumentIds": ["fiqa-31117"]
+  },
+  {
+    "id": "fiqa-q853",
+    "query": "What will my taxes be as self employed?",
+    "relevantDocumentIds": ["fiqa-260795", "fiqa-147080"]
+  },
+  {
+    "id": "fiqa-q10136",
+    "query": "How to minimise the risk of a reduction in purchase power in case of Brexit for money held in a bank account?",
+    "relevantDocumentIds": ["fiqa-526115", "fiqa-152316", "fiqa-290930"]
+  },
+  {
+    "id": "fiqa-q8635",
+    "query": "Is there any flaw in this investment scheme?",
+    "relevantDocumentIds": ["fiqa-67107", "fiqa-240215"]
+  },
+  {
+    "id": "fiqa-q2513",
+    "query": "How does revenue shared with someone else go into my tax return in Canada?",
+    "relevantDocumentIds": ["fiqa-82344"]
+  },
+  {
+    "id": "fiqa-q5206",
+    "query": "Is it a good idea to get an unsecured loan to pay off a credit card that won't lower a high rate?",
+    "relevantDocumentIds": ["fiqa-563030", "fiqa-287157", "fiqa-28230", "fiqa-201982", "fiqa-300660"]
+  },
+  {
+    "id": "fiqa-q8959",
+    "query": "How is the opening-day price of a stock decided?",
+    "relevantDocumentIds": ["fiqa-250164"]
+  },
+  {
+    "id": "fiqa-q4433",
+    "query": "When should you use an actively managed mutual fund in a 401k?",
+    "relevantDocumentIds": ["fiqa-146181", "fiqa-301580"]
+  },
+  {
+    "id": "fiqa-q4188",
+    "query": "Why is the stock market rising after Trump's attack on the TPP?",
+    "relevantDocumentIds": ["fiqa-468108"]
+  },
+  {
+    "id": "fiqa-q2713",
+    "query": "Physical Checks - Mailing",
+    "relevantDocumentIds": ["fiqa-29372", "fiqa-388147"]
+  },
+  {
+    "id": "fiqa-q9060",
+    "query": "Buying puts without owning underlying",
+    "relevantDocumentIds": ["fiqa-511093", "fiqa-40447"]
+  },
+  {
+    "id": "fiqa-q7098",
+    "query": "Can another tax loss be used to offset capital gains taxes? How does it work?",
+    "relevantDocumentIds": ["fiqa-34139", "fiqa-266898"]
+  },
+  {
+    "id": "fiqa-q10628",
+    "query": "What happens with the “long” buyer of a stock when somebody else's short fails (that is, unlimited loss bankrupts short seller)",
+    "relevantDocumentIds": ["fiqa-588116"]
+  },
+  {
+    "id": "fiqa-q6683",
+    "query": "Who are the sellers for the new public stocks?",
+    "relevantDocumentIds": ["fiqa-592187", "fiqa-77631"]
+  },
+  {
+    "id": "fiqa-q10183",
+    "query": "How are various types of income taxed differently in the USA?",
+    "relevantDocumentIds": ["fiqa-66858", "fiqa-314342"]
+  },
+  {
+    "id": "fiqa-q3829",
+    "query": "Are all VISA cards connected with bank accounts?",
+    "relevantDocumentIds": ["fiqa-523850", "fiqa-291438"]
+  },
+  {
+    "id": "fiqa-q5585",
+    "query": "Is there any site you can find out about the 'bonus features' of credit cards?",
+    "relevantDocumentIds": ["fiqa-300117"]
+  },
+  {
+    "id": "fiqa-q4105",
+    "query": "As an investor what are side effects of Quantitative Easing in US and in EU?",
+    "relevantDocumentIds": ["fiqa-166412", "fiqa-25096"]
+  },
+  {
+    "id": "fiqa-q1074",
+    "query": "How common is “pass-through” health insurance?",
+    "relevantDocumentIds": ["fiqa-443960"]
+  },
+  {
+    "id": "fiqa-q2465",
+    "query": "Can capital expenses for volunteer purposes be deducted from income?",
+    "relevantDocumentIds": ["fiqa-570680", "fiqa-81046", "fiqa-546509"]
+  },
+  {
+    "id": "fiqa-q4640",
+    "query": "What can my relatives do to minimize their out of pocket expenses on their fathers estate",
+    "relevantDocumentIds": ["fiqa-322314", "fiqa-101369", "fiqa-540539"]
+  },
+  {
+    "id": "fiqa-q9275",
+    "query": "Do I have to pay a capital gains tax if I rebuy the same stock within 30 days?",
+    "relevantDocumentIds": ["fiqa-338754", "fiqa-14364"]
+  },
+  {
+    "id": "fiqa-q10497",
+    "query": "Why would you elect to apply a refund to next year's tax bill?",
+    "relevantDocumentIds": [
+      "fiqa-304284",
+      "fiqa-147765",
+      "fiqa-34913",
+      "fiqa-398622",
+      "fiqa-575729",
+      "fiqa-31483",
+      "fiqa-159880",
+      "fiqa-71898",
+      "fiqa-196423",
+      "fiqa-445230"
+    ]
+  },
+  {
+    "id": "fiqa-q9481",
+    "query": "What are reasonable administrative fees for an IRA?",
+    "relevantDocumentIds": ["fiqa-30417", "fiqa-402240"]
+  },
+  {
+    "id": "fiqa-q3500",
+    "query": "Why invest in becoming a landlord?",
+    "relevantDocumentIds": ["fiqa-273187", "fiqa-141935", "fiqa-557478", "fiqa-174019", "fiqa-71424", "fiqa-565409"]
+  },
+  {
+    "id": "fiqa-q4205",
+    "query": "How and why does the exchange rate of a currency change almost everyday?",
+    "relevantDocumentIds": ["fiqa-79777", "fiqa-134239", "fiqa-540451"]
+  },
+  {
+    "id": "fiqa-q1306",
+    "query": "I made an investment with a company that contacted me, was it safe?",
+    "relevantDocumentIds": ["fiqa-594206", "fiqa-484437", "fiqa-204075", "fiqa-167684"]
+  },
+  {
+    "id": "fiqa-q1826",
+    "query": "Is the contribution towards Employment Insurance (EI) wasted if I never get fired, or are my premiums refunded?",
+    "relevantDocumentIds": ["fiqa-401731", "fiqa-8057", "fiqa-181787", "fiqa-583788"]
+  },
+  {
+    "id": "fiqa-q6262",
+    "query": "Help required on estimating SSA benefit amounts",
+    "relevantDocumentIds": ["fiqa-34538", "fiqa-26799", "fiqa-390877"]
+  },
+  {
+    "id": "fiqa-q5347",
+    "query": "car loan life insurance",
+    "relevantDocumentIds": ["fiqa-352930"]
+  },
+  {
+    "id": "fiqa-q4500",
+    "query": "What to ask Warren Buffet at the Berkshire Hathaway shareholder meeting?",
+    "relevantDocumentIds": ["fiqa-163048", "fiqa-533623"]
+  },
+  {
+    "id": "fiqa-q3615",
+    "query": "My previous and current employers both use Fidelity for 401(k). Does it make sense to rollover?",
+    "relevantDocumentIds": ["fiqa-518379", "fiqa-335991"]
+  },
+  {
+    "id": "fiqa-q8632",
+    "query": "Is it best to exercise options shares when they vest, or wait",
+    "relevantDocumentIds": ["fiqa-43497", "fiqa-213976"]
+  },
+  {
+    "id": "fiqa-q9979",
+    "query": "What is the best way to invest in gold as a hedge against inflation without having to hold physical gold?",
+    "relevantDocumentIds": ["fiqa-538237", "fiqa-35633", "fiqa-337243", "fiqa-35369"]
+  },
+  {
+    "id": "fiqa-q9617",
+    "query": "What differentiates index funds and ETFs?",
+    "relevantDocumentIds": ["fiqa-408524", "fiqa-364735", "fiqa-314008"]
+  },
+  {
+    "id": "fiqa-q1948",
+    "query": "Which colors can one use to fill out a check in the US?",
+    "relevantDocumentIds": ["fiqa-467509"]
+  },
+  {
+    "id": "fiqa-q6133",
+    "query": "What happens to all of the options when they expire?",
+    "relevantDocumentIds": ["fiqa-7733", "fiqa-415705"]
+  },
+  {
+    "id": "fiqa-q9737",
+    "query": "Long(100%)-Short(-100%) investment explanation",
+    "relevantDocumentIds": ["fiqa-245082", "fiqa-419897", "fiqa-99131"]
+  },
+  {
+    "id": "fiqa-q3771",
+    "query": "Best way to buy Japanese yen for travel?",
+    "relevantDocumentIds": ["fiqa-521712", "fiqa-128471", "fiqa-488948", "fiqa-198349", "fiqa-217683", "fiqa-49601"]
+  },
+  {
+    "id": "fiqa-q1736",
+    "query": "How can people have such high credit card debts?",
+    "relevantDocumentIds": ["fiqa-399406", "fiqa-396933", "fiqa-25543", "fiqa-562896", "fiqa-443419"]
+  },
+  {
+    "id": "fiqa-q5255",
+    "query": "Thrift Saving Plan (TSP) Share Price Charts",
+    "relevantDocumentIds": ["fiqa-75112", "fiqa-330453", "fiqa-412830"]
+  },
+  {
+    "id": "fiqa-q5380",
+    "query": "Can somebody explain “leveraged debt investment positions” and “exposures” in this context for me, please?",
+    "relevantDocumentIds": ["fiqa-549254"]
+  },
+  {
+    "id": "fiqa-q9188",
+    "query": "Selling mutual fund and buying equivalent ETF: Can I 1031 exchange?",
+    "relevantDocumentIds": ["fiqa-265167", "fiqa-580802"]
+  },
+  {
+    "id": "fiqa-q2051",
+    "query": "Where to find the 5 or 10 year returns for a mutual fund?",
+    "relevantDocumentIds": ["fiqa-558042"]
+  },
+  {
+    "id": "fiqa-q5067",
+    "query": "LLC: Where should the funds for initial startup costs come from?",
+    "relevantDocumentIds": ["fiqa-547301"]
+  },
+  {
+    "id": "fiqa-q10414",
+    "query": "What is considered high or low when talking about volume?",
+    "relevantDocumentIds": ["fiqa-79807", "fiqa-303325"]
+  },
+  {
+    "id": "fiqa-q6814",
+    "query": "Selling Stock - All or Nothing?",
+    "relevantDocumentIds": ["fiqa-340214", "fiqa-223206"]
+  },
+  {
+    "id": "fiqa-q6146",
+    "query": "Lost credit card replaced with new card and new numbers. Credit score affected?",
+    "relevantDocumentIds": ["fiqa-7403", "fiqa-160125"]
+  },
+  {
+    "id": "fiqa-q4756",
+    "query": "What is the formula for the Tesla Finance calculation?",
+    "relevantDocumentIds": ["fiqa-340254"]
+  },
+  {
+    "id": "fiqa-q7754",
+    "query": "Inverse Relationship between Volatility and Beta",
+    "relevantDocumentIds": ["fiqa-197527"]
+  },
+  {
+    "id": "fiqa-q2076",
+    "query": "Can vet / veterinary bills be considered deductions (tax-deductible) for Income Tax purposes [Canada]?",
+    "relevantDocumentIds": ["fiqa-184646", "fiqa-278824"]
+  },
+  {
+    "id": "fiqa-q1322",
+    "query": "Is this follow-up after a car crash a potential scam?",
+    "relevantDocumentIds": ["fiqa-399418", "fiqa-114231", "fiqa-115552", "fiqa-64138"]
+  },
+  {
+    "id": "fiqa-q2880",
+    "query": "Can I transfer my investment property into a SMSF?",
+    "relevantDocumentIds": ["fiqa-533791"]
+  },
+  {
+    "id": "fiqa-q5172",
+    "query": "does interest payment on loan stay the same if I pay early",
+    "relevantDocumentIds": ["fiqa-529418", "fiqa-539165"]
+  },
+  {
+    "id": "fiqa-q5185",
+    "query": "Invest in low cost small cap index funds when saving towards retirement?",
+    "relevantDocumentIds": ["fiqa-210236", "fiqa-317354"]
+  },
+  {
+    "id": "fiqa-q9644",
+    "query": "If early exercise is a bad idea, why American option is more expensive than European [duplicate]",
+    "relevantDocumentIds": ["fiqa-194605"]
+  },
+  {
+    "id": "fiqa-q6909",
+    "query": "Why do stocks priced above $2.00 on the ASX sometimes move in $0.005 increments?",
+    "relevantDocumentIds": ["fiqa-127012"]
+  },
+  {
+    "id": "fiqa-q5906",
+    "query": "0% APR first 12 months on new credit card. Can I exceed that 30% rule of thumb and not hurt my credit score?",
+    "relevantDocumentIds": ["fiqa-409907", "fiqa-15172"]
+  },
+  {
+    "id": "fiqa-q2348",
+    "query": "Why can't you just have someone invest for you and split the profits (and losses) with him?",
+    "relevantDocumentIds": [
+      "fiqa-211867",
+      "fiqa-247486",
+      "fiqa-381757",
+      "fiqa-447619",
+      "fiqa-566573",
+      "fiqa-410166",
+      "fiqa-211622",
+      "fiqa-474234",
+      "fiqa-306430",
+      "fiqa-268261",
+      "fiqa-352271",
+      "fiqa-543714",
+      "fiqa-146441",
+      "fiqa-265874",
+      "fiqa-134864"
+    ]
+  },
+  {
+    "id": "fiqa-q687",
+    "query": "Online tool to connect to my bank account and tell me what I spend in different categories?",
+    "relevantDocumentIds": ["fiqa-146021", "fiqa-268992"]
+  },
+  {
+    "id": "fiqa-q8017",
+    "query": "Purchasing ETFs when (pretty much) everything else is maxed out",
+    "relevantDocumentIds": ["fiqa-97836"]
+  },
+  {
+    "id": "fiqa-q8795",
+    "query": "Stock exchanges using open outcry",
+    "relevantDocumentIds": ["fiqa-57297"]
+  },
+  {
+    "id": "fiqa-q4499",
+    "query": "Is investing exlusively in a small-cap index fund a wise investment?",
+    "relevantDocumentIds": ["fiqa-323363", "fiqa-513818", "fiqa-76996"]
+  },
+  {
+    "id": "fiqa-q9929",
+    "query": "Investing in commodities, pros and cons?",
+    "relevantDocumentIds": ["fiqa-266323", "fiqa-568006"]
+  },
+  {
+    "id": "fiqa-q42",
+    "query": "What are the ins/outs of writing equipment purchases off as business expenses in a home based business?",
+    "relevantDocumentIds": ["fiqa-272709", "fiqa-327263", "fiqa-331981"]
+  },
+  {
+    "id": "fiqa-q3530",
+    "query": "How to exclude stock from mutual fund",
+    "relevantDocumentIds": ["fiqa-189190", "fiqa-184299", "fiqa-239998"]
+  },
+  {
+    "id": "fiqa-q5592",
+    "query": "Are “hard money loans” meant only for real estate?",
+    "relevantDocumentIds": ["fiqa-355241"]
+  },
+  {
+    "id": "fiqa-q8296",
+    "query": "Can the beta of a stock be used as a lagging indicator for the stock w.r.t the market",
+    "relevantDocumentIds": ["fiqa-78675", "fiqa-79998"]
+  },
+  {
+    "id": "fiqa-q659",
+    "query": "Buying from an aggressive salesperson",
+    "relevantDocumentIds": [
+      "fiqa-13139",
+      "fiqa-230908",
+      "fiqa-584685",
+      "fiqa-439467",
+      "fiqa-264297",
+      "fiqa-235925",
+      "fiqa-168796",
+      "fiqa-120279",
+      "fiqa-365240",
+      "fiqa-449079"
+    ]
+  },
+  {
+    "id": "fiqa-q9108",
+    "query": "Starting an investment portfolio with Rs 5,000/-",
+    "relevantDocumentIds": ["fiqa-272021", "fiqa-472585"]
+  },
+  {
+    "id": "fiqa-q6835",
+    "query": "Are bond ETF capital gains taxed similar to stock or stock funds if held for more than 1 year?",
+    "relevantDocumentIds": ["fiqa-149305", "fiqa-102243"]
+  },
+  {
+    "id": "fiqa-q6803",
+    "query": "What are the common moving averages used in a “Golden Cross” stock evaluation?",
+    "relevantDocumentIds": ["fiqa-193012", "fiqa-544053", "fiqa-142726", "fiqa-42620"]
+  },
+  {
+    "id": "fiqa-q9381",
+    "query": "Trade? Buy and hold? Or both?",
+    "relevantDocumentIds": ["fiqa-408123", "fiqa-384983"]
+  },
+  {
+    "id": "fiqa-q4414",
+    "query": "Do high interest rates lead to higher bond yields or lower?",
+    "relevantDocumentIds": ["fiqa-235522", "fiqa-367137"]
+  },
+  {
+    "id": "fiqa-q3067",
+    "query": "Should I make extra payments to my under water mortgage or increase my savings?",
+    "relevantDocumentIds": ["fiqa-406156", "fiqa-517299"]
+  },
+  {
+    "id": "fiqa-q4125",
+    "query": "Alternative means of salary for my employees",
+    "relevantDocumentIds": ["fiqa-344648", "fiqa-72046"]
+  },
+  {
+    "id": "fiqa-q1150",
+    "query": "How are the best way to make and save money at 22 years old",
+    "relevantDocumentIds": ["fiqa-531698", "fiqa-43603", "fiqa-353369", "fiqa-19936"]
+  },
+  {
+    "id": "fiqa-q7431",
+    "query": "Pay off mortgage or invest in high value saving account",
+    "relevantDocumentIds": ["fiqa-372921"]
+  },
+  {
+    "id": "fiqa-q2384",
+    "query": "Tax: 1099 paper form",
+    "relevantDocumentIds": ["fiqa-435835"]
+  },
+  {
+    "id": "fiqa-q895",
+    "query": "California tells me I didn't file documents for an LLC that isn't mine. What do I do?",
+    "relevantDocumentIds": ["fiqa-416268"]
+  },
+  {
+    "id": "fiqa-q7747",
+    "query": "What happens to bonds values when interest rates rise? [duplicate]",
+    "relevantDocumentIds": ["fiqa-97729", "fiqa-296420"]
+  },
+  {
+    "id": "fiqa-q879",
+    "query": "Capital improvement and depreciation in restaurant LLC",
+    "relevantDocumentIds": ["fiqa-366830"]
+  },
+  {
+    "id": "fiqa-q8040",
+    "query": "Best way to make most of savings with ISA and Offset mortgage",
+    "relevantDocumentIds": ["fiqa-523058"]
+  },
+  {
+    "id": "fiqa-q3051",
+    "query": "What items are exempt from the VAT? [U.K.]",
+    "relevantDocumentIds": ["fiqa-232063", "fiqa-591940"]
+  },
+  {
+    "id": "fiqa-q7705",
+    "query": "Why would I pick a specific ETF over an equivalent Mutual Fund?",
+    "relevantDocumentIds": ["fiqa-539263", "fiqa-195191", "fiqa-377429"]
+  },
+  {
+    "id": "fiqa-q10039",
+    "query": "Do individual investors use Google to obtain stock quotes?",
+    "relevantDocumentIds": ["fiqa-67785"]
+  },
+  {
+    "id": "fiqa-q9808",
+    "query": "Selling To Close",
+    "relevantDocumentIds": ["fiqa-40702", "fiqa-557582", "fiqa-431946"]
+  },
+  {
+    "id": "fiqa-q7188",
+    "query": "What explains the enormous increase in gold price in the early 21st century?",
+    "relevantDocumentIds": ["fiqa-305346"]
+  },
+  {
+    "id": "fiqa-q4813",
+    "query": "Dealer Financing Fell Through on vehicle purchase: Scam?",
+    "relevantDocumentIds": ["fiqa-98356"]
+  },
+  {
+    "id": "fiqa-q3888",
+    "query": "Why I can't view my debit card pre-authorized amounts?",
+    "relevantDocumentIds": ["fiqa-307083", "fiqa-319213", "fiqa-239632"]
+  },
+  {
+    "id": "fiqa-q10109",
+    "query": "Why does Charles Schwab have a Mandatory Settlement Period after selling stocks?",
+    "relevantDocumentIds": [
+      "fiqa-28314",
+      "fiqa-506374",
+      "fiqa-93231",
+      "fiqa-156029",
+      "fiqa-406974",
+      "fiqa-499849",
+      "fiqa-566591"
+    ]
+  },
+  {
+    "id": "fiqa-q957",
+    "query": "How can I withdraw money from my LLC?",
+    "relevantDocumentIds": ["fiqa-446870", "fiqa-321500", "fiqa-540334"]
+  },
+  {
+    "id": "fiqa-q10601",
+    "query": "Bitcoin Cost Basis Purchases",
+    "relevantDocumentIds": ["fiqa-568064"]
+  },
+  {
+    "id": "fiqa-q1871",
+    "query": "Is there any US bank that does not charge for incoming wire transfers?",
+    "relevantDocumentIds": ["fiqa-175524", "fiqa-364112", "fiqa-244185", "fiqa-444162"]
+  },
+  {
+    "id": "fiqa-q5331",
+    "query": "Exercises of employee share options",
+    "relevantDocumentIds": ["fiqa-200784"]
+  },
+  {
+    "id": "fiqa-q2790",
+    "query": "Should I pay more than 20% down on a home?",
+    "relevantDocumentIds": [
+      "fiqa-423403",
+      "fiqa-279329",
+      "fiqa-27268",
+      "fiqa-472484",
+      "fiqa-100483",
+      "fiqa-469125",
+      "fiqa-4612"
+    ]
+  },
+  {
+    "id": "fiqa-q9882",
+    "query": "Money-market or cash-type ETFs for foreigners with U.S brokerage account",
+    "relevantDocumentIds": ["fiqa-65702"]
+  },
+  {
+    "id": "fiqa-q4999",
+    "query": "Looking for a good source for Financial Statements",
+    "relevantDocumentIds": ["fiqa-314898", "fiqa-338803", "fiqa-9938", "fiqa-46211"]
+  },
+  {
+    "id": "fiqa-q4142",
+    "query": "Relation between inflation rates and interest rates",
+    "relevantDocumentIds": ["fiqa-586930", "fiqa-544020", "fiqa-203926", "fiqa-61346"]
+  },
+  {
+    "id": "fiqa-q3189",
+    "query": "Diversify my retirement investments with a Roth IRA",
+    "relevantDocumentIds": ["fiqa-225395", "fiqa-272840"]
+  },
+  {
+    "id": "fiqa-q5134",
+    "query": "Why does Yahoo Finance's data for a Vanguard fund's dividend per share not match the info from Vanguard?",
+    "relevantDocumentIds": ["fiqa-158523", "fiqa-206727"]
+  },
+  {
+    "id": "fiqa-q1321",
+    "query": "Are social media accounts (e.g. YouTube, Twitter, Instagram, etc.) considered assets?",
+    "relevantDocumentIds": ["fiqa-216456", "fiqa-292065"]
+  },
+  {
+    "id": "fiqa-q10710",
+    "query": "Probablity of touching In the money vs expiring in the money for an american option",
+    "relevantDocumentIds": ["fiqa-6771"]
+  },
+  {
+    "id": "fiqa-q6890",
+    "query": "Where does the money go when I buy stocks?",
+    "relevantDocumentIds": ["fiqa-558703", "fiqa-240196"]
+  },
+  {
+    "id": "fiqa-q3049",
+    "query": "How to calculate my estimated taxes. 1099 MISC + Self Employment",
+    "relevantDocumentIds": ["fiqa-127974", "fiqa-88477", "fiqa-582864", "fiqa-450808"]
+  },
+  {
+    "id": "fiqa-q849",
+    "query": "Accounting for reimbursements that exceed actual expenses",
+    "relevantDocumentIds": ["fiqa-557186"]
+  },
+  {
+    "id": "fiqa-q4539",
+    "query": "How should I save money if the real interest rate (after inflation) is negative?",
+    "relevantDocumentIds": ["fiqa-370879", "fiqa-275925"]
+  },
+  {
+    "id": "fiqa-q4084",
+    "query": "What industries soar when oil prices go up?",
+    "relevantDocumentIds": ["fiqa-250028", "fiqa-308633"]
+  },
+  {
+    "id": "fiqa-q715",
+    "query": "what would you do with $100K saving?",
+    "relevantDocumentIds": ["fiqa-579763", "fiqa-546538", "fiqa-187404"]
+  },
+  {
+    "id": "fiqa-q2416",
+    "query": "Why should a company go public?",
+    "relevantDocumentIds": ["fiqa-162612", "fiqa-48569", "fiqa-105129", "fiqa-471247"]
+  },
+  {
+    "id": "fiqa-q7509",
+    "query": "Investment Portfolio Setup for beginner",
+    "relevantDocumentIds": ["fiqa-178303"]
+  },
+  {
+    "id": "fiqa-q2204",
+    "query": "What's an economic explanation for why greeting cards are so expensive?",
+    "relevantDocumentIds": [
+      "fiqa-280056",
+      "fiqa-4066",
+      "fiqa-174363",
+      "fiqa-424523",
+      "fiqa-271514",
+      "fiqa-50809",
+      "fiqa-374030",
+      "fiqa-83922"
+    ]
+  },
+  {
+    "id": "fiqa-q9646",
+    "query": "Do common stocks and preferred stocks have any differences in terms of percentage of the company per unit they represent?",
+    "relevantDocumentIds": ["fiqa-556191", "fiqa-272784"]
+  },
+  {
+    "id": "fiqa-q2334",
+    "query": "How do you determine “excess cash” for Enterprise Value calculations from a balance sheet?",
+    "relevantDocumentIds": ["fiqa-228403", "fiqa-2304", "fiqa-150650"]
+  },
+  {
+    "id": "fiqa-q2903",
+    "query": "How should I file my taxes as a contractor?",
+    "relevantDocumentIds": ["fiqa-527776"]
+  },
+  {
+    "id": "fiqa-q4827",
+    "query": "Are all financial advisors compensated in the same way?",
+    "relevantDocumentIds": ["fiqa-495791"]
+  },
+  {
+    "id": "fiqa-q5534",
+    "query": "How does “taking over payments” work?",
+    "relevantDocumentIds": ["fiqa-423272", "fiqa-421136"]
+  },
+  {
+    "id": "fiqa-q9668",
+    "query": "Do stock option prices predicate the underlying stock's movement?",
+    "relevantDocumentIds": ["fiqa-13260", "fiqa-42438", "fiqa-111768"]
+  },
+  {
+    "id": "fiqa-q1530",
+    "query": "What is the proper way to report additional income for taxes (specifically, Android development)?",
+    "relevantDocumentIds": ["fiqa-28764", "fiqa-313361", "fiqa-219425"]
+  },
+  {
+    "id": "fiqa-q504",
+    "query": "Have plenty of cash flow but bad credit",
+    "relevantDocumentIds": ["fiqa-500755", "fiqa-344203", "fiqa-498751"]
+  },
+  {
+    "id": "fiqa-q721",
+    "query": "What are “upstream investments” and “downstream investments” in this context?",
+    "relevantDocumentIds": ["fiqa-496225"]
+  },
+  {
+    "id": "fiqa-q2296",
+    "query": "How does a bank make money on an interest free secured loan?",
+    "relevantDocumentIds": [
+      "fiqa-396853",
+      "fiqa-106424",
+      "fiqa-400009",
+      "fiqa-119298",
+      "fiqa-83330",
+      "fiqa-366594",
+      "fiqa-279897",
+      "fiqa-253563",
+      "fiqa-130850"
+    ]
+  },
+  {
+    "id": "fiqa-q3186",
+    "query": "United States Treasury Not Endorsing Checks",
+    "relevantDocumentIds": ["fiqa-555486", "fiqa-545421"]
+  },
+  {
+    "id": "fiqa-q10975",
+    "query": "How to contribute to Roth IRA when income is at the maximum limit & you have employer-sponsored 401k plans?",
+    "relevantDocumentIds": ["fiqa-61022"]
+  },
+  {
+    "id": "fiqa-q3859",
+    "query": "Buying an investment property in Australia - what are the advantages and disadvantages of building a house vs buying an existing one?",
+    "relevantDocumentIds": ["fiqa-230261"]
+  },
+  {
+    "id": "fiqa-q1994",
+    "query": "Does the IRS reprieve those who have to commute for work?",
+    "relevantDocumentIds": ["fiqa-434846", "fiqa-565157", "fiqa-51491", "fiqa-243356", "fiqa-156640"]
+  },
+  {
+    "id": "fiqa-q6647",
+    "query": "What is meant by “priced in”?",
+    "relevantDocumentIds": ["fiqa-69790", "fiqa-428017", "fiqa-462265"]
+  },
+  {
+    "id": "fiqa-q9164",
+    "query": "Bonds vs equities: crash theory",
+    "relevantDocumentIds": ["fiqa-305274", "fiqa-365298", "fiqa-263390"]
+  },
+  {
+    "id": "fiqa-q1812",
+    "query": "splitting a joint mortgage - one owner in home",
+    "relevantDocumentIds": ["fiqa-530570", "fiqa-219274"]
+  },
+  {
+    "id": "fiqa-q10462",
+    "query": "Is it okay to be married, 30 years old and have no retirement?",
+    "relevantDocumentIds": ["fiqa-8266", "fiqa-11378", "fiqa-35680", "fiqa-437879", "fiqa-204035", "fiqa-581204"]
+  },
+  {
+    "id": "fiqa-q8855",
+    "query": "How do i get into investing stocks [duplicate]",
+    "relevantDocumentIds": ["fiqa-208165", "fiqa-474296", "fiqa-312821"]
+  },
+  {
+    "id": "fiqa-q7594",
+    "query": "Converting annual interbank rates into monthly rates",
+    "relevantDocumentIds": ["fiqa-573899"]
+  },
+  {
+    "id": "fiqa-q4968",
+    "query": "Reasons behind a large price movement of a penny stock without any recent news releases?",
+    "relevantDocumentIds": ["fiqa-387022"]
+  },
+  {
+    "id": "fiqa-q7876",
+    "query": "Why do stocks split?",
+    "relevantDocumentIds": ["fiqa-533779"]
+  },
+  {
+    "id": "fiqa-q7071",
+    "query": "ESPP strategy - Sell right away or hold?",
+    "relevantDocumentIds": ["fiqa-124230", "fiqa-238629"]
+  },
+  {
+    "id": "fiqa-q3534",
+    "query": "Why do dishonour fees exist?",
+    "relevantDocumentIds": ["fiqa-340329"]
+  },
+  {
+    "id": "fiqa-q8974",
+    "query": "As a 22-year-old, how risky should I be with my 401(k) investments?",
+    "relevantDocumentIds": [
+      "fiqa-140738",
+      "fiqa-216365",
+      "fiqa-523331",
+      "fiqa-134931",
+      "fiqa-356595",
+      "fiqa-170625",
+      "fiqa-10476",
+      "fiqa-478242"
+    ]
+  },
+  {
+    "id": "fiqa-q10912",
+    "query": "Forex independent investments",
+    "relevantDocumentIds": ["fiqa-518721"]
+  },
+  {
+    "id": "fiqa-q2737",
+    "query": "What to do with an old building to get money",
+    "relevantDocumentIds": ["fiqa-426678"]
+  },
+  {
+    "id": "fiqa-q2964",
+    "query": "Unmarried Couple Splitting up with Joint Ownership of Home",
+    "relevantDocumentIds": ["fiqa-302409", "fiqa-95116"]
+  },
+  {
+    "id": "fiqa-q5178",
+    "query": "Formula that predicts whether one is better off investing or paying down debt",
+    "relevantDocumentIds": ["fiqa-240261", "fiqa-561056", "fiqa-111815", "fiqa-393833", "fiqa-39819"]
+  },
+  {
+    "id": "fiqa-q5061",
+    "query": "What fiscal scrutiny can be expected from IRS in early retirement?",
+    "relevantDocumentIds": ["fiqa-23747"]
+  },
+  {
+    "id": "fiqa-q7880",
+    "query": "Are there index tracking funds that avoid the “buy high - sell low” problem?",
+    "relevantDocumentIds": ["fiqa-272790", "fiqa-85319"]
+  },
+  {
+    "id": "fiqa-q9385",
+    "query": "Meaning of reinvestment",
+    "relevantDocumentIds": ["fiqa-403755"]
+  },
+  {
+    "id": "fiqa-q4411",
+    "query": "How does the importance of a cash emergency fund change when you live in a country with nationalized healthcare?",
+    "relevantDocumentIds": ["fiqa-79903", "fiqa-68239", "fiqa-116545"]
+  },
+  {
+    "id": "fiqa-q515",
+    "query": "financial institution wants share member break down for single member LLC",
+    "relevantDocumentIds": ["fiqa-372909"]
+  },
+  {
+    "id": "fiqa-q2075",
+    "query": "Are stories of turning a few thousands into millions by trading stocks real?",
+    "relevantDocumentIds": [
+      "fiqa-170042",
+      "fiqa-44417",
+      "fiqa-260983",
+      "fiqa-359580",
+      "fiqa-60459",
+      "fiqa-523393",
+      "fiqa-519619",
+      "fiqa-301866",
+      "fiqa-14967"
+    ]
+  },
+  {
+    "id": "fiqa-q8230",
+    "query": "Why would this kind of penny stock increase so much in value?",
+    "relevantDocumentIds": ["fiqa-319599", "fiqa-363204"]
+  },
+  {
+    "id": "fiqa-q4335",
+    "query": "What is the US Fair Tax?",
+    "relevantDocumentIds": ["fiqa-318583", "fiqa-357013", "fiqa-322246", "fiqa-484148"]
+  },
+  {
+    "id": "fiqa-q7533",
+    "query": "Investing tax (savings)",
+    "relevantDocumentIds": ["fiqa-162668", "fiqa-93853"]
+  },
+  {
+    "id": "fiqa-q5683",
+    "query": "What is the PEG ratio? How is the PEG ratio calculated? How is the PEG ratio useful for stock investing?",
+    "relevantDocumentIds": ["fiqa-173026", "fiqa-448690"]
+  },
+  {
+    "id": "fiqa-q4785",
+    "query": "What is the difference between a structured collar and a normal collar in finance?",
+    "relevantDocumentIds": ["fiqa-37517"]
+  },
+  {
+    "id": "fiqa-q7456",
+    "query": "What is market order's relation to bid ask spread?",
+    "relevantDocumentIds": ["fiqa-65120"]
+  },
+  {
+    "id": "fiqa-q3528",
+    "query": "In the US, does getting a loan with a cosigner, help your credit rating?",
+    "relevantDocumentIds": ["fiqa-345697"]
+  },
+  {
+    "id": "fiqa-q1393",
+    "query": "Which is better when working as a contractor, 1099 or incorporating?",
+    "relevantDocumentIds": ["fiqa-220022", "fiqa-589398", "fiqa-532932", "fiqa-352838", "fiqa-539133", "fiqa-352640"]
+  },
+  {
+    "id": "fiqa-q9487",
+    "query": "Is a public company allowed to issue new shares below market price without consulting shareholders?",
+    "relevantDocumentIds": ["fiqa-165544"]
+  },
+  {
+    "id": "fiqa-q10792",
+    "query": "How can I calculate a “running” return using XIRR in a spreadsheet?",
+    "relevantDocumentIds": ["fiqa-195044", "fiqa-374956"]
+  },
+  {
+    "id": "fiqa-q5264",
+    "query": "Does a company's stock price give any indication to or affect their revenue?",
+    "relevantDocumentIds": ["fiqa-371720", "fiqa-52579", "fiqa-505694", "fiqa-431814", "fiqa-576564"]
+  },
+  {
+    "id": "fiqa-q9733",
+    "query": "Due Diligence - Dilution?",
+    "relevantDocumentIds": ["fiqa-526073", "fiqa-110163", "fiqa-38655"]
+  },
+  {
+    "id": "fiqa-q4339",
+    "query": "What could happen to Detroit Municipal bonds because of Detroit's filing for bankruptcy?",
+    "relevantDocumentIds": ["fiqa-386531", "fiqa-488615"]
+  },
+  {
+    "id": "fiqa-q7311",
+    "query": "Finance, Social Capital IPOA.U",
+    "relevantDocumentIds": ["fiqa-323768"]
+  },
+  {
+    "id": "fiqa-q744",
+    "query": "What options are available for a home loan with poor credit but a good rental history?",
+    "relevantDocumentIds": ["fiqa-490443", "fiqa-566480", "fiqa-78176"]
+  },
+  {
+    "id": "fiqa-q7141",
+    "query": "Do investors go long option contracts when they cannot cover the exercise of the options?",
+    "relevantDocumentIds": ["fiqa-255927", "fiqa-132288"]
+  },
+  {
+    "id": "fiqa-q672",
+    "query": "Credit and Debit",
+    "relevantDocumentIds": ["fiqa-40966", "fiqa-563025"]
+  },
+  {
+    "id": "fiqa-q6002",
+    "query": "15 year mortgage vs 30 year paid off in 15",
+    "relevantDocumentIds": [
+      "fiqa-404605",
+      "fiqa-273501",
+      "fiqa-390642",
+      "fiqa-359862",
+      "fiqa-516848",
+      "fiqa-391819",
+      "fiqa-34389",
+      "fiqa-233472",
+      "fiqa-519346",
+      "fiqa-593434",
+      "fiqa-154181"
+    ]
+  },
+  {
+    "id": "fiqa-q4071",
+    "query": "If our economy crashes, and cash is worthless, should i buy gold or silver",
+    "relevantDocumentIds": ["fiqa-129875"]
+  },
+  {
+    "id": "fiqa-q4103",
+    "query": "What causes US Treasury I bond fixed interest to increase?",
+    "relevantDocumentIds": ["fiqa-440270"]
+  },
+  {
+    "id": "fiqa-q1441",
+    "query": "What's the difference between Market Cap and NAV?",
+    "relevantDocumentIds": ["fiqa-178", "fiqa-414940", "fiqa-416727", "fiqa-471123"]
+  },
+  {
+    "id": "fiqa-q3254",
+    "query": "Why do people buy US dollars on the black market?",
+    "relevantDocumentIds": ["fiqa-484891", "fiqa-443511", "fiqa-475756"]
+  },
+  {
+    "id": "fiqa-q7512",
+    "query": "understanding the process/payment of short sale dividends",
+    "relevantDocumentIds": ["fiqa-191060"]
+  },
+  {
+    "id": "fiqa-q2589",
+    "query": "How can I detect potential fraud in a company before investing in them?",
+    "relevantDocumentIds": ["fiqa-43961", "fiqa-450577", "fiqa-468144"]
+  },
+  {
+    "id": "fiqa-q2598",
+    "query": "Is it possible for US retail forex traders to trade exotic currencies?",
+    "relevantDocumentIds": ["fiqa-376126", "fiqa-593029"]
+  },
+  {
+    "id": "fiqa-q6800",
+    "query": "I don't live in America. How can I buy IPO stock of newly listed companies in the United States?",
+    "relevantDocumentIds": ["fiqa-35191"]
+  },
+  {
+    "id": "fiqa-q1391",
+    "query": "How is taxation for youtube/twitch etc monetization handled in the UK?",
+    "relevantDocumentIds": ["fiqa-266229", "fiqa-562176", "fiqa-440745"]
+  },
+  {
+    "id": "fiqa-q6278",
+    "query": "What is the best way to help my dad consolidate his credit card debt at a lower rate?",
+    "relevantDocumentIds": ["fiqa-138511", "fiqa-63698"]
+  },
+  {
+    "id": "fiqa-q7534",
+    "query": "Can you explain why it's better to invest now rather than waiting for the market to dip?",
+    "relevantDocumentIds": ["fiqa-175821", "fiqa-89714", "fiqa-358125"]
+  },
+  {
+    "id": "fiqa-q5356",
+    "query": "Historical stock prices: Where to find free / low cost data for offline analysis?",
+    "relevantDocumentIds": ["fiqa-279785", "fiqa-71553", "fiqa-381362", "fiqa-312405", "fiqa-562259"]
+  },
+  {
+    "id": "fiqa-q2579",
+    "query": "What to do when a job offer is made but with a salary less than what was asked for?",
+    "relevantDocumentIds": ["fiqa-197052", "fiqa-524471", "fiqa-432808", "fiqa-191977", "fiqa-280838", "fiqa-432020"]
+  },
+  {
+    "id": "fiqa-q9961",
+    "query": "Employer rollover from 403b to 401k?",
+    "relevantDocumentIds": ["fiqa-21311"]
+  },
+  {
+    "id": "fiqa-q7484",
+    "query": "Why sometimes payable date is BEFORE the ex-dividend date?",
+    "relevantDocumentIds": ["fiqa-444562"]
+  },
+  {
+    "id": "fiqa-q5790",
+    "query": "FX losses on non-UK mortgage for UK property - tax deductable?",
+    "relevantDocumentIds": ["fiqa-134794"]
+  },
+  {
+    "id": "fiqa-q7823",
+    "query": "Retirement Funds: Betterment vs Vanguard Life strategy vs Target Retirement",
+    "relevantDocumentIds": ["fiqa-105666", "fiqa-583549", "fiqa-451196"]
+  },
+  {
+    "id": "fiqa-q689",
+    "query": "Receive credit card payment sending my customer details to a credit card processing company?",
+    "relevantDocumentIds": ["fiqa-411044"]
+  },
+  {
+    "id": "fiqa-q604",
+    "query": "Is there a dollar amount that, when adding Massachusetts Sales Tax, precisely equals $200?",
+    "relevantDocumentIds": ["fiqa-451443", "fiqa-231947", "fiqa-261622"]
+  },
+  {
+    "id": "fiqa-q9174",
+    "query": "Which U.S. online discount broker is the best value for money?",
+    "relevantDocumentIds": ["fiqa-431652", "fiqa-535317", "fiqa-160218", "fiqa-544576", "fiqa-405217"]
+  },
+  {
+    "id": "fiqa-q6867",
+    "query": "Will there always be somebody selling/buying in every stock?",
+    "relevantDocumentIds": [
+      "fiqa-443804",
+      "fiqa-466143",
+      "fiqa-878",
+      "fiqa-540799",
+      "fiqa-502607",
+      "fiqa-445258",
+      "fiqa-538750"
+    ]
+  },
+  {
+    "id": "fiqa-q5970",
+    "query": "How to calculate ownership for property with a partner",
+    "relevantDocumentIds": ["fiqa-181608", "fiqa-546568", "fiqa-168453"]
+  },
+  {
+    "id": "fiqa-q4681",
+    "query": "How to fix Finance::Quote to pull quotes in GnuCash",
+    "relevantDocumentIds": ["fiqa-181909", "fiqa-587959"]
+  },
+  {
+    "id": "fiqa-q1670",
+    "query": "Investing in hemp producers in advance of possible legalization in Canada?",
+    "relevantDocumentIds": ["fiqa-290887", "fiqa-393898", "fiqa-493792"]
+  },
+  {
+    "id": "fiqa-q6901",
+    "query": "Rules for Broker Behavior with Covered Calls",
+    "relevantDocumentIds": ["fiqa-388571", "fiqa-254474"]
+  },
+  {
+    "id": "fiqa-q10808",
+    "query": "What are a few sites that make it easy to invest in high interest rate mutual funds?",
+    "relevantDocumentIds": ["fiqa-28291", "fiqa-487052", "fiqa-484599"]
+  },
+  {
+    "id": "fiqa-q2383",
+    "query": "Should I Purchase Health Insurance Through My S-Corp",
+    "relevantDocumentIds": ["fiqa-17215", "fiqa-232199"]
+  },
+  {
+    "id": "fiqa-q3085",
+    "query": "How long can I convert 401(k) to Roth 401(k)?",
+    "relevantDocumentIds": ["fiqa-248619", "fiqa-527010"]
+  },
+  {
+    "id": "fiqa-q104",
+    "query": "Investing/business with other people's money: How does it work?",
+    "relevantDocumentIds": ["fiqa-575869", "fiqa-523158"]
+  },
+  {
+    "id": "fiqa-q5083",
+    "query": "Co-signer deceased",
+    "relevantDocumentIds": ["fiqa-305509", "fiqa-138845"]
+  },
+  {
+    "id": "fiqa-q684",
+    "query": "Beyond RRSP deductions, how does a high income earner save on taxes?",
+    "relevantDocumentIds": ["fiqa-441120"]
+  },
+  {
+    "id": "fiqa-q10674",
+    "query": "How to sell a stock in a crashing market?",
+    "relevantDocumentIds": ["fiqa-99857", "fiqa-257241", "fiqa-543589", "fiqa-3095"]
+  },
+  {
+    "id": "fiqa-q3594",
+    "query": "If I were to get into a life situation where I would not be able to make regular payments, do lenders typically provide options other than default?",
+    "relevantDocumentIds": ["fiqa-246882", "fiqa-554171", "fiqa-525247", "fiqa-490294"]
+  },
+  {
+    "id": "fiqa-q10526",
+    "query": "What extra information might be obtained from the next highest bids in an order book?",
+    "relevantDocumentIds": ["fiqa-39185", "fiqa-283008"]
+  },
+  {
+    "id": "fiqa-q2181",
+    "query": "What are the risks & rewards of being a self-employed independent contractor / consultant vs. being a permanent employee?",
+    "relevantDocumentIds": ["fiqa-376631", "fiqa-397329"]
+  },
+  {
+    "id": "fiqa-q10994",
+    "query": "Net loss not distributed by mutual funds to their shareholders?",
+    "relevantDocumentIds": ["fiqa-496820", "fiqa-212394"]
+  },
+  {
+    "id": "fiqa-q5903",
+    "query": "Fees aside, what factors could account for performance differences between U.S. large-cap index ETFs?",
+    "relevantDocumentIds": ["fiqa-231863"]
+  },
+  {
+    "id": "fiqa-q5620",
+    "query": "What's the fuss about identity theft?",
+    "relevantDocumentIds": ["fiqa-448784", "fiqa-171510", "fiqa-329552", "fiqa-548740"]
+  },
+  {
+    "id": "fiqa-q5254",
+    "query": "How do I calculate the quarterly returns of a stock index?",
+    "relevantDocumentIds": ["fiqa-392851", "fiqa-402466"]
+  },
+  {
+    "id": "fiqa-q7221",
+    "query": "How Technical Analysts react to non-market hours effects",
+    "relevantDocumentIds": ["fiqa-186578"]
+  },
+  {
+    "id": "fiqa-q3446",
+    "query": "What's the difference between Term and Whole Life insurance?",
+    "relevantDocumentIds": ["fiqa-366685", "fiqa-211839", "fiqa-511386", "fiqa-236899", "fiqa-323498"]
+  },
+  {
+    "id": "fiqa-q7936",
+    "query": "Why naked call writing is risky compare to Covered call?",
+    "relevantDocumentIds": ["fiqa-293767", "fiqa-363043", "fiqa-336541"]
+  },
+  {
+    "id": "fiqa-q2472",
+    "query": "How do I deal with a mistaken attempt to collect a debt from me that is owed by someone else?",
+    "relevantDocumentIds": ["fiqa-401125", "fiqa-370334", "fiqa-307315"]
+  },
+  {
+    "id": "fiqa-q2306",
+    "query": "To whom should I report fraud on both of my credit cards?",
+    "relevantDocumentIds": ["fiqa-581889", "fiqa-315875"]
+  },
+  {
+    "id": "fiqa-q7633",
+    "query": "Can a trade happen “in between” the bid and ask price?",
+    "relevantDocumentIds": ["fiqa-494727", "fiqa-442048", "fiqa-122996", "fiqa-197839"]
+  },
+  {
+    "id": "fiqa-q2400",
+    "query": "Will I be paid dividends if I own shares?",
+    "relevantDocumentIds": ["fiqa-456470", "fiqa-1198", "fiqa-564271"]
+  },
+  {
+    "id": "fiqa-q5549",
+    "query": "Pros / cons of being more involved with IRA investments [duplicate]",
+    "relevantDocumentIds": ["fiqa-286227", "fiqa-309361"]
+  },
+  {
+    "id": "fiqa-q1832",
+    "query": "Warren Buffett and Charles Munger advice for small investors?",
+    "relevantDocumentIds": ["fiqa-590276"]
+  },
+  {
+    "id": "fiqa-q2749",
+    "query": "Is it possible to create a self-managed superannuation fund to act as a mortage offset? (Australia)",
+    "relevantDocumentIds": ["fiqa-587192", "fiqa-207285"]
+  },
+  {
+    "id": "fiqa-q3801",
+    "query": "Can a bunch of wealthy people force Facebook to go public?",
+    "relevantDocumentIds": ["fiqa-390529", "fiqa-307776"]
+  },
+  {
+    "id": "fiqa-q3735",
+    "query": "Shorting Stocks And Margin Account Minimum",
+    "relevantDocumentIds": ["fiqa-330041", "fiqa-266900", "fiqa-314478"]
+  },
+  {
+    "id": "fiqa-q622",
+    "query": "Accidentally opened a year term CD account, then realized I need the money sooner. What to do?",
+    "relevantDocumentIds": ["fiqa-179756", "fiqa-369239"]
+  },
+  {
+    "id": "fiqa-q9088",
+    "query": "Brokerage account for charity",
+    "relevantDocumentIds": ["fiqa-569461", "fiqa-561377"]
+  },
+  {
+    "id": "fiqa-q4605",
+    "query": "If the U.S. defaults on its debt, what will happen to my bank money?",
+    "relevantDocumentIds": [
+      "fiqa-41312",
+      "fiqa-313306",
+      "fiqa-453941",
+      "fiqa-504661",
+      "fiqa-229310",
+      "fiqa-210759",
+      "fiqa-400826"
+    ]
+  },
+  {
+    "id": "fiqa-q2330",
+    "query": "How can I determine if a debt consolidation offer is real or a scam?",
+    "relevantDocumentIds": ["fiqa-478514", "fiqa-104221"]
+  },
+  {
+    "id": "fiqa-q6792",
+    "query": "Where to find the full book of outstanding bids/asks for a stock?",
+    "relevantDocumentIds": ["fiqa-485973"]
+  },
+  {
+    "id": "fiqa-q6625",
+    "query": "What does a high theta mean for an option position?",
+    "relevantDocumentIds": ["fiqa-88892"]
+  },
+  {
+    "id": "fiqa-q2885",
+    "query": "Merits of buying apartment houses and renting them",
+    "relevantDocumentIds": ["fiqa-367360", "fiqa-414692", "fiqa-359579", "fiqa-85229", "fiqa-454810"]
+  },
+  {
+    "id": "fiqa-q15",
+    "query": "Can I send a money order from USPS as a business?",
+    "relevantDocumentIds": ["fiqa-325273"]
+  },
+  {
+    "id": "fiqa-q6110",
+    "query": "Why does short selling require borrowing?",
+    "relevantDocumentIds": [
+      "fiqa-118039",
+      "fiqa-331850",
+      "fiqa-188531",
+      "fiqa-233379",
+      "fiqa-94117",
+      "fiqa-259706",
+      "fiqa-320450",
+      "fiqa-226496"
+    ]
+  },
+  {
+    "id": "fiqa-q4823",
+    "query": "Close to retirement & we may move within 7 years. Should we re-finance our mortgage, or not?",
+    "relevantDocumentIds": ["fiqa-104726", "fiqa-362919", "fiqa-561929"]
+  },
+  {
+    "id": "fiqa-q3694",
+    "query": "Has anyone created a documentary about folks who fail to save enough for retirement?",
+    "relevantDocumentIds": ["fiqa-282442", "fiqa-204747"]
+  },
+  {
+    "id": "fiqa-q8",
+    "query": "How to deposit a cheque issued to an associate in my business into my business account?",
+    "relevantDocumentIds": ["fiqa-566392", "fiqa-65404"]
+  },
+  {
+    "id": "fiqa-q1309",
+    "query": "Why does FlagStar Bank harass you about payments within grace period?",
+    "relevantDocumentIds": ["fiqa-471630", "fiqa-156162", "fiqa-489401", "fiqa-438869"]
+  },
+  {
+    "id": "fiqa-q3039",
+    "query": "Can increasing my tax withholding from my full-time job cover FICA taxes for my freelance work?",
+    "relevantDocumentIds": ["fiqa-136804"]
+  },
+  {
+    "id": "fiqa-q699",
+    "query": "Prepaid Rent (Accrual Based Accounting)",
+    "relevantDocumentIds": ["fiqa-107092"]
+  },
+  {
+    "id": "fiqa-q7109",
+    "query": "How do I analyse moving averages?",
+    "relevantDocumentIds": ["fiqa-257185", "fiqa-565501", "fiqa-447781"]
+  },
+  {
+    "id": "fiqa-q5080",
+    "query": "Is there a standard or best practice way to handle money from an expiring UTMA account?",
+    "relevantDocumentIds": ["fiqa-256055"]
+  },
+  {
+    "id": "fiqa-q4981",
+    "query": "Where can I find open source portfolio management software?",
+    "relevantDocumentIds": ["fiqa-45218", "fiqa-247894", "fiqa-102684"]
+  },
+  {
+    "id": "fiqa-q3875",
+    "query": "Does freedom to provide services allow me contracting in Germany without paying taxes there (but in my home EU country)?",
+    "relevantDocumentIds": ["fiqa-136315", "fiqa-249859"]
+  },
+  {
+    "id": "fiqa-q3932",
+    "query": "How do historically low interest rates affect real estate prices?",
+    "relevantDocumentIds": ["fiqa-107697", "fiqa-527443"]
+  },
+  {
+    "id": "fiqa-q3934",
+    "query": "Should market based health insurance premiums be factored into 6 months emergency fund savings?",
+    "relevantDocumentIds": ["fiqa-457034", "fiqa-122952", "fiqa-209604", "fiqa-201769"]
+  },
+  {
+    "id": "fiqa-q7445",
+    "query": "IS it the wrong time to get into the equity market immediately after large gains?",
+    "relevantDocumentIds": ["fiqa-153178", "fiqa-104343", "fiqa-296231"]
+  },
+  {
+    "id": "fiqa-q2264",
+    "query": "Personal Tax Return software for Linux?",
+    "relevantDocumentIds": ["fiqa-534454", "fiqa-412819"]
+  },
+  {
+    "id": "fiqa-q2895",
+    "query": "Where should a young student put their money?",
+    "relevantDocumentIds": ["fiqa-521996", "fiqa-328691"]
+  },
+  {
+    "id": "fiqa-q6787",
+    "query": "Would it make sense to sell a stock, then repurchase it for tax purposes?",
+    "relevantDocumentIds": ["fiqa-587120"]
+  },
+  {
+    "id": "fiqa-q7096",
+    "query": "What's the formula for profits and losses when I delta hedge?",
+    "relevantDocumentIds": ["fiqa-482238"]
+  },
+  {
+    "id": "fiqa-q2747",
+    "query": "What evidence do I need to declare tutoring income on my income tax?",
+    "relevantDocumentIds": ["fiqa-540571"]
+  },
+  {
+    "id": "fiqa-q1933",
+    "query": "UK sole trader who often buys products/services on behalf of clients – do I deduct from declared income or claim as allowable expenses?",
+    "relevantDocumentIds": ["fiqa-183612"]
+  },
+  {
+    "id": "fiqa-q1748",
+    "query": "How high should I set my KickStarter funding goal in order to have $35,000 left over?",
+    "relevantDocumentIds": ["fiqa-18001", "fiqa-528564", "fiqa-576295"]
+  },
+  {
+    "id": "fiqa-q9735",
+    "query": "What are “equity assets”?",
+    "relevantDocumentIds": ["fiqa-392317"]
+  },
+  {
+    "id": "fiqa-q5862",
+    "query": "Can I get a discount on merchandise by paying with cash instead of credit?",
+    "relevantDocumentIds": ["fiqa-130209", "fiqa-269898", "fiqa-170141", "fiqa-562511"]
+  },
+  {
+    "id": "fiqa-q10932",
+    "query": "Transferring money from 403B to 401K?",
+    "relevantDocumentIds": ["fiqa-104134"]
+  },
+  {
+    "id": "fiqa-q6041",
+    "query": "Most effective Fundamental Analysis indicators for market entry",
+    "relevantDocumentIds": ["fiqa-111091", "fiqa-425020", "fiqa-241308", "fiqa-81655"]
+  },
+  {
+    "id": "fiqa-q7178",
+    "query": "Should an ADR that is being delisted be sold off?",
+    "relevantDocumentIds": ["fiqa-401329"]
+  },
+  {
+    "id": "fiqa-q7068",
+    "query": "Making money through CFD",
+    "relevantDocumentIds": ["fiqa-61864", "fiqa-10797"]
+  },
+  {
+    "id": "fiqa-q7700",
+    "query": "Should I re-allocate my portfolio now or let it balance out over time?",
+    "relevantDocumentIds": ["fiqa-273761", "fiqa-507468", "fiqa-2653", "fiqa-179328"]
+  },
+  {
+    "id": "fiqa-q10558",
+    "query": "Investment strategy for 401k when rolling over soon",
+    "relevantDocumentIds": ["fiqa-222485", "fiqa-483268"]
+  },
+  {
+    "id": "fiqa-q3014",
+    "query": "What investments are positively related to the housing market decline?",
+    "relevantDocumentIds": ["fiqa-341399", "fiqa-273282"]
+  },
+  {
+    "id": "fiqa-q4863",
+    "query": "How to calculate new price for bond if yield increases",
+    "relevantDocumentIds": ["fiqa-87398", "fiqa-198465", "fiqa-290562"]
+  },
+  {
+    "id": "fiqa-q3149",
+    "query": "Tips for insurance coverage for one-man-teams",
+    "relevantDocumentIds": ["fiqa-490223", "fiqa-98112"]
+  },
+  {
+    "id": "fiqa-q1416",
+    "query": "US resident with Canadian income via T4A-NR",
+    "relevantDocumentIds": ["fiqa-326717"]
+  },
+  {
+    "id": "fiqa-q2801",
+    "query": "If I deposit money as cash does it count as direct deposit?",
+    "relevantDocumentIds": ["fiqa-398856", "fiqa-475541"]
+  },
+  {
+    "id": "fiqa-q5343",
+    "query": "“International credit report” for French nationals?",
+    "relevantDocumentIds": ["fiqa-2860"]
+  },
+  {
+    "id": "fiqa-q547",
+    "query": "What percentage of my company should I have if I only put money?",
+    "relevantDocumentIds": ["fiqa-6349", "fiqa-278629"]
+  },
+  {
+    "id": "fiqa-q6985",
+    "query": "Bed and Breakfast, Same Day Capital Gains UK",
+    "relevantDocumentIds": ["fiqa-456436"]
+  },
+  {
+    "id": "fiqa-q2154",
+    "query": "What tax software automatically determines the best filing status, etc?",
+    "relevantDocumentIds": ["fiqa-476632"]
+  },
+  {
+    "id": "fiqa-q3394",
+    "query": "What is the easiest way to back-test index funds and ETFs?",
+    "relevantDocumentIds": ["fiqa-445971", "fiqa-342258", "fiqa-129319", "fiqa-570664"]
+  },
+  {
+    "id": "fiqa-q5410",
+    "query": "Dealership made me the secondary owner to my own car",
+    "relevantDocumentIds": ["fiqa-13975", "fiqa-507813", "fiqa-368802"]
+  },
+  {
+    "id": "fiqa-q810",
+    "query": "Can I open a bank account in the US remotely? Will I pay taxes for the money on it?",
+    "relevantDocumentIds": ["fiqa-30596"]
+  },
+  {
+    "id": "fiqa-q3033",
+    "query": "Tax consequences of changing state residency?",
+    "relevantDocumentIds": ["fiqa-571430", "fiqa-265866"]
+  },
+  {
+    "id": "fiqa-q8332",
+    "query": "Why do put option prices go higher when the underlying stock tanks (drops)?",
+    "relevantDocumentIds": ["fiqa-328794", "fiqa-232261", "fiqa-445526"]
+  },
+  {
+    "id": "fiqa-q1469",
+    "query": "Why do some companies report how well their EBITDA performed even if their overall net profit did equally well?",
+    "relevantDocumentIds": ["fiqa-444589"]
+  },
+  {
+    "id": "fiqa-q10812",
+    "query": "Is is possible to dispute IRS underpayment penalties?",
+    "relevantDocumentIds": ["fiqa-451935", "fiqa-46737", "fiqa-314455", "fiqa-342756"]
+  },
+  {
+    "id": "fiqa-q3512",
+    "query": "As an employee, when is it inappropriate to request to see your young/startup company's financial statements?",
+    "relevantDocumentIds": ["fiqa-466835", "fiqa-115042"]
+  },
+  {
+    "id": "fiqa-q4102",
+    "query": "How can I determine if my rate of return is “good” for the market I am in?",
+    "relevantDocumentIds": ["fiqa-554734", "fiqa-241101", "fiqa-39115", "fiqa-448699"]
+  },
+  {
+    "id": "fiqa-q3566",
+    "query": "Where can I buy stocks if I only want to invest a little bit at a time, and not really be involved in trading?",
+    "relevantDocumentIds": ["fiqa-152286", "fiqa-99943", "fiqa-307424"]
+  },
+  {
+    "id": "fiqa-q94",
+    "query": "Using credit card points to pay for tax deductible business expenses",
+    "relevantDocumentIds": ["fiqa-245447"]
+  },
+  {
+    "id": "fiqa-q2551",
+    "query": "How to find cheaper alternatives to a traditional home telephone line?",
+    "relevantDocumentIds": ["fiqa-413832", "fiqa-450742", "fiqa-143100"]
+  },
+  {
+    "id": "fiqa-q2399",
+    "query": "Where do web sites get foreign exchange currency rate / quote information?",
+    "relevantDocumentIds": ["fiqa-343489"]
+  }
+]

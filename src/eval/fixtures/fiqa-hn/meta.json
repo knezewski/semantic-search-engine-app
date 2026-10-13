@@ -1,0 +1,14 @@
+{
+  "source": "BEIR fiqa, test split",
+  "documents": 3393,
+  "goldDocuments": 1705,
+  "hardNegativeDocuments": 1688,
+  "queries": 648,
+  "avgRelevantPerQuery": 2.63,
+  "negativesPerQuery": 3,
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "tokenizer": "lowercase [a-z0-9]+"
+  }
+}
