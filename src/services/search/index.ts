@@ -121,19 +121,22 @@ export class SearchService {
     if (mode === "dense") {
       hits = (await densePromise).map(point => this.toHit(point))
     } else {
-      // Dense and sparse searches are independent — run them in parallel.
-      const [densePoints, sparseHits] = await Promise.all([
-        densePromise,
-        this.sparseHits(input.query, pool, input.source)
-      ])
-      const denseHits = densePoints.map(point => this.toHit(point))
-      hits = rrfFuse(
-        [
-          denseHits.map(hit => ({ id: hit.chunkId, item: hit })),
-          sparseHits.map(hit => ({ id: hit.chunkId, item: hit }))
-        ],
-        pool
-      )
+      const denseHits = (await densePromise).map(point => this.toHit(point))
+      if (env.rrfSparseWeight === 0) {
+        // Sparse channel is disabled by weight — skip the BM25 query entirely.
+        hits = denseHits
+      } else {
+        // Dense and sparse searches are independent — run them in parallel.
+        const sparseHits = await this.sparseHits(input.query, pool, input.source)
+        hits = rrfFuse(
+          [
+            denseHits.map(hit => ({ id: hit.chunkId, item: hit })),
+            sparseHits.map(hit => ({ id: hit.chunkId, item: hit }))
+          ],
+          pool,
+          { k: env.rrfK, weights: [env.rrfDenseWeight, env.rrfSparseWeight] }
+        )
+      }
     }
 
     const qdrantMs = performance.now() - qdrantStarted

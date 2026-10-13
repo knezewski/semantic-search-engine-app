@@ -7,6 +7,8 @@ import { VectorService } from "../services/vector"
 import { summarize } from "../utils/percentile"
 import { aggregate, scoreQuery } from "./metrics"
 import type { EvalDocument, EvalQuery } from "./types"
+import { EVAL_FIXTURE_SET, loadJson } from "./fixtures"
+import { payloadString, round } from "./helpers"
 
 const INDEX_VARIANTS = [
   { name: "baseline", hnswM: 16, hnswEfConstruct: 128, scalarQuantization: false },
@@ -17,15 +19,12 @@ const INDEX_VARIANTS = [
 const SEARCH_EF = [32, 64, 128]
 const SEARCH_LIMIT = 10
 
-const loadJson = async <T>(name: string): Promise<T> =>
-  (await Bun.file(join(import.meta.dir, "fixtures", name)).json()) as T
-
 const indexVariant = async (
   corpus: EvalDocument[],
   name: string,
   tune: { hnswM: number; hnswEfConstruct: number; scalarQuantization: boolean }
 ) => {
-  const collection = `eval_hnsw_${name}`
+  const collection = `eval_hnsw_${EVAL_FIXTURE_SET ? `${EVAL_FIXTURE_SET}_` : ""}${name}`
   const qdrant = getQdrantClient()
   const existing = await qdrant.getCollections()
   if (existing.collections.some(item => item.name === collection)) {
@@ -66,10 +65,7 @@ const measure = async (vectors: VectorService, dataset: EvalQuery[], hnswEf: num
     latencies.push(performance.now() - started)
     scores.push(
       scoreQuery(
-        hits.map(hit => {
-          const payload = (hit.payload ?? {}) as Record<string, unknown>
-          return typeof payload.documentId === "string" ? payload.documentId : ""
-        }),
+        hits.map(hit => payloadString(hit.payload, "documentId")),
         item.relevantDocumentIds
       )
     )
@@ -77,7 +73,6 @@ const measure = async (vectors: VectorService, dataset: EvalQuery[], hnswEf: num
 
   const summary = aggregate(scores)
   const timing = summarize(latencies)
-  const round = (value: number) => Number(value.toFixed(4))
   return {
     hnswEf,
     metrics: {

@@ -19,6 +19,8 @@
     "type-check": "tsc --noEmit",
     "test": "bun test src",
     "eval": "bun src/eval/run.ts",
+    "eval:rrf": "bun src/eval/rrf-sweep.ts",
+    "eval:rerank-pool": "bun src/eval/rerank-pool-sweep.ts",
     "eval:chunks": "bun src/eval/chunk-experiments.ts",
     "eval:models": "bun src/eval/models.ts",
     "eval:qdrant": "bun src/eval/qdrant-sweep.ts",

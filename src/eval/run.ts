@@ -1,52 +1,28 @@
 import { mkdir } from "node:fs/promises"
 import { dirname, join } from "node:path"
 import { getQdrantClient, verifyQdrantConnection } from "../db/qdrant.client"
-import { splitDocument } from "../domain/chunk"
-import { createDocumentRecord } from "../domain/document"
 import { getEmbeddingService } from "../services/embedding"
 import { type SearchMode, SearchService } from "../services/search"
 import { VectorService } from "../services/vector"
 import { aggregate, type QueryScore, scoreQuery } from "./metrics"
 import type { EvalDocument, EvalQuery } from "./types"
+import { EVAL_FIXTURE_SET, evalCollection, loadJson } from "./fixtures"
+import { indexCorpus, round } from "./helpers"
 
-const EVAL_COLLECTION = "document_chunks_eval"
+const EVAL_COLLECTION = evalCollection()
 const SEARCH_LIMIT = 10
 const MODES: SearchMode[] = ["dense", "hybrid", "rerank"]
 
-const round = (value: number): number => Number(value.toFixed(4))
-
 const toMetrics = (summary: QueryScore) => ({
+  hitAt1: round(summary.hitAt1),
   hitAt5: round(summary.hitAt5),
   hitAt10: round(summary.hitAt10),
+  recallAt1: round(summary.recallAt1),
   recallAt5: round(summary.recallAt5),
   recallAt10: round(summary.recallAt10),
   mrr: round(summary.mrr),
   ndcgAt10: round(summary.ndcgAt10)
 })
-
-const indexCorpus = async (documents: EvalDocument[], vectors: VectorService): Promise<void> => {
-  const embeddings = getEmbeddingService()
-  await vectors.ensureCollection(EVAL_COLLECTION)
-
-  for (const item of documents) {
-    const record = createDocumentRecord({
-      id: item.id,
-      title: item.title,
-      text: item.text,
-      source: item.source
-    })
-    const chunks = await splitDocument(record)
-    const chunkVectors = await embeddings.embedBatch(chunks.map(chunk => chunk.text))
-    await vectors.deleteByDocumentId(item.id, EVAL_COLLECTION)
-    await vectors.upsertChunks(
-      chunks.map((chunk, index) => ({
-        ...chunk,
-        vector: chunkVectors[index] ?? []
-      })),
-      EVAL_COLLECTION
-    )
-  }
-}
 
 const evaluateMode = async (
   search: SearchService,
@@ -82,11 +58,6 @@ const evaluateMode = async (
   }
 }
 
-const loadJson = async <T>(name: string): Promise<T> => {
-  const path = join(import.meta.dir, "fixtures", name)
-  return (await Bun.file(path).json()) as T
-}
-
 const run = async (): Promise<void> => {
   const corpus = await loadJson<EvalDocument[]>("corpus.json")
   const dataset = await loadJson<EvalQuery[]>("dataset.json")
@@ -97,7 +68,7 @@ const run = async (): Promise<void> => {
   const search = new SearchService(qdrant, EVAL_COLLECTION)
 
   console.log(`Indexing ${corpus.length} eval documents into ${EVAL_COLLECTION}`)
-  await indexCorpus(corpus, vectors)
+  await indexCorpus(corpus, vectors, EVAL_COLLECTION)
 
   const byMode: Record<string, Awaited<ReturnType<typeof evaluateMode>>> = {}
   for (const mode of MODES) {
@@ -124,7 +95,10 @@ const run = async (): Promise<void> => {
     }))
   }
 
-  const outPath = join(import.meta.dir, "../../eval-results.json")
+  const outPath = join(
+    import.meta.dir,
+    EVAL_FIXTURE_SET ? `../../eval-results-${EVAL_FIXTURE_SET}.json` : "../../eval-results.json"
+  )
   await mkdir(dirname(outPath), { recursive: true })
   await Bun.write(outPath, `${JSON.stringify(results, null, 2)}\n`)
 

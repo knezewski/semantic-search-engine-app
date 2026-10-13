@@ -20,19 +20,46 @@ const termIndex = (term: string): number => {
   return hash >>> 0
 }
 
-const toSparseVector = (text: string): SparseVector => {
-  const tf = new Map<number, number>()
-  for (const token of tokenize(text)) {
-    const index = termIndex(token)
-    tf.set(index, (tf.get(index) ?? 0) + 1)
-  }
+const BM25_K1 = 1.2
+const BM25_B = 0.75
 
-  const indices = [...tf.keys()].sort((a, b) => a - b)
+/** `tf`: raw term counts. `bm25`: Okapi TF saturation and length normalisation (Qdrant's idf modifier supplies IDF). */
+type SparseWeighting = "tf" | "bm25"
+
+const termCounts = (text: string): { counts: Map<number, number>; length: number } => {
+  const counts = new Map<number, number>()
+  const tokens = tokenize(text)
+  for (const token of tokens) {
+    const index = termIndex(token)
+    counts.set(index, (counts.get(index) ?? 0) + 1)
+  }
+  return { counts, length: tokens.length }
+}
+
+const toSparseVector = (text: string): SparseVector => {
+  const { counts } = termCounts(text)
+  const indices = [...counts.keys()].sort((a, b) => a - b)
   return {
     indices,
-    values: indices.map(index => tf.get(index) ?? 0)
+    values: indices.map(index => counts.get(index) ?? 0)
   }
 }
 
-export type { SparseVector }
-export { termIndex, tokenize, toSparseVector }
+/** Document-side sparse vector. `avgDocTokens` is the corpus average length used by BM25 normalisation. */
+const toDocumentSparseVector = (text: string, weighting: SparseWeighting, avgDocTokens: number): SparseVector => {
+  if (weighting === "tf") return toSparseVector(text)
+
+  const { counts, length } = termCounts(text)
+  const indices = [...counts.keys()].sort((a, b) => a - b)
+  const norm = BM25_K1 * (1 - BM25_B + (BM25_B * length) / avgDocTokens)
+  return {
+    indices,
+    values: indices.map(index => {
+      const tf = counts.get(index) ?? 0
+      return (tf * (BM25_K1 + 1)) / (tf + norm)
+    })
+  }
+}
+
+export type { SparseVector, SparseWeighting }
+export { termIndex, toDocumentSparseVector, tokenize, toSparseVector }

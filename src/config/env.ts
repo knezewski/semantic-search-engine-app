@@ -24,6 +24,16 @@ const integer = (key: string, fallback: number): number => {
   return parsed
 }
 
+const number = (key: string, fallback: number): number => {
+  const raw = optional(key)
+  if (raw === undefined) return fallback
+  const parsed = Number.parseFloat(raw)
+  if (!Number.isFinite(parsed)) {
+    throw new Error(`${key} must be a number, got "${raw}"`)
+  }
+  return parsed
+}
+
 const nodeEnv = optional("NODE_ENV") ?? "development"
 
 const env = {
@@ -50,7 +60,14 @@ const env = {
   chunkOverlap: integer("CHUNK_OVERLAP", 50),
 
   searchHnswEf: integer("SEARCH_HNSW_EF", 64),
+  sparseWeighting: optional("SPARSE_WEIGHTING") === "bm25" ? "bm25" : "tf",
+  sparseAvgDocTokens: integer("SPARSE_AVG_DOC_TOKENS", 176),
   embeddingCacheSize: integer("EMBEDDING_CACHE_SIZE", 256),
+
+  rrfK: number("RRF_K", 60),
+  rrfDenseWeight: number("RRF_DENSE_WEIGHT", 1),
+  // FiQA sweep: BM25 drags MRR/NDCG down, so ranking accuracy is dense-first by default.
+  rrfSparseWeight: number("RRF_SPARSE_WEIGHT", 0),
 
   rerankEnabled: flag("RERANK_ENABLED", false),
   rerankModel: optional("RERANK_MODEL") ?? "Xenova/ms-marco-MiniLM-L-6-v2",

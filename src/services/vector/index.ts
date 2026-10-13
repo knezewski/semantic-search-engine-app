@@ -1,7 +1,7 @@
 import type { QdrantClient } from "@qdrant/js-client-rest"
 import { env } from "../../config/env"
 import type { EmbeddedChunk } from "../../domain/embedding"
-import { type SparseVector, toSparseVector } from "../../domain/sparse"
+import { type SparseVector, toDocumentSparseVector } from "../../domain/sparse"
 import { pointIdForChunk } from "../../utils/hash"
 
 const PAYLOAD_INDEXES = ["documentId", "source"] as const
@@ -109,7 +109,11 @@ export class VectorService {
     await this.qdrant.upsert(collection, {
       wait: true,
       points: chunks.map(chunk => {
-        const sparse = toSparseVector(`${chunk.title} ${chunk.text}`)
+        const sparse = toDocumentSparseVector(
+          `${chunk.title} ${chunk.text}`,
+          env.sparseWeighting,
+          env.sparseAvgDocTokens
+        )
         return {
           id: pointIdForChunk(chunk.chunkId),
           // Unnamed dense vector is addressed with "" when mixed with named sparse vectors.

@@ -40,8 +40,10 @@ const ndcgAtK = (retrieved: string[], relevant: string[], k: number): number => 
 }
 
 interface QueryScore {
+  hitAt1: number
   hitAt5: number
   hitAt10: number
+  recallAt1: number
   recallAt5: number
   recallAt10: number
   mrr: number
@@ -49,8 +51,10 @@ interface QueryScore {
 }
 
 const scoreQuery = (retrieved: string[], relevant: string[]): QueryScore => ({
+  hitAt1: hitAtK(retrieved, relevant, 1),
   hitAt5: hitAtK(retrieved, relevant, 5),
   hitAt10: hitAtK(retrieved, relevant, 10),
+  recallAt1: recallAtK(retrieved, relevant, 1),
   recallAt5: recallAtK(retrieved, relevant, 5),
   recallAt10: recallAtK(retrieved, relevant, 10),
   mrr: reciprocalRank(retrieved, relevant),
@@ -61,8 +65,10 @@ const mean = (values: number[]): number =>
   values.length === 0 ? 0 : values.reduce((sum, value) => sum + value, 0) / values.length
 
 const aggregate = (scores: QueryScore[]): QueryScore => ({
+  hitAt1: mean(scores.map(score => score.hitAt1)),
   hitAt5: mean(scores.map(score => score.hitAt5)),
   hitAt10: mean(scores.map(score => score.hitAt10)),
+  recallAt1: mean(scores.map(score => score.recallAt1)),
   recallAt5: mean(scores.map(score => score.recallAt5)),
   recallAt10: mean(scores.map(score => score.recallAt10)),
   mrr: mean(scores.map(score => score.mrr)),

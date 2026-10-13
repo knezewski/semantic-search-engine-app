@@ -7,6 +7,8 @@ import { HuggingFaceEmbeddingService } from "../services/embedding"
 import { VectorService } from "../services/vector"
 import { aggregate, scoreQuery } from "./metrics"
 import type { EvalDocument, EvalQuery } from "./types"
+import { EVAL_FIXTURE_SET, loadJson } from "./fixtures"
+import { payloadString, round } from "./helpers"
 
 const MODELS = [
   { id: "BAAI/bge-small-en-v1.5", dimensions: 384 },
@@ -17,11 +19,8 @@ const SEARCH_LIMIT = 10
 
 const slug = (modelId: string): string => modelId.replace(/[^a-zA-Z0-9]+/g, "_").slice(0, 40)
 
-const loadJson = async <T>(name: string): Promise<T> =>
-  (await Bun.file(join(import.meta.dir, "fixtures", name)).json()) as T
-
 const evaluateModel = async (corpus: EvalDocument[], dataset: EvalQuery[], modelId: string, dimensions: number) => {
-  const collection = `eval_model_${slug(modelId)}`
+  const collection = `eval_model_${EVAL_FIXTURE_SET ? `${EVAL_FIXTURE_SET}_` : ""}${slug(modelId)}`
   const embeddings = new HuggingFaceEmbeddingService(modelId, dimensions)
   const tokenizer = new HuggingFaceTokenizer(modelId)
   const vectors = new VectorService(getQdrantClient(), collection)
@@ -53,17 +52,13 @@ const evaluateModel = async (corpus: EvalDocument[], dataset: EvalQuery[], model
     const hits = await vectors.searchChunks({ vector: queryVector, limit: SEARCH_LIMIT })
     scores.push(
       scoreQuery(
-        hits.map(hit => {
-          const payload = (hit.payload ?? {}) as Record<string, unknown>
-          return typeof payload.documentId === "string" ? payload.documentId : ""
-        }),
+        hits.map(hit => payloadString(hit.payload, "documentId")),
         item.relevantDocumentIds
       )
     )
   }
   const queryMs = performance.now() - queryStarted
   const summary = aggregate(scores)
-  const round = (value: number) => Number(value.toFixed(4))
 
   return {
     modelId,

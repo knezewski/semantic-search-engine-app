@@ -27,5 +27,12 @@ describe("retrieval metrics", () => {
     expect(score.hitAt5).toBe(1)
     expect(score.mrr).toBeCloseTo(0.5)
     expect(score.recallAt5).toBe(1)
+    expect(score.hitAt1).toBe(0)
+    expect(score.recallAt1).toBe(0)
+  })
+
+  test("recallAtK@1 counts only the top-ranked hit", () => {
+    expect(recallAtK(["a", "b", "c"], ["a", "b"], 1)).toBeCloseTo(1 / 2)
+    expect(recallAtK(["a", "b", "c"], ["a", "b"], 2)).toBe(1)
   })
 })

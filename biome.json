@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
   "files": {
-    "includes": ["**", "!**/node_modules", "!**/dist", "!**/qdrant_storage", "!**/bun.lock"]
+    "includes": ["**", "!**/node_modules", "!**/dist", "!**/qdrant_storage", "!**/bun.lock", "!**/fixtures/fiqa-hn"]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {

@@ -7,6 +7,8 @@ import { SearchService } from "../services/search"
 import { VectorService } from "../services/vector"
 import { aggregate, scoreQuery } from "./metrics"
 import type { EvalDocument, EvalQuery } from "./types"
+import { EVAL_FIXTURE_SET, loadJson } from "./fixtures"
+import { round } from "./helpers"
 
 const VARIANTS = [
   { chunkSize: 250, chunkOverlap: 25 },
@@ -16,13 +18,8 @@ const VARIANTS = [
 
 const SEARCH_LIMIT = 10
 
-const loadJson = async <T>(name: string): Promise<T> => {
-  const path = join(import.meta.dir, "fixtures", name)
-  return (await Bun.file(path).json()) as T
-}
-
 const runVariant = async (corpus: EvalDocument[], dataset: EvalQuery[], chunkSize: number, chunkOverlap: number) => {
-  const collection = `document_chunks_eval_${chunkSize}`
+  const collection = `document_chunks_eval${EVAL_FIXTURE_SET ? `_${EVAL_FIXTURE_SET}` : ""}_${chunkSize}`
   const qdrant = getQdrantClient()
   const vectors = new VectorService(qdrant, collection)
   const search = new SearchService(qdrant, collection)
@@ -60,7 +57,6 @@ const runVariant = async (corpus: EvalDocument[], dataset: EvalQuery[], chunkSiz
   }
 
   const summary = aggregate(scores)
-  const round = (value: number) => Number(value.toFixed(4))
   return {
     chunkSize,
     chunkOverlap,

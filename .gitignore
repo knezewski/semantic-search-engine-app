@@ -11,6 +11,8 @@ eval-results.json
 eval-chunk-results.json
 eval-model-results.json
 eval-qdrant-results.json
+eval-rrf-results.json
+eval-rerank-pool-results.json
 bench-results.json
 bench-ingest-results.json
 

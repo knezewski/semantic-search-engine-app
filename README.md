@@ -11,31 +11,58 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 ## Features
 
 - **Hybrid retrieval:** dense + BM25 sparse, fused with Reciprocal Rank Fusion (RRF).
-- **Reranking:** optional cross-encoder rerank over the hybrid candidate pool (default search mode).
-- **Measured quality:** Recall@K / MRR / NDCG harness over a fixed fixture corpus; chunk-size, embedding-model, and Qdrant quantization sweeps.
+- **Reranking:** optional cross-encoder rerank over the hybrid candidate pool (opt-in via `RERANK_ENABLED`).
+- **Measured quality:** Recall@K / MRR / NDCG harness over BEIR FiQA (with hard negatives) plus chunk-size, embedding-model, RRF, rerank-pool, and Qdrant quantization sweeps.
 - **Latency transparency:** `Server-Timing` response header splitting `embed` / `qdrant` / `rerank` / `total`; search-percentile and ingest-throughput benchmarks.
 - **Resilient ingest:** four BullMQ queues + workers, 3 attempts with exponential backoff, manual replay, deterministic chunk ids, idempotent `document_chunks` collection with payload indexes.
 - **Operable:** `/health`, `/ready`, `/metrics`; circuit breaker and graceful shutdown; typed env; SQLite document store.
 
 ## Current results
 
-> Measured locally on the fixture corpus (30 documents, 73 queries, `EMBEDDING_MODEL=BAAI/bge-small-en-v1.5`). Reproduce with `bun run eval` / `bun run bench`.
+Measured on the BEIR **FiQA** test split — **3 393 documents, 648 queries** with BM25-selected hard negatives (the 30-doc fixture is only a smoke test). Embeddings `BAAI/bge-small-en-v1.5`. Reproduce:
 
-| Mode | Recall@5 | MRR | NDCG@10 |
+```bash
+EVAL_FIXTURE_SET=fiqa-hn bun run eval              # modes → eval-results-fiqa-hn.json
+EVAL_FIXTURE_SET=fiqa-hn bun run eval:rrf          # RRF k × weights → eval-rrf-results.json
+EVAL_FIXTURE_SET=fiqa-hn bun run eval:rerank-pool  # rerank pool + latency → eval-rerank-pool-results.json
+```
+
+### Modes
+
+| Mode | Recall@1 | Recall@10 | MRR | NDCG@10 |
+| --- | --- | --- | --- | --- |
+| dense | 0.2721 | **0.6422** | **0.6289** | **0.5713** |
+| hybrid (BM25 1:1, k=60) | 0.1561 | 0.5901 | 0.4831 | 0.4523 |
+| rerank (MiniLM, pool=15) | 0.2269 | 0.6145 | 0.5682 | 0.5228 |
+
+> `dense` wins on every ranking metric. Equal-weight BM25 fusion *hurts*: it drops MRR 0.629 → 0.483 and NDCG@10 0.571 → 0.452. Rerank recovers part of it but still trails dense.
+
+### RRF fusion sweep (dense vs BM25 weight)
+
+| Config | Recall@10 | MRR | NDCG@10 |
 | --- | --- | --- | --- |
-| dense | 1.000 | 0.966 | 0.975 |
-| hybrid | 1.000 | 0.973 | 0.980 |
-| rerank | 1.000 | 0.986 | 0.990 |
+| dense (BM25 weight 0) | 0.6422 | **0.6289** | **0.5713** |
+| dense 1 : BM25 0.25, k=10 | **0.6492** | 0.5934 | 0.5523 |
+| dense 1 : BM25 1, k=60 (old default) | 0.5899 | 0.4845 | 0.4528 |
 
-> Recall@5 is saturated (1.0) on this corpus; MRR/NDCG@10 discriminate and rank dense < hybrid < rerank.
+> BM25 is the weak channel on FiQA — the more weight it gets, the lower MRR/NDCG. Ranking accuracy is dense-first, so `RRF_SPARSE_WEIGHT` now defaults to `0` (BM25 stays opt-in).
 
-| Metric | p50 | p95 |
-| --- | --- | --- |
-| `/search` latency (ms) | 36.6 | 43.6 |
+### Rerank pool trade-off (200-query sample)
 
-> Latency measured with `hybrid` as the default mode; `mode:"rerank"` adds cross-encoder time (~0.5–1.1 s per request).
+| Pool | Recall@10 | MRR | NDCG@10 | rerank p50 | rerank p95 |
+| --- | --- | --- | --- | --- | --- |
+| dense (no rerank) | 0.5948 | **0.5866** | **0.5315** | 0 | 0 |
+| 15 | **0.6141** | 0.5218 | 0.5021 | 2.67 s | 3.81 s |
+| 30 | 0.6070 | 0.5113 | 0.4934 | 3.81 s | 4.18 s |
+| 50 | 0.6134 | 0.5059 | 0.4906 | 6.32 s | 8.58 s |
 
-> Status (2026-10-04): reranking returns real cross-encoder scores (the previous implementation always returned 0), and ingest fails fast with `503 NOT_READY` when Redis is down. Manual test cases **SRCH-06** and **ERR-04** now pass.
+> Bigger pools **don't help** — MRR/NDCG fall as the weak reranker gets more candidates to mis-rank. Measured cross-encoder latency is **2.7–8.6 s/query**, far above the 0.5–1.1 s first assumed: `ms-marco-MiniLM-L-6` appears to run in **wasm** here (Bun doesn't load `onnxruntime-node`), so the bottleneck is the rerank runtime, not the pool size.
+
+### Takeaways
+
+- **dense-first is the right default on FiQA** — BM25 and the current reranker both cost ranking accuracy.
+- The knobs stay wired (`RRF_K`, channel weights, `RERANK_CANDIDATES`, `RERANK_MODEL`) for corpora where lexical/rerank signal helps.
+- **To make rerank practical**, run the cross-encoder natively (onnxruntime-node under Node, or a separate Python/FastAPI rerank service) — wasm is the latency ceiling here.
 
 ## Tech
 
@@ -99,7 +126,10 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | `CHUNK_SIZE` / `CHUNK_OVERLAP` | `500` / `50` | embedding-tokenizer tokens |
 | `SEARCH_HNSW_EF` | `64` | ANN recall/latency tradeoff |
 | `EMBEDDING_CACHE_SIZE` | `256` | cached query embeddings |
-| `RERANK_ENABLED` | `true` | makes `rerank` the default mode |
+| `RRF_K` | `60` | reciprocal-rank constant for hybrid fusion |
+| `RRF_DENSE_WEIGHT` | `1` | dense channel weight in RRF fusion |
+| `RRF_SPARSE_WEIGHT` | `0` | BM25 channel weight (`0` = dense-only; FiQA sweep showed BM25 hurts MRR/NDCG) |
+| `RERANK_ENABLED` | `false` | opt-in cross-encoder rerank (default mode stays `hybrid`) |
 | `RERANK_MODEL` | `Xenova/ms-marco-MiniLM-L-6-v2` | cross-encoder |
 | `RERANK_CANDIDATES` | `15` | candidate pool ceiling before rerank (lower = faster, smaller recall window) |
 
@@ -112,7 +142,7 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | GET | `/metrics` | BullMQ waiting/active/completed/failed per queue |
 | POST | `/documents` | `202 { id, status: "queued" }` |
 | GET | `/documents/:id` | pipeline status (`queued → chunking → embedding → indexing → ready \| failed`) |
-| POST | `/search` | default `rerank`; `mode` may be `hybrid` or `dense` |
+| POST | `/search` | default `hybrid` (dense-first); `mode` may be `hybrid`, `dense`, or `rerank` |
 
 `POST /search` accepts `query`, `limit` (1–50), `source`, `scoreThreshold` (0–1), `mode`, and returns `{ results: [...] }` plus a `Server-Timing` header (`embed`, `qdrant`, `rerank`, `total`).
 
@@ -129,12 +159,16 @@ curl -s -X POST http://localhost:3000/search \
 ## Quality and performance
 
 ```
-bun run eval          # dense vs hybrid vs rerank → eval-results.json
-bun run eval:chunks   # chunk sizes 250/25, 500/50, 800/80
-bun run eval:models   # embedding bake-off
-bun run eval:qdrant   # HNSW / int8 quantization sweep
-bun run bench         # search latency percentiles → bench-results.json
-bun run bench:ingest  # ingest throughput
+bun run eval               # dense vs hybrid vs rerank → eval-results.json
+bun run eval:rrf           # RRF k × dense/BM25 weight sweep → eval-rrf-results.json
+bun run eval:rerank-pool   # rerank candidate pool + latency → eval-rerank-pool-results.json
+bun run eval:chunks        # chunk sizes 250/25, 500/50, 800/80
+bun run eval:models        # embedding bake-off
+bun run eval:qdrant        # HNSW / int8 quantization sweep
+bun run bench              # search latency percentiles → bench-results.json
+bun run bench:ingest       # ingest throughput
+
+Prefix any `eval*` command with `EVAL_FIXTURE_SET=fiqa-hn` to run against the BEIR FiQA corpus (3 393 docs) instead of the small smoke fixture.
 ```
 
 ## Development
