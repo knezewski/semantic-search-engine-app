@@ -8,6 +8,7 @@ dist/
 # Local infra / generated reports
 qdrant_storage/
 eval-results.json
+eval-results-fiqa-hn*.json
 eval-chunk-results.json
 eval-model-results.json
 eval-qdrant-results.json
