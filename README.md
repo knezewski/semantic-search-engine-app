@@ -19,20 +19,38 @@ Client → Hono API → Service → BullMQ (Redis) → Ingest → Chunk → Embe
 
 ## Evaluation status
 
-The harness now uses **`document-v2` metrics**: document IDs are deduplicated in first-occurrence order before every cutoff, NDCG cannot count the same document twice, and reciprocal rank is explicitly named **MRR@10**. Each run saves a configuration/data manifest, raw per-query rankings, slices and seeded paired-bootstrap differences in a unique `eval-runs/<run-id>/` directory.
+The harness uses **`document-v2` metrics**: document IDs are deduplicated in first-occurrence order before every cutoff, NDCG cannot count the same document twice, and reciprocal rank is explicitly named **MRR@10**. Each run saves a configuration/data manifest, raw per-query rankings, slices and seeded paired-bootstrap differences in a unique `eval-runs/<run-id>/` directory.
 
-**Historical results are withdrawn pending a fresh benchmark.** Earlier tables used duplicate-sensitive NDCG, an unrecorded configuration and, for the pool sweep, the first 200 queries rather than a seeded sample. Their numbers and derived confidence intervals are incompatible with `document-v2`. Old local artifacts are left untouched, but cannot be corrected without their missing ranked IDs. No new quality results are claimed here.
+### Latest retrieval snapshot
+
+The latest completed v3 benchmark was run on **2026-11-17**, using 648 queries over 3,393 documents and pinned embedding/reranker revisions. It evaluates a **ranked document list**, not generated answers:
+
+| Configuration | Recall@10 | MRR@10 | NDCG@10 |
+| --- | ---: | ---: | ---: |
+| Dense baseline | 0.6422 | 0.6295 | 0.5581 |
+| Dense + reranker, pool=15 | 0.6428 | 0.5754 | 0.5256 |
+| Dense + reranker, pool=30 | 0.6283 | 0.5657 | 0.5125 |
+| Dense + reranker, pool=50 | 0.6171 | 0.5561 | 0.5015 |
+
+Relative to dense, pool=15 changed NDCG@10 by **−0.0325** (95% paired bootstrap CI **[−0.0482, −0.0170]**). The reranker did not provide a quality gain on this benchmark. The current recommendation is therefore **dense-first; keep reranking opt-in**.
+
+These are retrieval results for a reduced FiQA stress fixture containing gold documents and BM25-mined distractors. The queries influenced tuning, so this is **not an independent held-out test, a production estimate, or a business SLA**. Older metric-v1 artifacts are not comparable. The benchmark used the independent v3 pool protocol; the old top-50-logit-reuse protocol is obsolete.
 
 - Built-in `smoke`: **12 documents / 8 queries**, for wiring checks only.
-- `fiqa-hn`: **3 393 documents / 648 queries**, BEIR FiQA test queries with BM25-mined distractors. This is a reduced-corpus stress benchmark, not a full-corpus or production estimate. Since its queries have been used for tuning, a new held-out evaluation is needed for final model selection.
-- Existing dense-first defaults are unchanged pending re-evaluation; this is not a renewed claim of superiority.
+- `fiqa-hn`: **3,393 documents / 648 queries**, a reduced-corpus stress benchmark.
+- Dense-first defaults remain unchanged; reranking is not enabled by default.
+- The result does not establish quality on your future production queries. For release decisions, add a genuinely unused, domain-specific judged query set and agree on a top-K success threshold and latency target before tuning against it.
+
+See the [latest detailed v3 report](<eval-runs/audit-v3-20261117T150656Z-nlLoLZ/report-v3.md>) and [evaluation methodology](<docs/evaluation.md>).
 
 ```bash
 # Explicit local endpoint: these commands index fresh collections and may download models.
 QDRANT_URL=http://localhost:6333 QDRANT_API_KEY= EVAL_FIXTURE_SET=fiqa-hn bun run eval
 QDRANT_URL=http://localhost:6333 QDRANT_API_KEY= EVAL_FIXTURE_SET=fiqa-hn bun run eval:rrf
-QDRANT_URL=http://localhost:6333 QDRANT_API_KEY= EVAL_FIXTURE_SET=fiqa-hn EVAL_QUERIES=200 EVAL_SEED=42 bun run eval:rerank-pool
+QDRANT_URL=http://localhost:6333 QDRANT_API_KEY= EVAL_FIXTURE_SET=fiqa-hn EVAL_QUERIES=200 EVAL_SEED=42 EVAL_POOL_PROTOCOL=fixed-candidates bun run eval:rerank-pool
 ```
+
+`eval:rerank-pool` uses independent reranker calls per pool. Set `EVAL_POOL_PROTOCOL=serving-depth` to retrieve each pool at its own depth. Repeated warm latency defaults are controlled by `EVAL_LATENCY_REPEATS=3` and `EVAL_LATENCY_WARMUP_ROUNDS=1`; these measurements are exploratory and are not an end-to-end SLA.
 
 See [evaluation methodology and artifact schema](<docs/evaluation.md>) for metric semantics, model pinning, latency protocol, limitations and the rerun checklist.
 
@@ -102,7 +120,7 @@ See `.env.example`; values are read in `src/config/env.ts`.
 | `RRF_K` | `60` | reciprocal-rank constant for hybrid fusion |
 | `RRF_DENSE_WEIGHT` | `1` | dense channel weight in RRF fusion |
 | `RRF_SPARSE_WEIGHT` | `0` | sparse channel weight (`0` = dense-only); historical quality claims await re-evaluation |
-| `RERANK_ENABLED` | `false` | opt-in cross-encoder rerank (default mode stays `hybrid`) |
+| `RERANK_ENABLED` | `false` | opt-in cross-encoder rerank; dense-first remains the evaluated default recommendation |
 | `RERANK_MODEL` | `Xenova/ms-marco-MiniLM-L-6-v2` | cross-encoder |
 | `RERANK_REVISION` | `main` | pin reranker model and tokenizer to the same full HF commit SHA |
 | `RERANK_CANDIDATES` | `15` | candidate pool ceiling before rerank (lower = faster, smaller recall window) |
