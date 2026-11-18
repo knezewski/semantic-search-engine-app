@@ -55,6 +55,7 @@ const env = {
   collectionName: optional("COLLECTION_NAME") ?? "document_chunks",
   vectorSize: integer("VECTOR_SIZE", 384),
   embeddingModel: optional("EMBEDDING_MODEL") ?? "BAAI/bge-small-en-v1.5",
+  embeddingRevision: optional("EMBEDDING_REVISION"),
 
   chunkSize: integer("CHUNK_SIZE", 500),
   chunkOverlap: integer("CHUNK_OVERLAP", 50),
@@ -66,11 +67,12 @@ const env = {
 
   rrfK: number("RRF_K", 60),
   rrfDenseWeight: number("RRF_DENSE_WEIGHT", 1),
-  // FiQA sweep: BM25 drags MRR/NDCG down, so ranking accuracy is dense-first by default.
+  // Preserve the historical dense-first default; document-v2 benchmarking must revalidate quality.
   rrfSparseWeight: number("RRF_SPARSE_WEIGHT", 0),
 
   rerankEnabled: flag("RERANK_ENABLED", false),
   rerankModel: optional("RERANK_MODEL") ?? "Xenova/ms-marco-MiniLM-L-6-v2",
+  rerankRevision: optional("RERANK_REVISION"),
   rerankCandidates: integer("RERANK_CANDIDATES", 15)
 } as const
 

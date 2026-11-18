@@ -1,30 +1,15 @@
-import { mkdir } from "node:fs/promises"
-import { dirname, join } from "node:path"
 import { getQdrantClient, verifyQdrantConnection } from "../db/qdrant.client"
 import { toSparseVector } from "../domain/sparse"
 import { getEmbeddingService } from "../services/embedding"
-import { rrfFuse, type Ranked } from "../services/search/rrf"
+import { type Ranked, rrfFuse } from "../services/search/rrf"
 import { VectorService } from "../services/vector"
-import { evalCollection, loadJson } from "./fixtures"
-import { indexCorpus, payloadString, qualitySummary } from "./helpers"
-import { aggregate, scoreQuery } from "./metrics"
-import type { EvalDocument, EvalQuery } from "./types"
+import { indexCorpus, payloadString } from "./helpers"
+import { compareQueries, makeQueryResult, summarizeQueries } from "./report"
+import { createEvalRun } from "./run-context"
 
-/**
- * Sweeps RRF `k` and dense/sparse channel weights over the hybrid candidate
- * pool. Retrieves dense + sparse rankings once per query, then fuses in memory
- * for every (k, weight) pair — no re-indexing per config.
- *
- * Run: EVAL_FIXTURE_SET=fiqa-hn bun run eval:rrf
- */
-
-const COLLECTION = evalCollection()
 const SEARCH_LIMIT = 10
-// Mirrors SearchService.candidateLimit(10) at the default RERANK_CANDIDATES=15.
 const POOL = 15
-
 const K_VALUES = [10, 30, 60, 100]
-
 const WEIGHT_PAIRS = [
   { label: "d1:s1", dense: 1, sparse: 1 },
   { label: "d1:s0.5", dense: 1, sparse: 0.5 },
@@ -37,104 +22,86 @@ const WEIGHT_PAIRS = [
 interface ChunkRef {
   chunkId: string
   documentId: string
+  score: number
 }
-
 const toRanked = (points: Awaited<ReturnType<VectorService["searchChunks"]>>): Array<Ranked<ChunkRef>> =>
   points.map(point => {
     const chunkId = payloadString(point.payload, "chunkId") || String(point.id)
-    return { id: chunkId, item: { chunkId, documentId: payloadString(point.payload, "documentId") } }
+    return {
+      id: chunkId,
+      item: { chunkId, documentId: payloadString(point.payload, "documentId"), score: point.score }
+    }
   })
 
 const run = async (): Promise<void> => {
+  const context = await createEvalRun("rrf", {
+    searchLimit: SEARCH_LIMIT,
+    pool: POOL,
+    kValues: K_VALUES,
+    weightPairs: WEIGHT_PAIRS
+  })
+  const collection = context.collection()
   await verifyQdrantConnection()
-  const corpus = await loadJson<EvalDocument[]>("corpus.json")
-  const dataset = await loadJson<EvalQuery[]>("dataset.json")
-
   const qdrant = getQdrantClient()
-  const vectors = new VectorService(qdrant, COLLECTION)
-
-  console.log(`Indexing ${corpus.length} eval documents into ${COLLECTION}`)
-  await indexCorpus(corpus, vectors, COLLECTION)
-
+  await context.captureQdrant(qdrant)
+  const vectors = new VectorService(qdrant, collection)
+  await indexCorpus(context.corpus, vectors, collection)
   const embeddings = getEmbeddingService()
 
-  // Retrieve dense + sparse rankings once per query (fusion params don't affect them).
-  console.log(`Retrieving dense + sparse rankings for ${dataset.length} queries (pool=${POOL})`)
-  const perQuery: Array<{
-    dense: Array<Ranked<ChunkRef>>
-    sparse: Array<Ranked<ChunkRef>>
-    relevant: string[]
-  }> = []
-
-  for (const item of dataset) {
+  const candidates = []
+  for (const item of context.dataset) {
     const queryVector = await embeddings.embed(item.query)
     const [densePoints, sparsePoints] = await Promise.all([
       vectors.searchChunks({ vector: queryVector, limit: POOL }),
       vectors.searchSparse({ sparse: toSparseVector(item.query), limit: POOL })
     ])
-    perQuery.push({
-      dense: toRanked(densePoints),
-      sparse: toRanked(sparsePoints),
-      relevant: item.relevantDocumentIds
-    })
+    candidates.push({ item, dense: toRanked(densePoints), sparse: toRanked(sparsePoints) })
   }
-
-  // Dense-only top-10 as the reference point (no fusion).
-  const denseReference = qualitySummary(
-    aggregate(
-      perQuery.map(query =>
-        scoreQuery(
-          query.dense.slice(0, SEARCH_LIMIT).map(ranked => ranked.item.documentId),
-          query.relevant
-        )
-      )
+  const baselineRows = candidates.map(({ item, dense }) =>
+    makeQueryResult(
+      item,
+      dense.slice(0, SEARCH_LIMIT).map(hit => hit.item)
     )
   )
-
-  const variants: Array<Record<string, unknown>> = []
+  const variants = []
   for (const pair of WEIGHT_PAIRS) {
     for (const k of K_VALUES) {
-      const scores = perQuery.map(query =>
-        scoreQuery(
-          rrfFuse([query.dense, query.sparse], SEARCH_LIMIT, {
-            k,
-            weights: [pair.dense, pair.sparse]
-          }).map(ref => ref.documentId),
-          query.relevant
+      const queryResults = candidates.map(({ item, dense, sparse }) => {
+        const hits = rrfFuse([dense, sparse], SEARCH_LIMIT, { k, weights: [pair.dense, pair.sparse] })
+        // rrfFuse returns items with their original dense/sparse score, not the fused score.
+        // Omit it here rather than mislabeling it as a fusion score; source scores are saved below.
+        return makeQueryResult(
+          item,
+          hits.map(({ documentId, chunkId }) => ({ documentId, chunkId }))
         )
-      )
-      const metrics = qualitySummary(aggregate(scores))
-      variants.push({
+      })
+      const variant = {
         label: pair.label,
         k,
         denseWeight: pair.dense,
         sparseWeight: pair.sparse,
-        ...metrics
-      })
-      console.log(`  ${pair.label} k=${k} → ${JSON.stringify(metrics)}`)
+        ...summarizeQueries(queryResults),
+        comparisonToDense: compareQueries(baselineRows, queryResults, context.bootstrapOptions),
+        queryResults
+      }
+      variants.push(variant)
+      console.log(`${pair.label} k=${k}: ${JSON.stringify(variant.metrics)}`)
     }
   }
-
-  const results = {
-    collection: COLLECTION,
-    model: getEmbeddingService().modelId,
-    documents: corpus.length,
-    queries: dataset.length,
-    pool: POOL,
-    searchLimit: SEARCH_LIMIT,
-    denseReference,
+  const path = await context.writeResults({
+    collection,
+    collectionInfo: await vectors.getCollection(collection),
+    documents: context.corpus.length,
+    queries: context.dataset.length,
+    denseReference: { ...summarizeQueries(baselineRows), queryResults: baselineRows },
+    candidates: candidates.map(({ item, dense, sparse }) => ({ id: item.id, dense, sparse })),
     variants
-  }
-
-  const outPath = join(import.meta.dir, "../../eval-rrf-results.json")
-  await mkdir(dirname(outPath), { recursive: true })
-  await Bun.write(outPath, `${JSON.stringify(results, null, 2)}\n`)
-
-  console.log("\nDense reference:", JSON.stringify(denseReference))
-  console.log(`Wrote ${outPath}`)
+  })
+  console.log(`Wrote ${path}`)
 }
 
-run().catch(error => {
-  console.error(error)
-  process.exit(1)
-})
+if (import.meta.main)
+  run().catch(error => {
+    console.error(error)
+    process.exitCode = 1
+  })

@@ -36,7 +36,10 @@ class HuggingFaceTokenizer implements TokenizerPort {
   private tokenizer: Awaited<ReturnType<typeof AutoTokenizer.from_pretrained>> | null = null
   private loading: Promise<Awaited<ReturnType<typeof AutoTokenizer.from_pretrained>>> | null = null
 
-  constructor(modelId: string) {
+  constructor(
+    modelId: string,
+    private readonly revision = "main"
+  ) {
     this.modelId = modelId
   }
 
@@ -59,7 +62,7 @@ class HuggingFaceTokenizer implements TokenizerPort {
   private async getTokenizer() {
     if (this.tokenizer) return this.tokenizer
     if (!this.loading) {
-      this.loading = AutoTokenizer.from_pretrained(this.modelId)
+      this.loading = AutoTokenizer.from_pretrained(this.modelId, { revision: this.revision })
     }
     this.tokenizer = await this.loading
     return this.tokenizer
@@ -70,7 +73,7 @@ let instance: TokenizerPort | null = null
 
 const getTokenizer = (): TokenizerPort => {
   if (!instance) {
-    instance = new HuggingFaceTokenizer(env.embeddingModel)
+    instance = new HuggingFaceTokenizer(env.embeddingModel, env.embeddingRevision)
   }
   return instance
 }

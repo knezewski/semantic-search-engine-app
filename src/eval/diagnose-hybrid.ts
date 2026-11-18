@@ -229,11 +229,11 @@ const fmt = (value: number): string => value.toFixed(3).padStart(6)
 const printTable = (title: string, result: ReturnType<typeof evaluateCorpus>): void => {
   console.log(`\n=== ${title} ===`)
   console.log(
-    `${"config".padEnd(46)}${"Hit@1".padStart(7)}${"Hit@10".padStart(7)}${"Rec@10".padStart(7)}${"MRR".padStart(7)}${"NDCG10".padStart(7)}`
+    `${"config".padEnd(46)}${"Hit@1".padStart(7)}${"Hit@10".padStart(7)}${"Rec@10".padStart(7)}${"MRR@10".padStart(7)}${"NDCG10".padStart(7)}`
   )
   for (const [name, s] of result.scores) {
     console.log(
-      `${name.padEnd(46)} ${fmt(s.hitAt1)} ${fmt(s.hitAt10)} ${fmt(s.recallAt10)} ${fmt(s.mrr)} ${fmt(s.ndcgAt10)}`
+      `${name.padEnd(46)} ${fmt(s.hitAt1)} ${fmt(s.hitAt10)} ${fmt(s.recallAt10)} ${fmt(s.mrrAt10)} ${fmt(s.ndcgAt10)}`
     )
   }
   const c = result.coverage
@@ -261,8 +261,9 @@ const run = async (): Promise<void> => {
     `gold=${goldDocuments.length} negatives per corpus=${corpus.length - goldDocuments.length} queries=${dataset.length}`
   )
 
-  const embeddings = new HuggingFaceEmbeddingService(env.embeddingModel, env.vectorSize)
-  const cachePath = join(tmpdir(), "diagnose-hybrid-embeddings.json")
+  const embeddings = new HuggingFaceEmbeddingService(env.embeddingModel, env.vectorSize, env.embeddingRevision)
+  const cacheKey = `${env.embeddingModel}-${env.embeddingRevision ?? "main"}`.replace(/[^a-zA-Z0-9_-]/g, "_")
+  const cachePath = join(tmpdir(), `diagnose-hybrid-${cacheKey}-embeddings.json`)
   const cache = await loadEmbeddingCache(cachePath)
 
   const allRows = await Promise.all(corpora.map(item => buildRows(item.documents)))
@@ -279,14 +280,7 @@ const run = async (): Promise<void> => {
     printTable(item.name, evaluateCorpus(prepared, dataset, queryVectors))
   }
 
-  const prod = (await Bun.file(join(import.meta.dir, "../../eval-results-fiqa-hn.json")).json()) as {
-    metrics: Record<string, Record<string, number>>
-  }
-  const pick = (m: Record<string, number> | undefined): string =>
-    [m?.hitAt1, m?.hitAt10, m?.recallAt10, m?.mrr, m?.ndcgAt10].map(value => fmt(value ?? 0)).join(" ")
-  console.log("\n=== validation: real pipeline (Qdrant), fixture corpus ===")
-  console.log(`${"dense".padEnd(46)} ${pick(prod.metrics.dense)}`)
-  console.log(`${"hybrid".padEnd(46)} ${pick(prod.metrics.hybrid)}`)
+  console.log("\nCompare with a fresh document-v2 run in eval-runs/. Legacy metric-v1 artifacts are incompatible.")
 }
 
 run().catch(error => {

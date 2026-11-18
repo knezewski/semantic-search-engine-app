@@ -15,10 +15,11 @@ const payloadString = (payload: unknown, key: string): string => {
   return typeof value === "string" ? value : ""
 }
 
-/** Re-embed + re-index the corpus into `collection`, idempotent per document. */
+/** Build an isolated evaluation collection; never reuse or delete an existing index. */
 const indexCorpus = async (documents: EvalDocument[], vectors: VectorService, collection: string): Promise<void> => {
   const embeddings = getEmbeddingService()
-  await vectors.ensureCollection(collection)
+  const created = await vectors.ensureCollection(collection)
+  if (!created.created) throw new Error(`Refusing to reuse evaluation collection ${collection}`)
 
   for (const item of documents) {
     const record = createDocumentRecord({
@@ -29,7 +30,6 @@ const indexCorpus = async (documents: EvalDocument[], vectors: VectorService, co
     })
     const chunks = await splitDocument(record)
     const chunkVectors = await embeddings.embedBatch(chunks.map(chunk => chunk.text))
-    await vectors.deleteByDocumentId(item.id, collection)
     await vectors.upsertChunks(
       chunks.map((chunk, index) => ({ ...chunk, vector: chunkVectors[index] ?? [] })),
       collection
@@ -41,7 +41,7 @@ const indexCorpus = async (documents: EvalDocument[], vectors: VectorService, co
 const qualitySummary = (metrics: ReturnType<typeof aggregate>) => ({
   recallAt5: round(metrics.recallAt5),
   recallAt10: round(metrics.recallAt10),
-  mrr: round(metrics.mrr),
+  mrrAt10: round(metrics.mrrAt10),
   ndcgAt10: round(metrics.ndcgAt10)
 })
 
