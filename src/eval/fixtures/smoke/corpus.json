@@ -1,0 +1,74 @@
+[
+  {
+    "id": "smoke-redis",
+    "title": "Redis",
+    "text": "Redis is an in-memory data store used for caches and job queues. Cached entries can expire with a time to live.",
+    "source": "smoke/storage"
+  },
+  {
+    "id": "smoke-qdrant",
+    "title": "Vector search",
+    "text": "Qdrant stores embedding vectors and retrieves nearest neighbors using vector similarity. Payload metadata can filter results.",
+    "source": "smoke/search"
+  },
+  {
+    "id": "smoke-rrf",
+    "title": "Reciprocal Rank Fusion",
+    "text": "Reciprocal Rank Fusion combines ranked dense and sparse search results by adding weighted reciprocal ranks. It does not require comparable raw scores.",
+    "source": "smoke/search"
+  },
+  {
+    "id": "smoke-rerank",
+    "title": "Cross-encoder reranking",
+    "text": "A cross-encoder scores a query and passage together. A reranker reorders retrieved candidates but cannot recover missing candidates.",
+    "source": "smoke/search"
+  },
+  {
+    "id": "smoke-chunks",
+    "title": "Document chunking",
+    "text": "Chunking splits a long document into smaller passages. Overlapping adjacent chunks can preserve evidence near passage boundaries.",
+    "source": "smoke/ingest"
+  },
+  {
+    "id": "smoke-queues",
+    "title": "Background jobs",
+    "text": "BullMQ schedules background jobs through Redis. Failed jobs may be retried with exponential backoff to reduce repeated load.",
+    "source": "smoke/ingest"
+  },
+  {
+    "id": "smoke-faithfulness",
+    "title": "Grounded answers",
+    "text": "A faithful generated answer supports its factual claims with the provided source context. Unsupported claims are hallucinations.",
+    "source": "smoke/evaluation"
+  },
+  {
+    "id": "smoke-bootstrap",
+    "title": "Paired bootstrap",
+    "text": "Paired bootstrap resamples query indices with replacement. Both systems use the same sampled queries to estimate uncertainty in a metric difference.",
+    "source": "smoke/evaluation"
+  },
+  {
+    "id": "smoke-sqlite",
+    "title": "SQLite",
+    "text": "SQLite is an embedded relational database stored in a file. SQL transactions provide atomic updates to document status records.",
+    "source": "smoke/storage"
+  },
+  {
+    "id": "smoke-temperature",
+    "title": "Judge reproducibility",
+    "text": "A language model judge should use a fixed model revision and rubric. Zero temperature alone does not guarantee reproducible judgments.",
+    "source": "smoke/evaluation"
+  },
+  {
+    "id": "smoke-circuit",
+    "title": "Circuit breaker",
+    "text": "A circuit breaker stops calls to a repeatedly failing dependency and probes it again after a cooldown period.",
+    "source": "smoke/resilience"
+  },
+  {
+    "id": "smoke-idempotency",
+    "title": "Idempotent ingestion",
+    "text": "Idempotent ingestion gives the same stored result when a job is executed more than once. Deterministic chunk IDs prevent duplicate records.",
+    "source": "smoke/ingest"
+  }
+]

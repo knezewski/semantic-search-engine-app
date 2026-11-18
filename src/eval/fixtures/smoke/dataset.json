@@ -1,0 +1,34 @@
+[
+  {
+    "id": "smoke-q1",
+    "query": "Which database stores vectors for nearest neighbor search?",
+    "relevantDocumentIds": ["smoke-qdrant"]
+  },
+  {
+    "id": "smoke-q2",
+    "query": "How can I combine dense and sparse rankings without normalizing raw scores?",
+    "relevantDocumentIds": ["smoke-rrf"]
+  },
+  {
+    "id": "smoke-q3",
+    "query": "Can a cross-encoder find a relevant passage missing from its candidate pool?",
+    "relevantDocumentIds": ["smoke-rerank"]
+  },
+  { "id": "smoke-q4", "query": "Why overlap adjacent document chunks?", "relevantDocumentIds": ["smoke-chunks"] },
+  { "id": "smoke-q5", "query": "How are failed background jobs retried?", "relevantDocumentIds": ["smoke-queues"] },
+  {
+    "id": "smoke-q6",
+    "query": "What makes a generated answer faithful to its sources?",
+    "relevantDocumentIds": ["smoke-faithfulness"]
+  },
+  {
+    "id": "smoke-q7",
+    "query": "How does paired bootstrap estimate uncertainty when comparing search systems?",
+    "relevantDocumentIds": ["smoke-bootstrap"]
+  },
+  {
+    "id": "smoke-q8",
+    "query": "How can a repeated ingestion job avoid duplicate stored chunks?",
+    "relevantDocumentIds": ["smoke-idempotency"]
+  }
+]
