@@ -11,7 +11,11 @@ class HuggingFaceEmbeddingService implements EmbeddingPort {
   private extractor: FeatureExtractor | null = null
   private loading: Promise<FeatureExtractor> | null = null
 
-  constructor(modelId: string, dimensions: number) {
+  constructor(
+    modelId: string,
+    dimensions: number,
+    private readonly revision = "main"
+  ) {
     this.modelId = modelId
     this.dimensions = dimensions
   }
@@ -52,7 +56,7 @@ class HuggingFaceEmbeddingService implements EmbeddingPort {
   private async getExtractor(): Promise<FeatureExtractor> {
     if (this.extractor) return this.extractor
     if (!this.loading) {
-      this.loading = pipeline("feature-extraction", this.modelId).then(extractor => {
+      this.loading = pipeline("feature-extraction", this.modelId, { revision: this.revision }).then(extractor => {
         this.extractor = extractor as unknown as FeatureExtractor
         return this.extractor
       })
@@ -86,7 +90,7 @@ let instance: EmbeddingPort | null = null
 
 const getEmbeddingService = (): EmbeddingPort => {
   if (!instance) {
-    const raw = new HuggingFaceEmbeddingService(env.embeddingModel, env.vectorSize)
+    const raw = new HuggingFaceEmbeddingService(env.embeddingModel, env.vectorSize, env.embeddingRevision)
     instance = env.embeddingCacheSize > 0 ? new CachedEmbeddingService(raw, env.embeddingCacheSize) : raw
   }
   return instance

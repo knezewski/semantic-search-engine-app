@@ -24,7 +24,10 @@ class HuggingFaceRerankService implements RerankPort {
   private classifier: SequenceClassifier | null = null
   private loading: Promise<void> | null = null
 
-  constructor(modelId: string) {
+  constructor(
+    modelId: string,
+    private readonly revision = "main"
+  ) {
     this.modelId = modelId
   }
 
@@ -50,9 +53,9 @@ class HuggingFaceRerankService implements RerankPort {
     if (this.tokenizer && this.classifier) return
     if (!this.loading) {
       this.loading = Promise.all([
-        AutoTokenizer.from_pretrained(this.modelId),
+        AutoTokenizer.from_pretrained(this.modelId, { revision: this.revision }),
         // Quantized weights keep cross-encoder latency down on CPU.
-        AutoModelForSequenceClassification.from_pretrained(this.modelId, { dtype: "q8" })
+        AutoModelForSequenceClassification.from_pretrained(this.modelId, { dtype: "q8", revision: this.revision })
       ]).then(([tokenizer, classifier]) => {
         this.tokenizer = tokenizer as unknown as Tokenizer
         this.classifier = classifier as unknown as SequenceClassifier
@@ -66,7 +69,7 @@ let instance: RerankPort | null = null
 
 const getRerankService = (): RerankPort => {
   if (!instance) {
-    instance = new HuggingFaceRerankService(env.rerankModel)
+    instance = new HuggingFaceRerankService(env.rerankModel, env.rerankRevision)
   }
   return instance
 }

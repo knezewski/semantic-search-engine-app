@@ -84,7 +84,7 @@ export class SearchService {
     } catch (error) {
       // Dense embedding is unavailable — degrade to sparse/BM25-only search.
       console.warn("Embedding unavailable, degrading to sparse-only search", error)
-      const sparseHits = await this.sparseHits(input.query, limit, input.source)
+      const sparseHits = await this.sparseHits(input.query, limit, input.source, degraded)
       const now = performance.now()
       return {
         hits: sparseHits.slice(0, limit),
@@ -93,7 +93,7 @@ export class SearchService {
         rerankMs: 0,
         totalMs: now - started,
         mode: "dense",
-        degraded: ["embedding"]
+        degraded: ["embedding", ...degraded]
       }
     }
     const embedMs = performance.now() - started
@@ -127,7 +127,7 @@ export class SearchService {
         hits = denseHits
       } else {
         // Dense and sparse searches are independent — run them in parallel.
-        const sparseHits = await this.sparseHits(input.query, pool, input.source)
+        const sparseHits = await this.sparseHits(input.query, pool, input.source, degraded)
         hits = rrfFuse(
           [
             denseHits.map(hit => ({ id: hit.chunkId, item: hit })),
@@ -168,7 +168,7 @@ export class SearchService {
     }
   }
 
-  private async sparseHits(query: string, pool: number, source?: string): Promise<SearchHit[]> {
+  private async sparseHits(query: string, pool: number, source?: string, degraded?: string[]): Promise<SearchHit[]> {
     try {
       const sparsePoints = await this.vectors.searchSparse({
         sparse: toSparseVector(query),
@@ -178,6 +178,7 @@ export class SearchService {
       return sparsePoints.map(point => this.toHit(point))
     } catch (error) {
       console.warn("Sparse search unavailable, falling back to dense-only hybrid", error)
+      degraded?.push("sparse")
       return []
     }
   }
