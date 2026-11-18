@@ -1,11 +1,8 @@
 node_modules/
 dist/
-.env
-.env.local
-.env.*.local
 *.log
 
-# Local infra / generated reports
+# Local infrastructure and generated evaluation reports
 qdrant_storage/
 eval-runs/
 eval-results.json
@@ -29,29 +26,11 @@ data/
 
 # Runtime PID files written by `make start`
 .run/
-. DS_Store
-.agents/
-.claude/
-.cline/
-.codebuddy/
-.continue/
-.cursor/
-.kiro/
-skills-lock.json
-. DS_Store
-.agents/
-.claude/
-.cline/
-.codebuddy/
-.continue/
-.cursor/
-.kiro/
-skills-lock.json
 
-# OS
+# OS files
 .DS_Store
 
-# AI agent configs
+# AI agent configs and local instructions
 .agents/
 .claude/
 .cline/
@@ -62,7 +41,7 @@ skills-lock.json
 skills-lock.json
 CLAUDE.md
 
-# Env files (keep only .env.example tracked)
+# Environment files (keep only the example tracked)
 .env
 .env.*
 !.env.example
